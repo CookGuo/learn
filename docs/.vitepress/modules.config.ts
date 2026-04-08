@@ -148,26 +148,109 @@ export const modules: ModuleConfig[] = [
           { text: '模块介绍', link: '/advanced/' },
         ],
       },
-      { 
-        text: '性能优化', 
+      {
+        text: '性能优化',
         items: [
           { text: '性能指标与测量', link: '/advanced/performance-metrics' },
           { text: '加载优化策略', link: '/advanced/performance-loading' },
-        ] 
+        ]
       },
-      { 
-        text: '工程化', 
+      {
+        text: '工程化',
         items: [
           { text: 'Webpack 原理', link: '/advanced/webpack' },
           { text: 'Vite 原理', link: '/advanced/vite' },
           { text: 'Monorepo 实践', link: '/advanced/monorepo' },
         ],
       },
-      { 
-        text: '安全', 
+      {
+        text: '安全',
         items: [
           { text: 'XSS 与 CSRF', link: '/advanced/security-xss-csrf' },
           { text: '内容安全策略', link: '/advanced/security-csp' },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'interview',
+    title: '面试题库',
+    description: '前端面试高频题库，涵盖基础、进阶、精选、手写等核心题型',
+    icon: '💼',
+    order: 4,
+    enabled: true,
+    access: 'public',
+    sidebar: [
+      {
+        text: '基础篇',
+        items: [
+          { text: 'HTML/HTTP/Web综合', link: '/interview/base/' },
+        ],
+      },
+      {
+        text: '进阶篇',
+        items: [
+          { text: '进阶题型', link: '/interview/improve/' },
+        ],
+      },
+      {
+        text: '高频篇',
+        items: [
+          { text: '高频面试题', link: '/interview/high-frequency/' },
+        ],
+      },
+      {
+        text: '精选篇',
+        items: [
+          { text: 'HTML模块', link: '/interview/selection/1-HTML' },
+          { text: 'CSS模块', link: '/interview/selection/2-CSS' },
+          { text: 'JS模块', link: '/interview/selection/3-JS' },
+          { text: 'ES6模块', link: '/interview/selection/4-ES6' },
+          { text: '浏览器模块', link: '/interview/selection/5-Browser' },
+          { text: 'React模块', link: '/interview/selection/6-React' },
+          { text: 'Vue模块', link: '/interview/selection/7-Vue' },
+          { text: 'Node模块', link: '/interview/selection/8-Node' },
+          { text: '前端工程模块', link: '/interview/selection/9-Engineering' },
+          { text: '移动端开发', link: '/interview/selection/10-Mobile' },
+          { text: '小程序模块', link: '/interview/selection/11-MiniApp' },
+          { text: 'Uniapp模块', link: '/interview/selection/12-Uniapp' },
+          { text: '前端安全模块', link: '/interview/selection/13-Security' },
+          { text: '性能优化模块', link: '/interview/selection/14-Performance' },
+          { text: 'HTTP模块', link: '/interview/selection/15-HTTP' },
+          { text: '设计模式', link: '/interview/selection/16-DesignPattern' },
+          { text: '框架通识', link: '/interview/selection/17-Framework' },
+          { text: '排序算法', link: '/interview/selection/18-Algorithm' },
+          { text: '计算机通识', link: '/interview/selection/19-Computer' },
+        ],
+      },
+      {
+        text: '手写篇',
+        items: [
+          { text: '手写代码题', link: '/interview/handwritten/' },
+        ],
+      },
+      {
+        text: '原理篇',
+        items: [
+          { text: 'React Router原理', link: '/interview/principle/react-router' },
+        ],
+      },
+      {
+        text: '面经篇',
+        items: [
+          { text: '面经汇总 (待修复)', link: '/interview/experience/index' },
+        ],
+      },
+      {
+        text: '自检篇',
+        items: [
+          { text: '前端100题自检', link: '/interview/self-check/' },
+        ],
+      },
+      {
+        text: '每日一题',
+        items: [
+          { text: '每日一题', link: '/interview/daily/' },
         ],
       },
     ],

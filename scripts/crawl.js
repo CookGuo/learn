@@ -1,10 +1,13 @@
 #!/usr/bin/env node
-const axios = require('axios')
-const cheerio = require('cheerio')
-const TurndownService = require('turndown')
-const { gfm } = require('turndown-plugin-gfm')
-const fs = require('fs')
-const path = require('path')
+import axios from 'axios'
+import * as cheerio from 'cheerio'
+import TurndownService from 'turndown'
+import { gfm } from 'turndown-plugin-gfm'
+import fs from 'fs'
+import path from 'path'
+import { fileURLToPath } from 'url'
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
 const SITE_RULES = {
   'developer.mozilla.org': {
@@ -16,6 +19,11 @@ const SITE_RULES = {
     contentSelector: '.article-content',
     removeSelectors: ['.copy-code-btn', '.tag-list'],
     titleSelector: '.article-title'
+  },
+  'interview.poetries.top': {
+    contentSelector: '.theme-default-content, article, .content',
+    removeSelectors: ['.page-nav, .cookie, aside, .sidebar, nav, footer, .page-edit'],
+    titleSelector: 'h1'
   },
   default: {
     contentSelector: 'article, main, .content, .post-content',
@@ -72,8 +80,8 @@ async function crawl(url, outputPath) {
     const finalContent = frontmatter + markdown
 
     const outputFile = outputPath
-      ? path.resolve('docs', `${outputPath}.md`)
-      : path.resolve('docs', pageTitle.replace(/[^\w\u4e00-\u9fa5]+/g, '-').toLowerCase() + '.md')
+      ? path.resolve(__dirname, '..', 'docs', `${outputPath}.md`)
+      : path.resolve(__dirname, '..', 'docs', pageTitle.replace(/[^\w\u4e00-\u9fa5]+/g, '-').toLowerCase() + '.md')
 
     const outputDir = path.dirname(outputFile)
     if (!fs.existsSync(outputDir)) {
@@ -92,7 +100,7 @@ async function crawl(url, outputPath) {
 const [,, url, outputPath] = process.argv
 if (!url) {
   console.log('用法: node scripts/crawl.js <URL> [输出路径]')
-  console.log('示例: node scripts/crawl.js https://example.com/article browser/event-loop')
+  console.log('示例: node scripts/crawl.js https://example.com/article interview/base/index')
   process.exit(1)
 }
 

@@ -8,7 +8,20 @@
       "Bash(curl -s \"https://api.github.com/repos/poetries/browser-working-principle/contents/\")",
       "WebFetch(domain:github.com)",
       "Bash(curl -sL \"https://raw.githubusercontent.com/poetries/browser-working-principle/master/docs/guide/part1/lesson01.md\")",
-      "Bash(seq:*)"
+      "Bash(seq:*)",
+      "Bash(curl -sL \"https://raw.githubusercontent.com/poetries/fe-interview/master/docs/base.html\" -o /Users/guominyi/Desktop/learn-github/docs/interview/base/index.md)",
+      "Bash(curl -sL \"https://interview.poetries.top/docs/base.html\")",
+      "Bash(node scripts/crawl.js \"https://interview.poetries.top/docs/base.html\" \"interview/base/index\")",
+      "Bash(node scripts/crawl.js \"https://interview.poetries.top/docs/base/improve.html\" \"interview/improve/index\")",
+      "Bash(node scripts/crawl.js \"https://interview.poetries.top/docs/base/high-frequency.html\" \"interview/high-frequency/index\")",
+      "Bash(node scripts/crawl.js \"https://interview.poetries.top/docs/base/handwritten.html\" \"interview/handwritten/index\")",
+      "Bash(node scripts/crawl.js \"https://interview.poetries.top/principle-docs/react/01-React%20router原理.html\" \"interview/principle/react-router\")",
+      "Bash(node scripts/crawl.js \"https://interview.poetries.top/interview-exp/前端面经汇总.html\" \"interview/experience/index\")",
+      "Bash(node:*)",
+      "Bash(curl -sL \"https://interview.poetries.top/docs/excellent-docs/1-HTML模块.html\")",
+      "Bash(awk 'NR==4675' /Users/guominyi/Desktop/learn-github/docs/interview/experience/index.md)",
+      "Bash(xxd)",
+      "Bash(find docs/interview -name \"*.md\" -exec sed -i '' 's/\\(opens new window\\)//g' {} \\\\;)"
     ]
   }
 }
