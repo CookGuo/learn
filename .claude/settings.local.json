@@ -4,7 +4,11 @@
       "WebFetch(domain:interview.poetries.top)",
       "Bash(curl -s \"https://interview.poetries.top/docs/base.html\")",
       "Read(//tmp/**)",
-      "Bash(pnpm build:*)"
+      "Bash(pnpm build:*)",
+      "Bash(curl -s \"https://api.github.com/repos/poetries/browser-working-principle/contents/\")",
+      "WebFetch(domain:github.com)",
+      "Bash(curl -sL \"https://raw.githubusercontent.com/poetries/browser-working-principle/master/docs/guide/part1/lesson01.md\")",
+      "Bash(seq:*)"
     ]
   }
 }

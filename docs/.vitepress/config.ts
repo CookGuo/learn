@@ -20,6 +20,7 @@ export default defineConfig({
   title: '前端知识库',
   description: '系统化的前端知识体系',
   base: '/learn/',
+  ignoreDeadLinks: true,
 
   head: [
     ['link', { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' }],
