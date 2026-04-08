@@ -94,88 +94,9 @@ export const modules: ModuleConfig[] = [
     ],
   },
   {
-    id: 'basic',
-    title: '基础篇',
-    description: 'HTML / CSS / JavaScript 核心知识体系',
-    icon: '📖',
-    order: 2,
-    enabled: true,
-    access: 'public',
-    sidebar: [
-      {
-        text: '概述',
-        items: [
-          { text: '模块介绍', link: '/basic/' },
-        ],
-      },
-      { 
-        text: 'HTML', 
-        items: [
-          { text: '语义化与无障碍', link: '/basic/html-semantic' },
-          { text: 'HTML5 新特性', link: '/basic/html5' },
-        ] 
-      },
-      { 
-        text: 'CSS', 
-        items: [
-          { text: 'BFC 与格式化上下文', link: '/basic/css-bfc' },
-          { text: 'Flexbox 布局', link: '/basic/css-flexbox' },
-          { text: 'Grid 布局', link: '/basic/css-grid' },
-        ] 
-      },
-      { 
-        text: 'JavaScript', 
-        items: [
-          { text: '原型与原型链', link: '/basic/js-prototype' },
-          { text: 'Promise 与异步', link: '/basic/js-async' },
-          { text: 'ES6+ 新特性', link: '/basic/js-es6' },
-        ],
-      },
-    ],
-  },
-  {
-    id: 'advanced',
-    title: '进阶篇',
-    description: '性能优化、工程化、安全、框架原理',
-    icon: '🚀',
-    order: 3,
-    enabled: true,
-    access: 'public',
-    sidebar: [
-      {
-        text: '概述',
-        items: [
-          { text: '模块介绍', link: '/advanced/' },
-        ],
-      },
-      {
-        text: '性能优化',
-        items: [
-          { text: '性能指标与测量', link: '/advanced/performance-metrics' },
-          { text: '加载优化策略', link: '/advanced/performance-loading' },
-        ]
-      },
-      {
-        text: '工程化',
-        items: [
-          { text: 'Webpack 原理', link: '/advanced/webpack' },
-          { text: 'Vite 原理', link: '/advanced/vite' },
-          { text: 'Monorepo 实践', link: '/advanced/monorepo' },
-        ],
-      },
-      {
-        text: '安全',
-        items: [
-          { text: 'XSS 与 CSRF', link: '/advanced/security-xss-csrf' },
-          { text: '内容安全策略', link: '/advanced/security-csp' },
-        ],
-      },
-    ],
-  },
-  {
     id: 'interview',
-    title: '面试题库',
-    description: '前端面试高频题库，涵盖基础、进阶、精选、手写等核心题型',
+    title: '面试合集',
+    description: '基础篇、进阶篇、高频篇、手写篇、原理篇、面经篇',
     icon: '💼',
     order: 4,
     enabled: true,
@@ -200,6 +121,35 @@ export const modules: ModuleConfig[] = [
         ],
       },
       {
+        text: '手写篇',
+        items: [
+          { text: '手写代码题', link: '/interview/handwritten/' },
+        ],
+      },
+      {
+        text: '原理篇',
+        items: [
+          { text: 'React Router原理', link: '/interview/principle/react-router' },
+        ],
+      },
+      {
+        text: '面经篇',
+        items: [
+          { text: '面经汇总', link: '/interview/experience.html' },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'interview-selection',
+    title: '精选篇',
+    description: '精选面试题模块',
+    icon: '💼',
+    order: 5,
+    enabled: true,
+    access: 'public',
+    sidebar: [
+      {
         text: '精选篇',
         items: [
           { text: 'HTML模块', link: '/interview/selection/1-HTML' },
@@ -223,30 +173,34 @@ export const modules: ModuleConfig[] = [
           { text: '计算机通识', link: '/interview/selection/19-Computer' },
         ],
       },
-      {
-        text: '手写篇',
-        items: [
-          { text: '手写代码题', link: '/interview/handwritten/' },
-        ],
-      },
-      {
-        text: '原理篇',
-        items: [
-          { text: 'React Router原理', link: '/interview/principle/react-router' },
-        ],
-      },
-      {
-        text: '面经篇',
-        items: [
-          { text: '面经汇总 (待修复)', link: '/interview/experience/index' },
-        ],
-      },
+    ],
+  },
+  {
+    id: 'self-check',
+    title: '自检篇',
+    description: '前端100题自检',
+    icon: '✅',
+    order: 6,
+    enabled: true,
+    access: 'public',
+    sidebar: [
       {
         text: '自检篇',
         items: [
           { text: '前端100题自检', link: '/interview/self-check/' },
         ],
       },
+    ],
+  },
+  {
+    id: 'daily',
+    title: '每日一题',
+    description: '每日算法面试题',
+    icon: '📅',
+    order: 7,
+    enabled: true,
+    access: 'public',
+    sidebar: [
       {
         text: '每日一题',
         items: [

@@ -25,6 +25,11 @@ const SITE_RULES = {
     removeSelectors: ['.page-nav, .cookie, aside, .sidebar, nav, footer, .page-edit'],
     titleSelector: 'h1'
   },
+  'feinterview.poetries.top': {
+    contentSelector: '.content__default, .markdown-body, article',
+    removeSelectors: ['.page-nav, aside, .sidebar, nav, footer, .page-edit'],
+    titleSelector: 'h1'
+  },
   default: {
     contentSelector: 'article, main, .content, .post-content',
     removeSelectors: ['nav', 'header', 'footer', '.sidebar'],

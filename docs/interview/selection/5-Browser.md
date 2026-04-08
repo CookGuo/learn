@@ -1,16 +1,16 @@
 ---
-title: 前端高频面试题-精选篇-浏览器模块 | 前端进阶之旅 - 前端求职面试刷题宝典
+title: 前端高频面试题-精选篇-浏览器模块 
 source: https://interview.poetries.top/docs/excellent-docs/5-浏览器模块.html
 crawled: 2026-04-08
 ---
 
-# 前端高频面试题-精选篇-浏览器模块 | 前端进阶之旅 - 前端求职面试刷题宝典
+# 前端高频面试题-精选篇-浏览器模块 
 
-> 原文: [https://interview.poetries.top/docs/excellent-docs/5-浏览器模块.html](https://interview.poetries.top/docs/excellent-docs/5-浏览器模块.html)
+
 
 ---
 
-## [#](#_1-跨标签页通讯) 1 跨标签页通讯
+## 1. 跨标签页通讯
 
 > 不同标签页间的通讯，本质原理就是去运用一些可以 共享的中间介质，因此比较常用的有以下方法:
 
@@ -22,7 +22,7 @@ crawled: 2026-04-08
 *   设置共享`cookie`与不断轮询脏检查(`setInterval`)
 *   借助服务端或者中间层实现
 
-## [#](#_2-浏览器架构) 2 浏览器架构
+## 2. 浏览器架构
 
 *   用户界面
 *   主进程
@@ -37,9 +37,9 @@ crawled: 2026-04-08
 *   网络异步线程
 *   定时器线程
 
-## [#](#_3-渲染机制) 3 渲染机制
+## 3. 渲染机制
 
-### [#](#_3-1-浏览器的渲染机制一般分为以下几个步骤) 3.1 浏览器的渲染机制一般分为以下几个步骤
+### 3.1 浏览器的渲染机制一般分为以下几个步骤
 
 *   处理 `HTML` 并构建 `DOM` 树。
 *   处理 `CSS` 构建 `CSSOM` 树。
@@ -51,7 +51,7 @@ crawled: 2026-04-08
 *   css 是阻塞渲染的资源。需要将它尽早、尽快地下载到客户端，以便缩短首次渲染的时间
 *   当 HTML 解析到 script 标签时，会暂停构建 DOM，完成后才会从暂停的地方重新开始。也就是说，如果你想首屏渲染的越快，就越不应该在首屏就加载 JS 文件。并且 CSS 也会影响 JS 的执行，只有当解析完样式表才会执行 JS，所以也可以认为这种情况下，CSS 也会暂停构建 DOM
 
-### [#](#_3-2-图层) 3.2 图层
+### 3.2 图层
 
 > 一般来说，可以把普通文档流看成一个图层。特定的属性可以生成一个新的图层。不同的图层渲染互不影响，所以对于某些频繁需要渲染的建议单独生成一个新图层，提高性能。但也不能生成过多的图层，会引起反作用
 
@@ -62,7 +62,7 @@ crawled: 2026-04-08
     *   通过动画实现的 `opacity` 动画转换
     *   `position: fixed`
 
-### [#](#_3-3-重绘与回流) 3.3 重绘与回流
+### 3.3 重绘与回流
 
 > 当元素的样式发生变化时，浏览器需要触发更新，重新绘制元素。这个过程中，有两种类型的操作，即重绘与回流。
 
@@ -121,7 +121,7 @@ crawled: 2026-04-08
 *   更新界面
 *   以上就是一帧中可能会做的事情。如果在一帧中有空闲时间，就会去执行 `requestIdleCallback` 回调
 
-### [#](#_3-4-javascript-会阻塞-dom-生成) 3.4 JavaScript 会阻塞 DOM 生成
+### 3.4 JavaScript 会阻塞 DOM 生成
 
 > `JavaScript` 会阻塞 `DOM`生成，而样式文件又会阻塞 `JavaScript` 的执行，所以在实际的工程中需要重点关注 `JavaScript` 文件和样式表文件，使用不当会影响到页面性能的
 
@@ -131,20 +131,20 @@ crawled: 2026-04-08
 *   而 JavaScript 引擎在解析 JavaScript 之前，是不知道 JavaScript 是否操纵了 CSSOM 的，所以渲染引擎在遇到 JavaScript 脚本时，不管该脚本是否操纵了 CSSOM，都会执行 CSS 文件下载，解析操作，再执行 JavaScript 脚本。
 *   不管 CSS 文件和 JavaScript 文件谁先到达，都要先等到 CSS 文件下载完成并生成 CSSOM，然后再执行 JavaScript 脚本，最后再继续构建 DOM，构建布局树，绘制页面
 
-### [#](#_3-5-缩短白屏时长-可以有以下策略) 3.5 缩短白屏时长，可以有以下策略
+### 3.5 缩短白屏时长，可以有以下策略
 
 *   通过内联 JavaScript、内联 CSS 来移除这两种类型的文件下载，这样获取到 HTML 文件之后就可以直接开始渲染流程了。
 *   但并不是所有的场合都适合内联，那么还可以尽量减少文件大小，比如通过 webpack 等工具移除一些不必要的注释，并压缩 JavaScript 文件。
 *   还可以将一些不需要在解析 HTML 阶段使用的 JavaScript 标记上 `sync` 或者 `defer`
 *   对于大的 CSS 文件，可以通过媒体查询属性，将其拆分为多个不同用途的 CSS 文件，这样只有在特定的场景下才会加载特定的 CSS 文件。
 
-## [#](#_4-跨域) 4 跨域
+## 4. 跨域
 
 > 因为浏览器出于安全考虑，有同源策略。也就是说，如果`协议`、`域名`、`端口`有一个不同就是跨域，`Ajax` 请求会失败。
 
 我们可以通过以下几种常用方法解决跨域的问题
 
-### [#](#_4-1-jsonp) 4.1 JSONP
+### 4.1 JSONP
 
 > `JSONP` 的原理很简单，就是利用 `<script>`标签没有跨域限制的漏洞。通过 `<script>`标签指向一个需要访问的地址并提供一个回调函数来接收数据
 
@@ -188,7 +188,7 @@ jsonp(
 
 ```
 
-### [#](#_4-2-cors) 4.2 CORS
+### 4.2 CORS
 
 > `CORS` （Cross-Origin Resource Sharing，跨域资源共享） 是目前最为广泛的解决跨域问题的方案。方案依赖服务端/后端在响应头中添加 Access-Control-Allow-\* 头，告知浏览器端通过此请求
 
@@ -240,7 +240,7 @@ app.use(async (ctx, next)=> {
 
 当请求符合响应头的这些条件时，浏览器才会发送并响应正式的请求
 
-### [#](#_4-3-nginx反向代理) 4.3 nginx反向代理
+### 4.3 nginx反向代理
 
 反向代理只需要服务端/后端支持，几乎不涉及前端改动，只用切换接口即可
 
@@ -284,7 +284,7 @@ server {
 }
 ```
 
-### [#](#_4-4-node-中间层接口转发) 4.4 Node 中间层接口转发
+### 4.4 Node 中间层接口转发
 
 ```
 const router = require('koa-router')()
@@ -317,7 +317,7 @@ router.post('/github', async (ctx, next) => {
 module.exports = router
 ```
 
-### [#](#_4-5-proxy) 4.5 Proxy
+### 4.5 Proxy
 
 如果是通过`vue-cli`脚手架工具搭建项目，我们可以通过`webpack`为我们起一个本地服务器作为请求的代理对象
 
@@ -362,7 +362,7 @@ app.use('/api', proxy({ target: 'http://localhost:4000', changeOrigin: false
 module.exports = app
 ```
 
-### [#](#_4-6-websocket) 4.6 websocket
+### 4.6 websocket
 
 `webSocket`本身不存在跨域问题，所以我们可以利用`webSocket`来进行非同源之间的通信
 
@@ -387,13 +387,13 @@ function socketConnect(url) {
 let wsValue = socketConnect('ws://121.40.165.18:8800'); // websocket对象
 ```
 
-### [#](#_4-7-document-domain-不常用) 4.7 document.domain（不常用）
+### 4.7 document.domain（不常用）
 
 *   该方式只能用于二级域名相同的情况下，比如 `a.test.com` 和 `b.test.com` 适用于该方式。
 *   只需要给页面添加 `document.domain = 'test.com'` 表示二级域名都相同就可以实现跨域
 *   自 `Chrome 101` 版本开始，`document.domain` 将变为可读属性，也就是意味着上述这种跨域的方式被禁用了
 
-### [#](#_4-8-postmessage-不常用) 4.8 postMessage（不常用）
+### 4.8 postMessage（不常用）
 
 在两个 `origin` 下分别部署一套页面 `A` 与 `B`，`A` 页面通过 `iframe` 加载 `B` 页面并监听消息，`B` 页面发送消息
 
@@ -412,7 +412,7 @@ mc.addEventListener('message', (event) => {
 });
 ```
 
-### [#](#_4-9-window-name-不常用) 4.9 window.name（不常用）
+### 4.9 window.name（不常用）
 
 > 主要是利用 `window.name` 页面跳转不改变的特性实现跨域，即 `iframe` 加载一个跨域页面，设置 `window.name`，跳转到同域页面，可以通过 `$('iframe').contentWindow.name` 拿到跨域页面的数据
 
@@ -450,7 +450,7 @@ mc.addEventListener('message', (event) => {
 
 上面的代码只是最简单的原理演示代码，你可以对使用js封装上面的过程，比如动态的创建`iframe`,动态的注册各种事件等等，当然为了安全，获取完数据后，还可以销毁作为代理的`iframe`
 
-### [#](#_4-10-扩展阅读) 4.10 扩展阅读
+### 4.10 扩展阅读
 
 **跨域与监控**
 
@@ -460,7 +460,7 @@ mc.addEventListener('message', (event) => {
 
 前端项目在图片处理时可能会遇到图片绘制到 `Canvas` 上之后却不能读取像素或导出 `base64` 的问题。这个问题也是由同源策略引起。解决方式和上文相同，给图片添加 `crossorigin="anonymous"` 并在返回的图片文件响应头加上 `Access-Control-Allow-Origin: *` 即可解决
 
-## [#](#_5-浏览器缓存) 5 浏览器缓存
+## 5. 浏览器缓存
 
 > 我们经常需要对业务中的一些数据进行存储，通常可以分为 短暂性存储 和 持久性储存。
 
@@ -479,7 +479,7 @@ mc.addEventListener('message', (event) => {
 
 > 缓存分为强缓存和协商缓存。强缓存不过服务器，协商缓存需要过服务器，协商缓存返回的状态码是304。两类缓存机制可以同时存在，强缓存的优先级高于协商缓存。当执行强缓存时，如若缓存命中，则直接使用缓存数据库中的数据，不再进行缓存协商。
 
-### [#](#_6-1-强缓存) 6.1 强缓存
+### 6.1 强缓存
 
 **Expires(HTTP1.0)**：`Exprires`的值为服务端返回的数据到期时间。当再次请求时的请求时间小于返回的此时间，则直接使用缓存数据。但由于服务端时间和客户端时间可能有误差，这也将导致缓存命中的误差。另一方面，Expires是HTTP1.0的产物，故现在大多数使用`Cache-Control`替代
 
@@ -495,7 +495,7 @@ mc.addEventListener('message', (event) => {
 
 > 请注意`no-cache`指令很多人误以为是不缓存，这是不准确的，`no-cache`的意思是可以缓存，但每次用应该去向服务器验证缓存是否可用。`no-store`才是不缓存内容。当在首部字段`Cache-Control` 有指定 `max-age` 指令时，比起首部字段 Expires，会优先处理 `max-age` 指令。命中强缓存的表现形式：Firefox浏览器表现为一个灰色的200状态码。Chrome浏览器状态码表现为200 (`from disk cache`)或是200 OK (`from memory cache`)
 
-### [#](#_6-2-协商缓存-对比缓存) 6.2 协商缓存（对比缓存）
+### 6.2 协商缓存（对比缓存）
 
 > 协商缓存需要进行对比判断是否可以使用缓存。浏览器第一次请求数据时，服务器会将缓存标识与数据一起响应给客户端，客户端将它们备份至缓存中。再次请求时，客户端会将缓存中的标识发送给服务器，服务器根据此标识判断。若未失效，返回304状态码，浏览器拿到此状态码就可以直接使用缓存数据了
 
@@ -544,7 +544,7 @@ mc.addEventListener('message', (event) => {
 > *   **手动刷新**：强制缓存失效，协商缓存有效
 > *   **强制刷新**：强制缓存失效，协商缓存失效
 
-### [#](#_6-3-缓存场景) 6.3 缓存场景
+### 6.3 缓存场景
 
 > 对于大部分的场景都可以使用强缓存配合协商缓存解决，但是在一些特殊的地方可能需要选择特殊的缓存策
 
@@ -552,15 +552,15 @@ mc.addEventListener('message', (event) => {
 *   对于频繁变动的资源，可以使用 `Cache-Control: no-cache` 并配合 `ETag` 使用，表示该资源已被缓存，但是每次都会发送请求询问资源是否更新
 *   对于代码文件来说，通常使用 `Cache-Control: max-age=31536000` 并配合策略缓存使用，然后对文件进行指纹处理，一旦文件名变动就会立刻下载新的文件
 
-### [#](#_6-4-讲讲304) 6.4 讲讲304
+### 6.4 讲讲304
 
 > 如果客户端发送了一个带条件的 `GET` 请求且该请求已被允许，而文档的内容(自上次访问以来或者根据请求的条件)并没有改变，则服务器应当返回这个 `304` 状态码
 
-### [#](#_6-5-强缓存、协商缓存什么时候用哪个) 6.5 强缓存、协商缓存什么时候用哪个
+### 6.5 强缓存、协商缓存什么时候用哪个
 
 > 因为服务器上的资源不是一直固定不变的，大多数情况下它会更新，这个时候如果我们 还访问本地缓存，那么对用户来说，那就相当于资源没有更新，用户看到的还是旧的资 源;所以我们希望服务器上的资源更新了浏览器就请求新的资源，没有更新就使用本地 的缓存，以最大程度的减少因网络请求而产生的资源浪费。
 
-### [#](#_6-6-缓存总结) 6.6 缓存总结
+### 6.6 缓存总结
 
 > 缓存分为两种:强缓存和协商缓存，根据响应的 `header` 内容来决定。
 
@@ -572,7 +572,7 @@ mc.addEventListener('message', (event) => {
 *   强缓存相关字段有 `expires`，`cache-control`。如果 `cache-control` 与 `expires` 同时存在的话， `cache-control` 的优先级高于 `expires`。
 *   协商缓存相关字段有 `Last-Modified/If-Modified-Since`，`Etag/If-None-Match`
 
-### [#](#_6-7-cookie和localsrorage、session、indexdb-的区别) 6.7 cookie和localSrorage、session、indexDB 的区别
+### 6.7 cookie和localSrorage、session、indexDB 的区别
 
 | 特性 | cookie | localStorage | sessionStorage | indexDB |
 | --- | --- | --- | --- | --- |
@@ -591,7 +591,7 @@ mc.addEventListener('message', (event) => {
 | `secure` | 只能在协议为 `HTTPS` 的请求中携带 |
 | `same-site` | 规定浏览器不能在跨域请求中携带 `Cookie`，减少 `CSRF` 攻击 |
 
-### [#](#_6-8-什么是-cookie) 6.8 什么是 Cookie
+### 6.8 什么是 Cookie
 
 *   **HTTP 是无状态的协议**（对于事务处理没有记忆能力，每次客户端和服务端会话完成时，服务端不会保存任何会话信息）：每个请求都是完全独立的，服务端无法确认当前访问者的身份信息，无法分辨上一次的请求发送者和这一次的发送者是不是同一个人。所以服务器与浏览器为了进行会话跟踪（知道是谁在访问我），就必须主动的去维护一个状态，这个状态用于告知服务端前后两个请求是否来自同一浏览器。而这个状态需要通过 `cookie` 或者 `session` 去实现
 *   **cookie 存储在客户端**： `cookie` 是服务器发送到用户浏览器并保存在本地的一小块数据，它会在浏览器下次向同一服务器再发起请求时被携带并发送到服务器上
@@ -607,7 +607,7 @@ mc.addEventListener('message', (event) => {
 | `secure` | 该 cookie 是否仅被使用安全协议传输。安全协议有 `HTTPS`，`SSL`等，在网络上传输数据之前先将数据加密。默认为`false`。当 `secure` 值为 `true` 时，`cookie` 在 `HTTP` 中是无效，在 `HTTPS` 中才有效 |
 | `httpOnly` | 如果给某个 `cookie` 设置了 `httpOnly` 属性，则无法通过 JS 脚本 读取到该 `cookie` 的信息，但还是能通过 `Application` 中手动修改 `cookie`，所以只是在一定程度上可以防止 `XSS` 攻击，不是绝对的安全 |
 
-### [#](#_6-9-什么是-session) 6.9 什么是 Session
+### 6.9 什么是 Session
 
 *   `session` 是另一种记录服务器和客户端会话状态的机制
 *   `session` 是基于 `cookie` 实现的，`session` 存储在服务器端，`sessionId` 会被存储到客户端的`cookie` 中
@@ -621,14 +621,14 @@ mc.addEventListener('message', (event) => {
 
 > 根据以上流程可知，`SessionID` 是连接 `Cookie` 和 `Session` 的一道桥梁，大部分系统也是根据此原理来验证用户登录状态。
 
-### [#](#_6-10-cookie-和-session-的区别) 6.10 Cookie 和 Session 的区别
+### 6.10 Cookie 和 Session 的区别
 
 *   **安全性**： `Session` 比 `Cookie` 安全，`Session` 是存储在服务器端的，`Cookie` 是存储在客户端的。
 *   **存取值的类型不同**：Cookie 只支持存字符串数据，想要设置其他类型的数据，需要将其转换成字符串，`Session` 可以存任意数据类型。
 *   **有效期不同**： `Cookie` 可设置为长时间保持，比如我们经常使用的默认登录功能，`Session` 一般失效时间较短，客户端关闭（默认情况下）或者 `Session` 超时都会失效。
 *   **存储大小不同**： 单个 `Cookie` 保存的数据不能超过 `4K`，`Session` 可存储数据远高于 `Cookie`，但是当访问量过多，会占用过多的服务器资源。
 
-## [#](#_6-内存泄露) 6 内存泄露
+## 6. 内存泄露
 
 *   意外的全局变量: 无法被回收
 *   定时器: 未被正确关闭，导致所引用的外部变量无法被释放
@@ -638,9 +638,9 @@ mc.addEventListener('message', (event) => {
 
 > 可用 `chrome` 中的 `timeline` 进行内存标记，可视化查看内存的变化情况，找出异常点。
 
-## [#](#_7-浏览器api) 7 浏览器API
+## 7. 浏览器API
 
-### [#](#_7-1-web-worker) 7.1 Web Worker
+### 7.1 Web Worker
 
 > 现代浏览器为`JavaScript`创造的 多线程环境。可以新建并将部分任务分配到`worker`线程并行运行，两个线程可 独立运行，互不干扰，可通过自带的 消息机制 相互通信。
 
@@ -665,7 +665,7 @@ worker.onmessage = function (event) {
 *   无法使用 `document / window / alert / confirm`
 *   无法加载本地资源
 
-### [#](#_7-2-service-worker) 7.2 Service Worker
+### 7.2 Service Worker
 
 service worker
 
@@ -715,29 +715,29 @@ self.addEventListener("fetch", e => {
 
 > 当我们重新刷新页面可以发现我们缓存的数据是从 `Service` `Worker` 中读取的
 
-### [#](#_7-3-requestanimationframe用法) 7.3 requestAnimationFrame用法
+### 7.3 requestAnimationFrame用法
 
 > 在Web应用中，实现动画效果的方法比较多，`Javascript` 中可以通过定时器 `setTimeout` 来实现，`css3` 可以使用 `transition` 和 `animation` 来实现，`html5` 中的 `canvas` 也可以实现。除此之外，html5 还提供一个专门用于请求动画的`API`，那就是 `requestAnimationFrame`，顾名思义就是请求动画帧
 
-#### [#](#_1-页面可见) 1.页面可见
+#### 1.页面可见
 
 > 当页面被最小化或者被切换成后台标签页时，页面为不可见，浏览器会触发一个 `visibilitychange`事件,并设置`document.hidden`属性为true；切换到显示状态时，页面为可见，也同样触发一个 `visibilitychange` 事件，设置`document.hidden`属性为`false`
 
-#### [#](#_2-动画帧请求回调函数列表) 2.动画帧请求回调函数列表
+#### 2.动画帧请求回调函数列表
 
 > 每个`Document`都有一个动画帧请求回调函数列表，该列表可以看成是由`<handlerId, callback>`元组组成的集合。其中`handlerId`是一个整数，唯一地标识了元组在列表中的位置；`callback`是回调函数
 
-#### [#](#_3-屏幕刷新频率) 3.屏幕刷新频率
+#### 3.屏幕刷新频率
 
 > 即图像在屏幕上更新的速度，也即屏幕上的图像每秒钟出现的次数，它的单位是赫兹(Hz)。 对于一般笔记本电脑，这个频率大概是`60Hz`， 这个值的设定受屏幕分辨率、屏幕尺寸和显卡的影响
 
-#### [#](#_4-动画原理) 4.动画原理
+#### 4.动画原理
 
 > 根据上面的原理我们知道，你眼前所看到图像正在以每秒60次的频率刷新，由于刷新频率很高，因此你感觉不到它在刷新。而动画本质就是要让人眼看到图像被刷新而引起变化的视觉效果，这个变化要以连贯的、平滑的方式进行过渡。 那怎么样才能做到这种效果呢
 
 刷新频率为`60Hz`的屏幕每`16.7ms`刷新一次，我们在屏幕每次刷新前，将图像的位置向左移动一个像素，即`1px`。这样一来，屏幕每次刷出来的图像位置都比前一个要差`1px`，因此你会看到图像在移动；由于我们人眼的视觉停留效应，当前位置的图像停留在大脑的印象还没消失，紧接着图像又被移到了下一个位置，因此你才会看到图像在流畅的移动，这就是视觉效果上形成的动画
 
-#### [#](#_5-requestanimationframe用法) 5.requestAnimationFrame用法
+#### 5.requestAnimationFrame用法
 
 异步，传入的函数在重绘之前调用
 
@@ -759,7 +759,7 @@ self.addEventListener("fetch", e => {
 cancelAnimationFrame(handlerId)
 ```
 
-#### [#](#_6-与settimeout对比) 6.与setTimeout对比
+#### 6.与setTimeout对比
 
 > 理解了上面的概念以后，我们不难发现，`setTimeout` 其实就是通过设置一个间隔时间来不断的改变图像的位置，从而达到动画效果的。但利用seTimeout实现的动画在某些低端机上会出现卡顿、抖动的现象。 这种现象的产生有两个原因
 
@@ -799,7 +799,7 @@ window.requestAnimationFrame(render)
 *   CPU节能：使用`setTimeout`实现的动画，当页面被隐藏或最小化时，`setTimeout` 仍然在后台执行动画任务，由于此时页面处于不可见或不可用状态，刷新动画是没有意义的，完全是浪费CPU资源。而`requestAnimationFrame`则完全不同，当页面处理未激活的状态下，该页面的屏幕刷新任务也会被系统暂停，因此跟着系统步伐走的`requestAnimationFrame`也会停止渲染，当页面被激活时，动画就从上次停留的地方继续执行，有效节省了`CPU`开销
 *   函数节流：在高频率事件(`resize`,`scroll`等)中，为了防止在一个刷新间隔内发生多次函数执行，使用`requestAnimationFrame`可保证每个刷新间隔内，函数只被执行一次，这样既能保证流畅性，也能更好的节省函数执行的开销。一个刷新间隔内函数执行多次时没有意义的，因为显示器每`16.7ms`刷新一次，多次绘制并不会在屏幕上体现出来
 
-#### [#](#_7-优雅降级) 7.优雅降级
+#### 7.优雅降级
 
 > 由于`requestAnimationFrame`目前还存在兼容性问题，而且不同的浏览器还需要带不同的前缀。因此需要通过优雅降级的方式对`requestAnimationFrame`进行封装，优先使用高级特性，然后再根据不同浏览器的情况进行回退，直至只能使用`setTimeout`的情况。下面的代码就是有人在github上提供的polyfill，详细介绍请参考github代码 [requestAnimationFrame ](https://link.juejin.im/?target=https%3A%2F%2Fgithub.com%2Fdarius%2FrequestAnimationFrame)
 
@@ -832,9 +832,9 @@ if (!Date.now)
 }())
 ```
 
-## [#](#_8-页面加载执行) 8 页面加载执行
+## 8. 页面加载执行
 
-### [#](#_8-1-浏览器事件循环) 8.1 浏览器事件循环
+### 8.1 浏览器事件循环
 
 > 事件循环是指: 执行一个宏任务，然后执行清空微任务列表，循环再执行宏任务，再清微任务列表
 
@@ -843,12 +843,12 @@ if (!Date.now)
 
 > 宏任务中包括了 `script` ，浏览器会先执行一个宏任务，接下来有异步代码的话就先执行微任务
 
-### [#](#_8-2-怎么判断页面是否加载完成) 8.2 怎么判断页面是否加载完成
+### 8.2 怎么判断页面是否加载完成
 
 *   `Load` 事件触发代表页面中的 `DOM`，`CSS`，`JS`，图片已经全部加载完毕。
 *   `DOMContentLoaded` 事件触发代表初始的 `HTML` 被完全加载和解析，不需要等待 `CSS`，`JS`，图片加载
 
-### [#](#_8-3-css-加载会造成阻塞吗) 8.3 css 加载会造成阻塞吗 ？
+### 8.3 css 加载会造成阻塞吗 ？
 
 *   `DOM` 和 `CSSOM` 通常是并行构建的,所以 CSS 加载不会阻塞 DOM 的解析。
 *   然而,由于 `Render Tree` 是依赖于 DOM Tree 和 `CSSOM Tree` 的,
@@ -857,7 +857,7 @@ if (!Date.now)
 *   由于 JavaScript 是可操纵 DOM 和 css 样式的,如果在修改这些元素属性同时渲染界面（即 JavaScript 线程和 UI线程同时运行）,那么渲染线程前后获得的元素数据就可能不一致了。
 *   因此为了防止渲染出现不可预期的结果,浏览器设置 GUI 渲染线程与 JavaScript 引擎为互斥的关系。因此,样式表会在后面的 js 执行前先加载执行完毕,所以css 会阻塞后面 js 的执行
 
-### [#](#_8-4-为什么-js-阻塞页面加载) 8.4 为什么 JS 阻塞页面加载 ?
+### 8.4 为什么 JS 阻塞页面加载 ?
 
 *   由于 JavaScript 是可操纵 DOM 的,如果在修改这些元素属性同时渲染界面（即 JavaScript 线程和 UI 线程同时运行）,那么渲染线程前后获得的元素数据就可能不一致了
 *   因此为了防止渲染出现不可预期的结果,浏览器设置 GUI 渲染线程与 JavaScript 引擎为互斥的关系
@@ -866,14 +866,14 @@ if (!Date.now)
 *   当浏览器在执行 JavaScript 程序的时候,GUI 渲染线程会被保存在一个队列中,直到 JS 程序执行完成,才会接着执行
 *   因此如果 JS执行的时间过长,这样就会造成页面的渲染不连贯,导致页面渲染加载阻塞的感觉
 
-### [#](#_8-5-domcontentloaded-与-load-的区别) 8.5 DOMContentLoaded 与 load 的区别 ?
+### 8.5 DOMContentLoaded 与 load 的区别 ?
 
 *   当 `DOMContentLoaded` 事件触发时,仅当 `DOM` 解析完成后,不包括样式表,图片。我们前面提到 CSS 加载会阻塞 Dom 的渲染和后面 js 的执行,js 会阻塞 Dom 解析,所以我们可以得到结论:
 *   当文档中没有脚本时,浏览器解析完文档便能触发 `DOMContentLoaded` 事件。如果文档中包含脚本,则脚本会阻塞文档的解析,而脚本需要等 CSSOM 构建完成才能执行。在任何情况下,`DOMContentLoaded` 的触发不需要等待图片等其他资源加载完成
 *   当 `onload` 事件触发时,页面上所有的 `DOM`,样式表,脚本,图片等资源已经加载完毕
 *   `DOMContentLoaded` -> `load`
 
-### [#](#_8-6-什么是-crp-即关键渲染路径-如何优化) 8.6 什么是 CRP,即关键渲染路径? 如何优化
+### 8.6 什么是 CRP,即关键渲染路径? 如何优化
 
 > 关键渲染路径是浏览器将 HTML CSS JavaScript 转换为在屏幕上呈现的像素内容所经历的一系列步骤。也就是我们上面说的**浏览器渲染流程**。
 
@@ -913,7 +913,7 @@ if (!Date.now)
 *   优化关键字节数（缩小、压缩）来减少下载时间 优化加载剩余关键资源的顺序:
 *   让关键资源（`CSS`）尽早下载以减少 `CRP` 长度
 
-## [#](#_9-history路由和hash路由) 9 history路由和hash路由
+## 9. history路由和hash路由
 
 **hash 路由**
 
@@ -946,9 +946,9 @@ window.addEventListener("popstate", function() {
 });
 ```
 
-## [#](#_10-performance相关) 10 performance相关
+## 10 performance相关
 
-### [#](#window-performance-getentries) window.performance.getEntries()
+### window.performance.getEntries()
 
 > 浏览器获取网页时，会对网页中每一个对象（脚本文件、样式表、图片文件等等）发出一个HTTP请求。而通过`window.performance.getEntries`方法，则可以以数组形式，返回这些请求的时间统计信息，每个数组成员均是一个`PerformanceResourceTiming`对象！
 

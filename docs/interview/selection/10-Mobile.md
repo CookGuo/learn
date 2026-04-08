@@ -1,23 +1,23 @@
 ---
-title: 前端高频面试题-精选篇-移动多端开发模块 | 前端进阶之旅 - 前端求职面试刷题宝典
+title: 前端高频面试题-精选篇-移动多端开发模块 
 source: https://interview.poetries.top/docs/excellent-docs/10-移动多端开发.html
 crawled: 2026-04-08
 ---
 
-# 前端高频面试题-精选篇-移动多端开发模块 | 前端进阶之旅 - 前端求职面试刷题宝典
+# 前端高频面试题-精选篇-移动多端开发模块 
 
-> 原文: [https://interview.poetries.top/docs/excellent-docs/10-移动多端开发.html](https://interview.poetries.top/docs/excellent-docs/10-移动多端开发.html)
+
 
 ---
 
-## [#](#_1-移动端适配) 1 移动端适配
+## 1. 移动端适配
 
 **为什么要做适配**
 
 *   为了适应各种移动端设备，完美呈现应有的布局效果
 *   各个移动端设备，分辨率大小不一致，网页想铺满整个屏幕，并在各种分辨下等比缩放
 
-### [#](#适配方案) 适配方案
+### 适配方案
 
 *   固定高度，宽度百分比适配-布局非常均匀，适合百分比布局
 *   固定宽度，改变缩放比例适配-什么情况都可以
@@ -106,7 +106,7 @@ crawled: 2026-04-08
 *   像素比 = 物理像素 / `css`宽度
 *   获取设备的像素比 `window.devicePixelRatio`
 
-## [#](#_2-移动端300ms延迟) 2 移动端300ms延迟
+## 2. 移动端300ms延迟
 
 > 由来：300毫秒延迟解决的是双击缩放。双击缩放，手指在屏幕快速点击两次。safari浏览器就会将网页缩放值原始比例。由于用户可以双击缩放或者是滚动的操作，
 
@@ -129,7 +129,7 @@ crawled: 2026-04-08
 *   `ontouchend`
 *   `onclick`
 
-## [#](#_3-如何解决移动端-retina-屏-1px-像素问题) 3 如何解决移动端 Retina 屏 1px 像素问题
+## 3. 如何解决移动端 Retina 屏 1px 像素问题
 
 *   `伪元素 + transform scaleY(.5)`
 *   `border-image`
@@ -172,7 +172,7 @@ div{
 }
 ```
 
-## [#](#_4-如何解决移动端击穿-穿透-问题) 4 如何解决移动端击穿（穿透）问题
+## 4. 如何解决移动端击穿（穿透）问题
 
 > 在移动端开发的时候，我们有时候会遇到这样一个bug：点击关闭遮罩层的时候，遮罩层下面的带有点击的元素也会被触发，给人一种击穿了页面的感觉，这是为什么呢？
 
@@ -277,7 +277,7 @@ setTimeout(function () {
 
 > 这个库的引用方法，在我上一篇文章中已经讲到。fastClick的原理就是使用了方法一的做法。fastClick 在 touchend 阶段 调用 event.preventDefault，通过 document.createEvent 创建一个 MouseEvents，然后 通过 `eventTarget.dispatchEvent` 触发对应目标元素上绑定的 click 事件
 
-## [#](#_5-移动端的兼容问题) 5 移动端的兼容问题
+## 5. 移动端的兼容问题
 
 *   给移动端添加点击事件会有`300S`的延迟 如果用点击事件，需要引一个`fastclick.js`文件，解决`300s`的延迟 一般在移动端用`ontouchstart`、`ontouchmove`、`ontouchend`
 *   移动端点透问题,`touchstart` 早于 `touchend` 早于`click`,`click`的触发是有延迟的，这个时间大概在`300ms`左右，也就是说我们`tap`触发之后蒙层隐藏， 此时 `click`还没有触发，300ms之后由于蒙层隐藏，我们的click触发到了下面的a链接上尽量都使用`touch`事件来替换`click`事件。例如用touchend事件(推荐)。用`fastclick`，`github.com/ftlabs/fast…`用`preventDefault`阻止`a`标签的`click`消除 `IE10` 里面的那个叉号`input:-ms-clear{display:none;}`
@@ -285,9 +285,9 @@ setTimeout(function () {
 *   圆角`BUG` 某些Android手机圆角失效 `background-clip: padding-box;` 防止手机中网页放大和缩小 这点是最基本的，做为手机网站开发者来说应该都知道的，就是设置`meta`中的`viewport`
 *   设置用户截止缩放，一般写视口的时候就已经写好了
 
-## [#](#_6-jsbridge原理是什么-如何设计一个jsbridge) 6 JSBridge原理是什么？如何设计一个JSBridge？
+## 6. JSBridge原理是什么？如何设计一个JSBridge？
 
-### [#](#_6-1-jsbridge原理) 6.1 JSBridge原理
+### 6.1 JSBridge原理
 
 > `JSBridge`的作用就是让`native`可以调用`web`的`js`代码，让`web`可以调用原生的代码，实现数据通信，它在做`native`代码和js代码相互转换的事情。
 
@@ -296,20 +296,20 @@ setTimeout(function () {
 *   将`Native`端的接口封装成js接口
 *   将`Web`端js接口封装成原生接口
 
-### [#](#_6-2-jsbridge的核心) 6.2 JsBridge的核心
+### 6.2 JsBridge的核心
 
 *   拦截`Url`
 *   `load url("javascript:js_method()");`
 
-### [#](#_6-3-为什么是-js-bridge) 6.3 为什么是‘JS’Bridge
+### 6.3 为什么是‘JS’Bridge
 
 > 因为Web端支持JavaScript，而`Native(iOS/Android)`端的`Webview`控件对JavaScript也有所支持，页面加载完成后调用页面的JavaScript代码
 
-### [#](#_6-4-应用场景) 6.4 应用场景
+### 6.4 应用场景
 
 > 它有什么用？我们在使用混合开发模式(`Hybrid App`)混合使用`Native`和`Web`技术用到。例如目前的使用此技术的主流框架`React Native`、`Weex`、微信小程序等
 
-### [#](#_6-5-jsbridge实现-native端调用web端代码) 6.5 JSBridge实现 —— Native端调用Web端代码
+### 6.5 JSBridge实现 —— Native端调用Web端代码
 
 > `WebView`是`Native`中加载网页的一个控件，该组件提供一个`evaluateJavascript()`方法运行JS代码。我们要做的是在Native端执行一个js方法，在Web端进行监听
 
@@ -327,7 +327,7 @@ webView.evaluateJavascript("window.showWebDialog('123')",null);
 </script>
 ```
 
-### [#](#_6-6-jsbridge实现-web端调用native端代码-拦截url-schema) 6.6 JSBridge实现 —— Web端调用Native端代码（拦截URL Schema）
+### 6.6 JSBridge实现 —— Web端调用Native端代码（拦截URL Schema）
 
 > 当Web端要请求`Native`端的方法时，我们首先要自定义一个`URL Schema`，向Native端发起一个请求，最后在`Native`端的`WebView`进行监听，下面我们看看具体实现：
 
@@ -378,7 +378,7 @@ jsbridge://showToast?text=hello&a=b
     }
 ```
 
-### [#](#_6-7-jsbridge实现-web端调用native端代码-注入api) 6.7 JSBridge实现 —— Web端调用Native端代码（注入api)
+### 6.7 JSBridge实现 —— Web端调用Native端代码（注入api)
 
 > 注入API 方式的是Native端通过 WebView 提供的接口，向 JavaScript 的 `Context（window）`中注入对象。在Web中通过注入的对象调用Native方法
 

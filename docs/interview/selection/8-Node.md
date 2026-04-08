@@ -1,18 +1,18 @@
 ---
-title: 前端高频面试题-精选篇-Nodejs模块 | 前端进阶之旅 - 前端求职面试刷题宝典
+title: 前端高频面试题-精选篇-Nodejs模块 
 source: https://interview.poetries.top/docs/excellent-docs/8-Node模块.html
 crawled: 2026-04-08
 ---
 
-# 前端高频面试题-精选篇-Nodejs模块 | 前端进阶之旅 - 前端求职面试刷题宝典
+# 前端高频面试题-精选篇-Nodejs模块 
 
-> 原文: [https://interview.poetries.top/docs/excellent-docs/8-Node模块.html](https://interview.poetries.top/docs/excellent-docs/8-Node模块.html)
+
 
 ---
 
 > 当面试官问你`node`的时候，更多引导面试官用`node`做前端工程化，去引导到`webpack`、`npm`、打包工具上面去说说自己的想法，不要引导到自己会后端，后台不是会一点`node`语法就能写的
 
-## [#](#_1-package-json版本号规则) 1 package.json版本号规则
+## 1. package.json版本号规则
 
 **major.minor.patch**
 
@@ -40,7 +40,7 @@ crawled: 2026-04-08
 > *   这个想法固然是不错的，但是你只能控制你自己的项目锁死版本号，那你项目中依赖包的依赖包呢？你怎么控制限制别人锁死版本号呢？
 > *   为了解决这个不同人电脑安装的所有依赖版本都是一致的，确保项目代码在安装所执行的运行结果都一样，这时 `package-lock.json` 就应运而生了
 
-## [#](#_2-package-json-与-package-lock-json-的关系) 2 package.json 与 package-lock.json 的关系
+## 2. package.json 与 package-lock.json 的关系
 
 `package-lock.json` 是在 `npm(^5.x.x.x)`后才有，中途有几次更改
 
@@ -60,7 +60,7 @@ crawled: 2026-04-08
 *   `package.json` 文件修改了
 *   挪动了包的位置：将部分包的位置从 `dependencies` 移动到 `devDependencies` 这种操作，虽然包未变，但是也会影响 `package-lock.json`
 
-## [#](#_3-npm-模块安装机制) 3 npm 模块安装机制
+## 3. npm 模块安装机制
 
 *   发出 `npm install` 命令 `1` 查询 `node_modules` 目录之中是否已经存在指定模块
 *   若存在，不再重新安装
@@ -69,7 +69,7 @@ crawled: 2026-04-08
 *   下载压缩包，存放在根目录下的`.npm` 目录里
 *   解压压缩包到当前项目的 `node_modules` 目录
 
-## [#](#_4-模块化的差异-amd-cmd-commonjs-esmodule) 4 模块化的差异 AMD CMD COMMONJS ESMODULE
+## 4. 模块化的差异 AMD CMD COMMONJS ESMODULE
 
 *   `AMD`是依赖前置，`define`写法
 *   `CMD` 语法`require`
@@ -79,7 +79,7 @@ crawled: 2026-04-08
 *   `CommonJs` 是动态语法可以写在判断里，`ES6 Module` 静态语法只能写在顶层
 *   `CommonJs` 的 `this` 是当前模块，`ES6 Module`的 `this` 是 `undefined`
 
-## [#](#_5-node-的-event-loop-6个阶段) 5 Node 的 Event Loop: 6个阶段
+## 5. Node 的 Event Loop: 6个阶段
 
 *   `timer` 阶段: 执行到期的`setTimeout / setInterval`队列回调
 *   `I/O` 阶段: 执行上轮循环残流的`callback`
@@ -94,9 +94,9 @@ crawled: 2026-04-08
     *   执行`setImmediate`
 *   `close callbacks`
 
-## [#](#_6-koa相关) 6 Koa相关
+## 6. Koa相关
 
-### [#](#koa洋葱模型怎么实现的) koa洋葱模型怎么实现的
+### koa洋葱模型怎么实现的
 
 *   中间件执行就像洋葱一样，最早 `use` 的中间件，就放在最外层。处理顺序从左到右，左边接收一个 `request`，右边输出返回 `response`
 *   一般的中间件都会执行两次，调用 `next` 之前为第一次，调用 `next` 时把控制传递给下游的下一个中间件。当下游不再有中间件或者没有执行 `next` 函数时，就将依次恢复上游中间件的行为，让上游中间件执行 `next` 之后的代码
@@ -172,15 +172,15 @@ const compose = (middlewares, ctx) => {
 compose(middlewares, 1);
 ```
 
-### [#](#如果中间件中的next-方法报错了怎么办) 如果中间件中的next()方法报错了怎么办
+### 如果中间件中的next()方法报错了怎么办
 
 > 中间件链错误会由`ctx.onerror`捕获，该函数中会调用`this.app.emit('error', err, this)`（因为koa继承自events模块，所以有'emit'和on等方法），可以使用`app.on('error', (err) => {})`，或者`app.onerror = (err) => {}`进行捕获。
 
-### [#](#co的原理是怎样的) co的原理是怎样的
+### co的原理是怎样的
 
 > co的原理是通过不断调用generator函数的`next`方法来达到自动执行generator函数的，类似async、await函数自动执行
 
-## [#](#_7-express、koa实现原理以及对比) 7 Express、koa实现原理以及对比
+## 7. Express、koa实现原理以及对比
 
 > 底层建立在`node.js`内置的http模块上。http模块生成服务器的原始代码如下
 
@@ -207,7 +207,7 @@ app.listen(3000, "localhost");
 *   没有自带路由，由koa-router管理
 *   没有callback
 
-## [#](#_8-请介绍一下-require-的模块加载机制) 8 请介绍一下 require 的模块加载机制
+## 8. 请介绍一下 require 的模块加载机制
 
 这道题基本上就可以了解到面试者对 Node 模块机制的了解程度 基本上面试提到
 
@@ -409,7 +409,7 @@ console.log(json);
 console.log(test2);
 ```
 
-## [#](#_9-exports-xxx-xxx-和-module-exports-有什么区别) 9 exports.xxx=xxx 和 Module.exports={}有什么区别
+## 9. exports.xxx=xxx 和 Module.exports={}有什么区别
 
 `exports` 其实就是 `module.exports`
 
@@ -516,25 +516,25 @@ module.exports = function () { return 'foo'; };
 // 最终，我们强烈建议使用module.exports = xxx的方式来输出模块变量，这样，你只需要记忆一种方法。
 ```
 
-## [#](#_10-node-的异步-i-o) 10 Node 的异步 I/O
+## 10 Node 的异步 I/O
 
-### [#](#请介绍一下-node-事件循环的流程) 请介绍一下 Node 事件循环的流程
+### 请介绍一下 Node 事件循环的流程
 
 *   在进程启动时，Node 便会创建一个类似于 while(true)的循环，每执行一次循环体的过程我们成为 Tick。
 *   每个 Tick 的过程就是查看是否有事件待处理。如果有就取出事件及其相关的回调函数。然后进入下一个循环，如果不再有事件处理，就退出进程。
 
-### [#](#在每个-tick-的过程中-如何判断是否有事件需要处理呢) 在每个 tick 的过程中，如何判断是否有事件需要处理呢
+### 在每个 tick 的过程中，如何判断是否有事件需要处理呢
 
 *   每个事件循环中有一个或者多个观察者，而判断是否有事件需要处理的过程就是向这些观察者询问是否有要处理的事件。
 *   在 Node 中，事件主要来源于网络请求、文件的 I/O 等，这些事件对应的观察者有文件 I/O 观察者，网络 I/O 的观察者。
 *   事件循环是一个典型的生产者/消费者模型。异步 I/O，网络请求等则是事件的生产者，源源不断为 Node 提供不同类型的事件，这些事件被传递到对应的观察者那里，事件循环则从观察者那里取出事件并处理。
 *   在 windows 下，这个循环基于 IOCP 创建，在\*nix 下则基于多线程创建
 
-### [#](#描述一下整个异步-i-o-的流程) 描述一下整个异步 I/O 的流程
+### 描述一下整个异步 I/O 的流程
 
-## [#](#_11-v8-的垃圾回收机制) 11 V8 的垃圾回收机制
+## 11 V8 的垃圾回收机制
 
-### [#](#如何查看-v8-的内存使用情况) 如何查看 V8 的内存使用情况
+### 如何查看 V8 的内存使用情况
 
 使用 `process.memoryUsage()`,返回如下
 
@@ -549,11 +549,11 @@ module.exports = function () { return 'foo'; };
 
 > `heapTotal` 和 `heapUsed` 代表 `V8` 的内存使用情况。`external` 代表 `V8` 管理的，绑定到 Javascript 的 C++对象的内存使用情况。rss, 驻留集大小, 是给这个进程分配了多少物理内存(占总分配内存的一部分) 这些物理内存中包含堆，栈，和代码段。
 
-### [#](#v8-的内存限制是多少-为什么-v8-这样设计) V8 的内存限制是多少，为什么 V8 这样设计
+### V8 的内存限制是多少，为什么 V8 这样设计
 
 > 64 位系统下是 `1.4GB`， 32 位系统下是 `0.7GB`。因为 `1.5GB`的垃圾回收堆内存，V8 需要花费 50 毫秒以上，做一次非增量式的垃圾回收甚至要 1 秒以上。这是垃圾回收中引起 Javascript 线程暂停执行的事件，在这样的花销下，应用的性能和影响力都会直线下降。
 
-### [#](#v8-的内存分代和回收算法请简单讲一讲) V8 的内存分代和回收算法请简单讲一讲
+### V8 的内存分代和回收算法请简单讲一讲
 
 > 在 V8 中，主要将内存分为新生代和老生代两代。新生代中的对象存活时间较短的对象，老生代中的对象存活时间较长，或常驻内存的对象。
 
@@ -628,21 +628,21 @@ emitter.setMaxListeners() to increase limit
 
 > PS：安装 heapdump 在某些 Node.js 版本上可能出错，建议使用 `npm install heapdump -target=Node.js` 版本来安装。
 
-## [#](#_12-buffer-模块) 12 Buffer 模块
+## 12 Buffer 模块
 
-### [#](#新建-buffer-会占用-v8-分配的内存吗) 新建 Buffer 会占用 V8 分配的内存吗
+### 新建 Buffer 会占用 V8 分配的内存吗
 
 不会，Buffer 属于堆外内存，不是 V8 分配的。
 
-### [#](#buffer-alloc-和-buffer-allocunsafe-的区别) Buffer.alloc 和 Buffer.allocUnsafe 的区别
+### Buffer.alloc 和 Buffer.allocUnsafe 的区别
 
 > `Buffer.allocUnsafe` 创建的 Buffer 实例的底层内存是未初始化的。新创建的 Buffer 的内容是未知的，可能包含敏感数据。使用 Buffer.alloc() 可以创建以零初始化的 Buffer 实例。
 
-### [#](#buffer-的内存分配机制) Buffer 的内存分配机制
+### Buffer 的内存分配机制
 
 *   为了高效的使用申请来的内存，Node 采用了 slab 分配机制。slab 是一种动态的内存管理机制。Node 以 8kb 为界限来来区分 Buffer 为大对象还是小对象，如果是小于 8kb 就是小 `Buffer`，大于 8kb 就是大 Buffer。例如第一次分配一个 1024 字节的 Buffer，`Buffer.alloc(1024)`,那么这次分配就会- 用到一个 slab，接着如果继续 `Buffer.alloc(1024)`,那么上一次用的 slab 的空间还没有用完，因为总共是 8kb，`1024+1024 = 2048` 个字节，没有 8kb，所以就继续用这个 slab 给 Buffer 分配空间。如果超过 8kb，那么直接用 C++底层地宫的 `SlowBuffer` 来给 `Buffer` 对象提供空间。
 
-### [#](#buffer-乱码问题) Buffer 乱码问题
+### Buffer 乱码问题
 
 例如一个份文件 test.md 里的内容如下：
 
@@ -659,15 +659,15 @@ var rs = require('fs').createReadStream('test.md', {highWaterMark: 11});
 
 一般情况下，只需要设置 `rs.setEncoding('utf8')` 即可解决乱码问题
 
-## [#](#_13-websocket) 13 webSocket
+## 13 webSocket
 
-### [#](#websocket-与传统的-http-有什么优势) webSocket 与传统的 http 有什么优势
+### webSocket 与传统的 http 有什么优势
 
 *   客户端与服务器只需要一个 TCP 连接，比 `http` 长轮询使用更少的连接
 *   `webSocket` 服务端可以推送数据到客户端
 *   更轻量的协议头，减少数据传输量
 
-### [#](#websocket-协议升级简述一下) webSocket 协议升级简述一下
+### webSocket 协议升级简述一下
 
 > 首先，WebSocket 连接必须由浏览器发起，因为请求协议是一个标准的 HTTP 请求，格式如下：
 
@@ -699,29 +699,29 @@ Sec-WebSocket-Accept: server-random-string
 
 该响应代码 `101` 表示本次连接的 `HTTP` 协议即将被更改，更改后的协议就是 `Upgrade: websocket` 指定的 `WebSocket` 协议
 
-## [#](#_14-https) 14 https
+## 14 https
 
-### [#](#https-用哪些端口进行通信-这些端口分别有什么用) https 用哪些端口进行通信，这些端口分别有什么用
+### https 用哪些端口进行通信，这些端口分别有什么用
 
 *   `443` 端口用来验证服务器端和客户端的身份，比如验证证书的合法性
 *   `80` 端口用来传输数据（在验证身份合法的情况下，用来数据传输）
 
-### [#](#身份验证过程中会涉及到密钥-对称加密-非对称加密-摘要的概念-请解释一下) 身份验证过程中会涉及到密钥， 对称加密，非对称加密，摘要的概念，请解释一下
+### 身份验证过程中会涉及到密钥， 对称加密，非对称加密，摘要的概念，请解释一下
 
 *   **密钥**：密钥是一种参数，它是在明文转换为密文或将密文转换为明文的算法中输入的参数。密钥分为对称密钥与非对称密钥，分别应用在对称加密和非对称加密上。
 *   **对称加密**：对称加密又叫做私钥加密，即信息的发送方和接收方使用同一个密钥去加密和解密数据。对称加密的特点是算法公开、加密和解密速度快，适合于对大数据量进行加密，常见的对称加密算法有 `DES、3DES、TDEA、Blowfish、RC5` 和 `IDEA`。
 *   **非对称加密**：非对称加密也叫做公钥加密。非对称加密与对称加密相比，其安全性更好。对称加密的通信双方使用相同的密钥，如果一方的密钥遭泄露，那么整个通信就会被破解。而非对称加密使用一对密钥，即公钥和私钥，且二者成对出现。私钥被自己保存，不能对外泄露。公钥指的是公共的密钥，任何人都可以获得该密钥。用公钥或私钥中的任何一个进行加密，用另一个进行解密。
 *   **摘要**：摘要算法又称哈希/散列算法。它通过一个函数，把任意长度的数据转换为一个长度固定的数据串（通常用 16 进制的字符串表示）。算法不可逆。
 
-### [#](#为什么需要-ca-机构对证书签名) 为什么需要 CA 机构对证书签名
+### 为什么需要 CA 机构对证书签名
 
 > 如果不签名会存在中间人攻击的风险，签名之后保证了证书里的信息，比如公钥、服务器信息、企业信息等不被篡改，能够验证客户端和服务器端的“合法性”。
 
-### [#](#https-验证身份也就是-tsl-ssl-身份验证的过程) https 验证身份也就是 TSL/SSL 身份验证的过程
+### https 验证身份也就是 TSL/SSL 身份验证的过程
 
-## [#](#_15-进程通信) 15 进程通信
+## 15 进程通信
 
-### [#](#请简述一下-node-的多进程架构) 请简述一下 node 的多进程架构
+### 请简述一下 node 的多进程架构
 
 > 面对 node 单线程对多核 CPU 使用不足的情况，Node 提供了 `child_process` 模块，来实现进程的复制，node 的多进程架构是主从模式，如下所示：
 
@@ -737,7 +737,7 @@ for(var i = 0; i < cpus.length; i++){
 
 这就是著名的主从模式，`Master-Worker`
 
-### [#](#请问创建子进程的方法有哪些-简单说一下它们的区别) 请问创建子进程的方法有哪些，简单说一下它们的区别
+### 请问创建子进程的方法有哪些，简单说一下它们的区别
 
 *   `spawn()`：启动一个子进程来执行命令
 *   `exec()`: 启动一个子进程来执行命令，与 spawn()不同的是其接口不同，它有一个回调函数获知子进程的状况
@@ -746,7 +746,7 @@ for(var i = 0; i < cpus.length; i++){
 *   `spawn()`与 `exec()`、`execFile()`不同的是，后两者创建时可以指定 `timeout` 属性设置超时时间，一旦创建的进程超过设定的时间就会被杀死
 *   `exec()`与 `execFile()`不同的是，`exec()`适合执行已有命令，`execFile()`适合执行文件。
 
-### [#](#实现一个-node-子进程被杀死-然后自动重启代码的思路) 实现一个 node 子进程被杀死，然后自动重启代码的思路
+### 实现一个 node 子进程被杀死，然后自动重启代码的思路
 
 在创建子进程的时候就让子进程监听 `exit` 事件，如果被杀死就重新 `fork` 一下
 

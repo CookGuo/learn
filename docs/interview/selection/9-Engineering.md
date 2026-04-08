@@ -1,16 +1,16 @@
 ---
-title: 前端高频面试题-精选篇-前端工程模块 | 前端进阶之旅 - 前端求职面试刷题宝典
+title: 前端高频面试题-精选篇-前端工程模块 
 source: https://interview.poetries.top/docs/excellent-docs/9-前端工程模块.html
 crawled: 2026-04-08
 ---
 
-# 前端高频面试题-精选篇-前端工程模块 | 前端进阶之旅 - 前端求职面试刷题宝典
+# 前端高频面试题-精选篇-前端工程模块 
 
-> 原文: [https://interview.poetries.top/docs/excellent-docs/9-前端工程模块.html](https://interview.poetries.top/docs/excellent-docs/9-前端工程模块.html)
+
 
 ---
 
-## [#](#_1-webpack的基本配置) 1 webpack的基本配置
+## 1. webpack的基本配置
 
 基于`webpack4`
 
@@ -177,9 +177,9 @@ module.exports = smart(webpackCommonConf, {
 })
 ```
 
-## [#](#_2-webpack高级配置) 2 webpack高级配置
+## 2. webpack高级配置
 
-### [#](#配置多入口打包) 配置多入口打包
+### 配置多入口打包
 
 ```
 // paths.js
@@ -357,7 +357,7 @@ module.exports = smart(webpackCommonConf, {
 })
 ```
 
-### [#](#抽离css文件) 抽离CSS文件
+### 抽离CSS文件
 
 ```
 const path = require('path')
@@ -439,7 +439,7 @@ module.exports = smart(webpackCommonConf, {
 })
 ```
 
-### [#](#抽离公共代码splitchunks-避免多次打包) 抽离公共代码splitChunks，避免多次打包
+### 抽离公共代码splitChunks，避免多次打包
 
 ```
 // webpack.prod.js
@@ -552,7 +552,7 @@ module.exports = smart(webpackCommonConf, {
 })
 ```
 
-## [#](#_3-webpack性能优化-构建速度) 3 webpack性能优化-构建速度
+## 3. webpack性能优化-构建速度
 
 > 先分析遇到哪些问题，在配合下面的方法优化，不要上来就回答，让人觉得背面试题
 
@@ -578,9 +578,9 @@ module.exports = smart(webpackCommonConf, {
     *   `DllPlugin`打包出`dll`文件
     *   `DllReferencePlugin`引用`dll`文件
 
-### [#](#优化babel-loader) 优化babel-loader
+### 优化babel-loader
 
-### [#](#ignoreplugin) IgnorePlugin
+### IgnorePlugin
 
 *   `import moment from 'moment'`
 *   默认会引入所有语言JS代码，代码过大
@@ -601,9 +601,9 @@ pluins: [
 ]
 ```
 
-### [#](#noparse) noParse
+### noParse
 
-### [#](#happypack) happyPack
+### happyPack
 
 ```
 // webpack.prod.js
@@ -634,7 +634,7 @@ const HappyPack = require('happypack')
 }
 ```
 
-### [#](#paralleluglifyplugin) parallelUglifyPlugin
+### parallelUglifyPlugin
 
 ```
 // webpack.prod.js
@@ -665,11 +665,11 @@ const ParallelUglifyPlugin = require('webpack-parallel-uglify-plugin')
 }
 ```
 
-### [#](#自动刷新) 自动刷新
+### 自动刷新
 
 > 使用`dev-server`即可
 
-### [#](#热更新) 热更新
+### 热更新
 
 ```
 // webpack.dev.js
@@ -705,7 +705,7 @@ if (module.hot) {
 }
 ```
 
-### [#](#优化打包速度完整代码) 优化打包速度完整代码
+### 优化打包速度完整代码
 
 ```
 // webpack.common.js
@@ -992,7 +992,7 @@ module.exports = smart(webpackCommonConf, {
 })
 ```
 
-### [#](#dllplugin-动态链接库) DllPlugin 动态链接库
+### DllPlugin 动态链接库
 
 ```
 // webpack.common.js
@@ -1148,7 +1148,7 @@ module.exports = {
   },
 ```
 
-## [#](#_4-webpack性能优化-产出代码-线上运行) 4 webpack性能优化-产出代码（线上运行）
+## 4. webpack性能优化-产出代码（线上运行）
 
 **前言**
 
@@ -1215,9 +1215,9 @@ module.exports = {
     *   创建函数作用域更少
     *   代码可读性更好 
 
-## [#](#_5-webpack原理简述) 5 webpack原理简述
+## 5. webpack原理简述
 
-### [#](#_1-1-核心概念) 1.1 核心概念
+### 1.1 核心概念
 
 > JavaScript 的 模块打包工具 (module bundler)。通过分析模块之间的依赖，最终将所有模块打包成一份或者多份代码包 (bundler)，供 HTML 直接引用。实质上，Webpack 仅仅提供了 打包功能 和一套 文件处理机制，然后通过生态中的各种 Loader 和 Plugin 对代码进行预编译和打包。因此 Webpack 具有高度的可拓展性，能更好的发挥社区生态的力量。
 
@@ -1228,7 +1228,7 @@ module.exports = {
 *   Loader: 模块加载器，进行各种文件类型的加载与转换；
 *   Plugin: 拓展插件，可以通过 Webpack 相应的事件钩子，介入到打包过程中的任意环节，从而对代码按需修改；
 
-### [#](#_1-2-工作流程-加载-编译-输出) 1.2 工作流程 (加载 - 编译 - 输出)
+### 1.2 工作流程 (加载 - 编译 - 输出)
 
 1.  读取配置文件，按命令 初始化 配置参数，创建 Compiler 对象；
 2.  调用插件的 apply 方法 挂载插件 监听，然后从入口文件开始执行编译；
@@ -1236,7 +1236,7 @@ module.exports = {
 4.  将编译后的所有代码包装成一个个代码块 (Chuck)， 并按依赖和配置确定 输出内容。这个步骤，仍然可以通过 Plugin 进行文件的修改;
 5.  最后，根据 Output 把文件内容一一写入到指定的文件夹中，完成整个过程；
 
-### [#](#_1-3-模块包装) 1.3 模块包装
+### 1.3 模块包装
 
 ```
 (function(modules) {
@@ -1288,7 +1288,7 @@ module.exports = {
 *   **模块机制**: webpack自己实现了一套模拟模块的机制，将其包裹于业务代码的外部，从而提供了一套模块机制；
 *   **文件编译**: webpack 规定了一套编译规则，通过 Loader 和 Plugin，以管道的形式对文件字符串进行处理；
 
-### [#](#_1-4-webpack的打包原理) 1.4 webpack的打包原理
+### 1.4 webpack的打包原理
 
 *   `初始化参数`：从配置文件和 Shell 语句中读取与合并参数，得出最终的参数
 *   `开始编译`：用上一步得到的参数初始化 Compiler 对象，加载所有配置的插件，执行对象的 run 方法开始执行编译
@@ -1298,7 +1298,7 @@ module.exports = {
 *   `输出资源`：根据入口和模块之间的依赖关系，组装成一个个包含多个模块的 Chunk，再把每个 Chunk 转换成一个单独的文件加入到输出列表，这步是可以修改输出内容的最后机会
 *   `输出完成`：在确定好输出内容后，根据配置确定输出的路径和文件名，把文件内容写入到文件系统
 
-### [#](#_1-5-webpack的打包原理详细) 1.5 webpack的打包原理详细
+### 1.5 webpack的打包原理详细
 
 **相关问题**
 
@@ -1493,7 +1493,7 @@ const createCompiler = (rawOptions) => {
 *   写入本地文件，用的是 webpack 函数执行时初始化的文件流工具。
 *   执行 `done` 钩子函数，这里会执行 `compiler.run()` 的回调，再执行 `compiler.close()`，然后执行持久化存储（前提是使用的 `filesystem` 缓存模式）
 
-### [#](#_1-6-总结) 1.6 总结
+### 1.6 总结
 
 1.  **初始化参数**：从配置文件和 Shell 语句中读取并合并参数，得出最终的配置参数。
 2.  **开始编译**：从上一步得到的参数初始化 `Compiler` 对象，加载所有配置的插件，执行对象的 `run` 方法开始执行编译。
@@ -1503,7 +1503,7 @@ const createCompiler = (rawOptions) => {
 6.  **输出资源**：根据入口和模块之间的依赖关系，组装成一个个包含多个模块的 `chunk`，再把每个 `chunk` 转换成一个单独的文件加入到输出列表，这一步是可以修改输出内容的最后机会。
 7.  **输出完成**：在确定好输出内容后，根据配置确定输出的路径和文件名，把文件内容写入到文件系统。
 
-## [#](#_6-webpack热更新原理) 6 webpack热更新原理
+## 6. webpack热更新原理
 
 *   当修改了一个或多个文件；
 *   文件系统接收更改并通知 `webpack`；
@@ -1511,7 +1511,7 @@ const createCompiler = (rawOptions) => {
 *   `HMR Server` 使用 `webSocket` 通知 `HMR runtime` 需要更新，`HMR` 运行时通过 `HTTP` 请求更新 `jsonp`
 *   `HMR` 运行时替换更新中的模块，如果确定这些模块无法更新，则触发整个页面刷新
 
-## [#](#_7-webpack-loader) 7 webpack Loader
+## 7. webpack Loader
 
 > 由于 Webpack 是基于 Node，因此 Webpack 其实是只能识别 js 模块，比如 css / html / 图片等类型的文件并无法加载，因此就需要一个对 不同格式文件转换器。其实 Loader 做的事，也并不难理解: 对 Webpack 传入的字符串进行按需修改。例如一个最简单的 Loader:
 
@@ -1553,7 +1553,7 @@ module.exports = function(htmlSource) {
 *   链式调用: Webpack 会按顺序链式调用每个 Loader；
 *   统一原则: 遵循 Webpack制定的设计规则和结构，输入与输出均为字符串，各个 Loader 完全独立，即插即用；
 
-## [#](#_8-webpack-plugin) 8 webpack Plugin
+## 8. webpack Plugin
 
 > 插件系统是 Webpack 成功的一个关键性因素。在编译的整个生命周期中，Webpack 会触发许多事件钩子，Plugin 可以监听这些事件，根据需求在相应的时间点对打包内容进行定向的修改。
 
@@ -1648,7 +1648,7 @@ hook.call('event-hook')
 *   `mini-css-extrcat-plugin` 抽离CSS代码，放到一个单独的文件中
 *   `optimize-css-assets-plugin` 压缩css
 
-### [#](#实现一个编译结束退出命令的插件) 实现一个编译结束退出命令的插件
+### 实现一个编译结束退出命令的插件
 
 ```
 apply (compiler) {
@@ -1682,7 +1682,7 @@ export default {
 </script>
 ```
 
-## [#](#_9-webpack编译优化) 9 webpack编译优化
+## 9. webpack编译优化
 
 **代码优化:**
 
@@ -1745,7 +1745,7 @@ var fn = function() {
     *   开发: `cheap-module-eval-source-map`
     *   生产: `hidden-source-map`；
 
-### [#](#优化webpack打包速度) 优化webpack打包速度
+### 优化webpack打包速度
 
 *   减少文件搜索范围
     *   比如通过别名
@@ -1754,9 +1754,9 @@ var fn = function() {
 *   `Happypack` 并发调用
 *   `babel` 也可以缓存编译
 
-## [#](#_10-webpack-import-原理) 10 webpack import()原理
+## 10 webpack import()原理
 
-### [#](#动态导入原理) 动态导入原理
+### 动态导入原理
 
 > 用于动态加载的`import()`方法
 
@@ -1771,12 +1771,12 @@ import('lodash').then(_ => {
  })
 ```
 
-### [#](#webpack中如何实现动态导入) webpack中如何实现动态导入？
+### webpack中如何实现动态导入？
 
 1.  使用`import(/** webpackChunkName: "lodash" **/ 'lodash').then(_ => {})`，同时可以在`webpack.config.js`中配置一下`output的chunkFilename`为`[name].bunld.js`将要导入的模块单独抽离到一个`bundle`中，以此实现代码分离。
 2.  使用`async`，由于`import()`返回的是一个`promise`, 因此我们可以使用`async`函数来简化它，不过需要`babel`这样的预处理器及处理转换`async`的插件。`const _ = await import(/* webpackChunkName: "lodash" */ 'lodash');`
 
-## [#](#_11-webpack有哪几种文件指纹) 11 webpack有哪几种文件指纹？
+## 11 webpack有哪几种文件指纹？
 
 *   `hash`是跟整个项目的构建相关，只要项目里有文件更改，整个项目构建的`hash`值都会更改，并且全部文件都共用相同的`hash`值。(粒度整个项目)
 *   `chunkhash`是根据不同的入口进行依赖文件解析，构建对应的`chunk`(模块)，生成对应的`hash`值。只有被修改的`chunk`(模块)在重新构建之后才会生成新的`hash`值，不会影响其它的`chunk`。(粒度`entry`的每个入口文件)
@@ -1790,14 +1790,14 @@ import('lodash').then(_ => {
 *   如果是`chunkhash`的话，只和`entry`的每个入口文件有关，也就是同一个`chunk`下的文件有所改动该`chunk`下的文件的`hash`值就会发生改变
 *   如果是`contenthash`的话，和每个生成的文件有关，只有当要构建的文件内容发生改变时才会给该文件生成新的`hash`值，并不会影响其它文件。
 
-## [#](#_12-webpack中如何处理图片的) 12 webpack中如何处理图片的？
+## 12 webpack中如何处理图片的？
 
 在`webpack`中有两种处理图片的`loader`：
 
 *   `file-loader`：解决`CSS`等中引入图片的路径问题；(解决通过`url`,`import/require()`等引入图片的问题)
 *   `url-loader`：当图片小于设置的`limit`参数值时，`url-loader`将图片进行`base64`编码(当项目中有很多图片，通过`url-loader`进行`base64`编码后会减少`http`请求数量，提高性能)，大于limit参数值，则使用`file-loader`拷贝图片并输出到编译目录中；
 
-## [#](#_13-webpack常用插件总结) 13 webpack常用插件总结
+## 13 webpack常用插件总结
 
 **1\. 功能类**
 
@@ -2306,7 +2306,7 @@ const webpackConfig = {
 module.exports = smp.wrap(webpackConfig);
 ```
 
-## [#](#_14-抽象语法树ast) 14 抽象语法树AST
+## 14 抽象语法树AST
 
 > **抽象语法树（`Abstract Syntax Tree`）**，是将代码逐字母解析成 **树状对象** 的形式。这是语言之间的转换、代码语法检查、代码风格检查、代码格式化、代码高亮、代码错误提示、代码自动补全等等的基础
 
@@ -2329,7 +2329,7 @@ const element = {
 }
 ```
 
-## [#](#_15-babel环境搭建和基本配置) 15 Babel环境搭建和基本配置
+## 15 Babel环境搭建和基本配置
 
 *   `.babelr`c配置
 *   `presets`和`plugins`
@@ -2380,12 +2380,12 @@ const element = {
 npx babel src/index.js
 ```
 
-## [#](#_16-使用babel-loader会有哪些问题-可以怎样优化) 16 使用babel-loader会有哪些问题？可以怎样优化？
+## 16 使用babel-loader会有哪些问题？可以怎样优化？
 
 1.  会使得编译很慢。解决办法是可以在`webpack`的`babel-loader`配置中使用`exclude`这个可选项来去除一些不需要编译的文件夹(例如`node_modules`和`bower_components`)，另一种可以设置`cacheDirectory`选项为`true`, 开启缓存, 转译的结果将会缓存到文件系统中, 这样使`babel-loader`至少提速两倍(代码量越多效果应该越明显)。
 2.  `babel-loader`使得打包文件体积过大。`Babel` 对一些公共方法使用了非常小的辅助代码, 比如 `_extend`.默认情况下会被添加到每一个需要它的文件中, 所以会导致打包文件体积过大.解决办法: 引入`babel runtime`作为一个单独的模块, 来避免重复。也就是可以使用`@babel/plugin-transform-runtime`和`babel-runtime`。
 
-## [#](#_17-babel-原理) 17 Babel 原理
+## 17 Babel 原理
 
 > `babel` 的编译过程分为三个阶段：**parsing**、**transforming**、**generating**，以 ES6 编译为 ES5 作为例子：
 
@@ -2396,7 +2396,7 @@ npx babel src/index.js
 
 [Babel原理及其使用 ](http://interview.poetries.top/principle-docs/webpack/05-Babel%E5%8E%9F%E7%90%86%E5%8F%8A%E5%85%B6%E4%BD%BF%E7%94%A8.html)
 
-## [#](#_18-babel是如何编译class的) 18 Babel是如何编译Class的？
+## 18 Babel是如何编译Class的？
 
 就拿下面的类来说：
 
@@ -2549,7 +2549,7 @@ var Person = /*#__PURE__*/function () {
     (副作用大致理解为：一个函数会、或者可能会对函数外部变量产生影响的行为。)
     
 
-## [#](#_19-babel-polyfill是什么) 19 Babel Polyfill是什么
+## 19 Babel Polyfill是什么
 
 *   什么是`Polyfill`? `Polyfill`是一种`JavaScript`的`API`的`Polyfill`，用来模拟实现一些`JavaScript`的新特性，使得这些新特性能够在旧的浏览器中运行
 *   `core-js`是一个标准库，提供了一些常用的API的`Polyfill`，比如`Promise`、`Set`、`Map`等
@@ -2608,7 +2608,7 @@ import "@babel/polyfill"
 *   `babel 7.4`之后弃用`babel-polyfill`
 *   直接推荐使用`core-js`和`regenerator`
 
-## [#](#_20-babel-runtime) 20 Babel Runtime
+## 20 Babel Runtime
 
 > `Babel Runtime`是一个工具库，它包含了`Babel`编译过程中会用到的一些辅助函数，比如`_extends`、`_classCallCheck`等，这些函数在编译过程中会被插入到每个文件的头部，如果每个文件都插入一遍，会导致代码冗余，所以`Babel Runtime`就是用来解决这个问题的
 
@@ -2642,9 +2642,9 @@ import "@babel/polyfill"
 
 重新打包后，没有污染`window`
 
-## [#](#_21-tree-shaking原理是什么) 21 Tree Shaking原理是什么
+## 21 Tree Shaking原理是什么
 
-### [#](#对tree-shaking的了解) 对tree-shaking的了解
+### 对tree-shaking的了解
 
 **作用：**
 
@@ -2661,7 +2661,7 @@ import "@babel/polyfill"
 *   可以在`package.json`中配置`sideEffects`来指定哪些文件是有副作用的。它有两种值，一个是布尔类型，如果是`false`则表示所有文件都没有副作用；如果是一个数组的话，数组里的文件路径表示改文件有副作用
 *   `rollup`和`webpack`中对`tree-shaking`的层度不同，例如对`babel`转译后的`class`，如果`babel`的转译是宽松模式下的话(也就是`loose`为`true`)，`webpack`依旧会认为它有副作用不会`tree-shaking`掉，而`rollup`会。这是因为`rollup`有程序流分析的功能，可以更好的判断代码是否真正会产生副作用。
 
-### [#](#原理) 原理
+### 原理
 
 *   `ES6 Module` 引入进行静态分析，故而编译的时候正确判断到底加载了那些模块
 *   静态分析程序流，判断那些模块和变量未被使用或者引用，进而删除对应代码
@@ -2694,11 +2694,11 @@ if(condition) {
 }
 ```
 
-## [#](#_22-vite了解吗) 22 Vite了解吗
+## 22 Vite了解吗
 
 > 是一个基于浏览器原生`ES`模块导入的开发服务器，在开发环境下，利用浏览器去解析`import`，在服务器端按需编译返回，完全跳过了打包这个概念，服务器随启随用。同时不仅对`Vue`文件提供了支持，还支持热更新，而且热更新的速度不会随着模块增多而变慢。在生产环境下使用`Rollup`打包
 
-### [#](#vite-特点) Vite 特点
+### Vite 特点
 
 *   `Dev Server` 无需等待，即时启动；
 *   几乎实时的模块热更新；
@@ -2714,7 +2714,7 @@ if(condition) {
 
 > 可以不打包，需要启动server，需要浏览器支持
 
-### [#](#vite-为什么启动非常快) Vite 为什么启动非常快
+### Vite 为什么启动非常快
 
 *   开发环境使用`Es6 Module`，无需打包，非常快
 *   生产环境使用`rollup`，并不会快很多
@@ -2768,7 +2768,7 @@ if(condition) {
 </script>
 ```
 
-### [#](#手写实现) 手写实现
+### 手写实现
 
 > Vite 的核心功能：`Static Server + Compile + HMR`
 
@@ -2864,9 +2864,9 @@ app.listen(3080)
 console.log('Server running @ http://localhost:3080')
 ```
 
-## [#](#_23-面试真题) 23 面试真题
+## 23 面试真题
 
-### [#](#前端为何打包和构建) 前端为何打包和构建
+### 前端为何打包和构建
 
 *   **体积更小**（`Tree Shaking`、压缩、合并）加载更快
 *   **编译高级语言语法**（`TS`、`ES6+`、模块化、`SCSS`）
@@ -2875,43 +2875,43 @@ console.log('Server running @ http://localhost:3080')
 *   **统一的构建流程和产出标准**
 *   **集成公司构建规范（提测、上线等）**
 
-### [#](#module-chunk-bundle区别) module chunk bundle区别
+### module chunk bundle区别
 
 *   `moudle`各个源码文件，`webpack`中一切皆模块
 *   `chunk` 多模块合并成的，如`entry`中定义的、`import()`动态导入的、`splitChunks`拆分的
 *   `bundle` 最终输出的文件
 
-### [#](#loader和plugin区别) loader和plugin区别
+### loader和plugin区别
 
 *   **loader模块转化** `scss`\=>`css`
 *   **plugin插件**，扩展功能，如`html-webpack-plugin`、`clean-webpack-plugin`
 
-### [#](#babel和webpack的区别) babel和webpack的区别
+### babel和webpack的区别
 
 *   `babel` `JS`新语法编译工具，不关系模块化
 *   `webpack` 模块化打包工具，是多个`loader`、`plugin`的集合\`
 
-### [#](#babel-polyfill和babel-runtime的区别) babel-polyfill和babel-runtime的区别
+### babel-polyfill和babel-runtime的区别
 
 *   `babel-polyfill` 污染全局变量，会影响其他库
 *   `babel-runtime` 不会污染全局变量，不会影响其他库
 *   产出第三方`lib`要用`babel-runtime`
 
-### [#](#webpack如何实现懒加载) webpack如何实现懒加载
+### webpack如何实现懒加载
 
 *   `import()`语法
 *   结合`vue`、`react`异步组件
 *   结合`vue-router`、`react-router`异步加载路由
 
-### [#](#为何proxy不能被polyfill) 为何proxy不能被polyfill
+### 为何proxy不能被polyfill
 
 *   如`Class`可以用`funcition`模拟
 *   如`Promise`可以用`callback`模拟
 *   但`Proxy`的功能用`Object.defineProperty`无法模拟
 
-### [#](#webpack优化) webpack优化
+### webpack优化
 
-#### [#](#优化构建速度) 优化构建速度
+#### 优化构建速度
 
 **可用于生产**
 
@@ -2927,7 +2927,7 @@ console.log('Server running @ http://localhost:3080')
 *   热更新
 *   `DllPlugin`
 
-#### [#](#优化产出代码) 优化产出代码
+#### 优化产出代码
 
 *   小图片转`base64`
 *   `bundle`加`hash`

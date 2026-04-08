@@ -1,16 +1,16 @@
 ---
-title: 前端高频面试题-精选篇-框架通识模块 | 前端进阶之旅 - 前端求职面试刷题宝典
+title: 前端高频面试题-精选篇-框架通识模块 
 source: https://interview.poetries.top/docs/excellent-docs/17-框架通识.html
 crawled: 2026-04-08
 ---
 
-# 前端高频面试题-精选篇-框架通识模块 | 前端进阶之旅 - 前端求职面试刷题宝典
+# 前端高频面试题-精选篇-框架通识模块 
 
-> 原文: [https://interview.poetries.top/docs/excellent-docs/17-框架通识.html](https://interview.poetries.top/docs/excellent-docs/17-框架通识.html)
+
 
 ---
 
-## [#](#_1-mvvm) 1 MVVM
+## 1. MVVM
 
 > `MVVM` 由以下三个内容组成
 
@@ -234,7 +234,7 @@ p.a = 2 // bind `value` to `2`
 p.a // -> Get 'a' = 2
 ```
 
-## [#](#_2-路由原理) 2 路由原理
+## 2. 路由原理
 
 > 前端路由实现起来其实很简单，本质就是监听 `URL` 的变化，然后匹配路由规则，显示相应的页面，并且无须刷新。目前单页面使用的路由就只有两种实现方式
 
@@ -245,7 +245,7 @@ p.a // -> Get 'a' = 2
 
 > `History`模式是 `HTML5` 新推出的功能，比之 `Hash URL` 更加美观
 
-## [#](#_3-virtual-dom) 3 Virtual Dom
+## 3. Virtual Dom
 
 **为什么需要 Virtual Dom**
 
@@ -692,9 +692,9 @@ setTimeout(() => {
 }, 1000)
 ```
 
-## [#](#_4-diff算法) 4 Diff算法
+## 4. Diff算法
 
-### [#](#_4-1-react-diff) 4.1 React-Diff
+### 4.1 React-Diff
 
 React的思路是递增法。通过对比新的列表中的节点，在原本的列表中的位置是否是递增，来判断当前节点是否需要移动。
 
@@ -937,7 +937,7 @@ function reactDiff(prevChildren, nextChildren, parent) {
 
 这里是有可优化的空间的，接下来我们介绍`vue2.x`中的`diff`算法——`双端比较`，该算法解决了上述的问题
 
-### [#](#_4-2-vue2-x-diff-双端比较) 4.2 Vue2.X Diff —— 双端比较
+### 4.2 Vue2.X Diff —— 双端比较
 
 所谓`双端比较`就是**新列表**和**旧列表**两个列表的头与尾互相对比，，在对比的过程中指针会逐渐向内靠拢，直到某一个列表的节点全部遍历过，对比停止。
 
@@ -1395,7 +1395,7 @@ function vue2diff(prevChildren, nextChildren, parent) {
 }
 ```
 
-### [#](#_4-3-vue3-diff-最长递增子序列) 4.3 Vue3 Diff —— 最长递增子序列
+### 4.3 Vue3 Diff —— 最长递增子序列
 
 `vue3`的`diff`借鉴于[inferno ](https://github.com/infernojs/inferno)，该算法其中有两个理念。第一个是相同的前置与后置元素的预处理；第二个则是最长递增子序列，此思想与`React`的`diff`类似又不尽相同。下面我们来一一介绍。
 

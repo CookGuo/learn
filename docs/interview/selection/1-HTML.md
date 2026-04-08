@@ -1,16 +1,16 @@
 ---
-title: 前端高频面试题-精选篇-HTML模块 | 前端进阶之旅 - 前端求职面试刷题宝典
+title: 前端高频面试题-精选篇-HTML模块 
 source: https://interview.poetries.top/docs/excellent-docs/1-HTML模块.html
 crawled: 2026-04-08
 ---
 
-# 前端高频面试题-精选篇-HTML模块 | 前端进阶之旅 - 前端求职面试刷题宝典
+# 前端高频面试题-精选篇-HTML模块 
 
-> 原文: [https://interview.poetries.top/docs/excellent-docs/1-HTML模块.html](https://interview.poetries.top/docs/excellent-docs/1-HTML模块.html)
+
 
 ---
 
-## [#](#_1-如何理解html语义化) 1 如何理解HTML语义化
+## 1. 如何理解HTML语义化
 
 *   用正确的标签做正确的事情！
 *   `HTML`语义化就是让页面的内容结构化，便于对浏览器、搜索引擎解析；
@@ -18,7 +18,7 @@ crawled: 2026-04-08
 *   搜索引擎的爬虫依赖于标记来确定上下文和各个关键字的权重，利于 `SEO`。
 *   使阅读源代码的人对网站更容易将网站分块，便于阅读维护理解
 
-## [#](#_2-h5的新特性有哪些) 2 H5的新特性有哪些
+## 2. H5的新特性有哪些
 
 *   画布(`Canvas`) API
 *   地理(`Geolocation`) API
@@ -57,7 +57,7 @@ socket.onopen = function(event) {
 };
 ```
 
-## [#](#_3-说一下-html5-drag-api) 3 说一下 HTML5 drag api
+## 3. 说一下 HTML5 drag api
 
 *   `dragstart`:事件主体是被拖放元素，在开始拖放被拖放元素时触发，。
 *   `darg`:事件主体是被拖放元素，在正在拖放被拖放元素时触发。
@@ -67,7 +67,7 @@ socket.onopen = function(event) {
 *   `drop`:事件主体是目标元素，在目标元素完全接受被拖放元素时触发。
 *   `dragend`:事件主体是被拖放元素，在整个拖放操作结束时触发
 
-## [#](#_4-iframe有那些缺点) 4 iframe有那些缺点
+## 4. iframe有那些缺点
 
 *   `iframe`会阻塞主页面的`Onload`事件；
 *   搜索引擎的检索程序无法解读这种页面，不利于`SEO`;
@@ -75,7 +75,7 @@ socket.onopen = function(event) {
 *   使用`iframe`之前需要考虑这两个缺点。如果需要使用`iframe`，最好是通过`javascript`
 *   动态给`iframe`添加`src`属性值，这样可以绕开以上两个问题
 
-## [#](#_5-如何实现浏览器内多个标签页之间的通信) 5 如何实现浏览器内多个标签页之间的通信
+## 5. 如何实现浏览器内多个标签页之间的通信
 
 1.  使用`WebSocket` 可以实现多个标签页之间的通信
 2.  调用`localStorage`
@@ -145,7 +145,7 @@ socket.onopen = function(event) {
 </script>  
 ```
 
-## [#](#_6-简述一下src与href的区别) 6 简述一下src与href的区别
+## 6. 简述一下src与href的区别
 
 *   `src`用于替换当前元素，`href`用于在当前文档和引用资源之间确立联系。
 *   `src`是`source`的缩写，指向外部资源的位置，指向的内容将会嵌入到文档中当前标签所在位置；在请求`src`资源时会将其指向的资源下载并应用到文档内，例如`js`脚本，`img`图片和`frame`等元素
@@ -164,7 +164,7 @@ socket.onopen = function(event) {
 
 > 那么浏览器会识别该文档为css文件，就会并行下载资源并且不会停止对当前文档的处理。这也是为什么建议使用`link`方式来加载css，而不是使用`@import`方式。
 
-## [#](#_7-知道的网页制作会用到的图片格式有哪些) 7 知道的网页制作会用到的图片格式有哪些
+## 7. 知道的网页制作会用到的图片格式有哪些
 
 > `png-8`，`png-24`，`jpeg`，`gif`，`svg`
 
@@ -174,7 +174,7 @@ socket.onopen = function(event) {
 
 在质量相同的情况下，`WebP`格式图像的体积要比JPEG格式图像小`40%`
 
-## [#](#_8-script标签中defer和async的区别) 8 script标签中defer和async的区别
+## 8. script标签中defer和async的区别
 
 *   `script` ：会阻碍 `HTML` 解析，只有下载好并执行完脚本才会继续解析 `HTML`。
 *   `defer`:浏览器指示脚本在文档被解析后执行，`script`被异步加载后并不会立刻执行，而是等待文档被解析完毕后执行。
@@ -182,7 +182,7 @@ socket.onopen = function(event) {
 
 > 蓝色线代表网络读取，红色线代表执行时间，这俩都是针对脚本的;绿色线代表 HTML 解析
 
-## [#](#_9-说一下-web-worker) 9 说一下 web worker
+## 9. 说一下 web worker
 
 > 在 HTML 页面中，如果在执行脚本时，页面的状态是不可响应式的，直到脚本执行完成后， 页面才变成可响应。`web worker` 是运行在后台的 `js`，独立于其他脚本，不会影响页面你 的性能。并且通过 `postMessage` 将结果回传到主线程。这样在进行复杂操作的时候，就 不会阻塞主线程了
 
@@ -192,11 +192,11 @@ socket.onopen = function(event) {
 *   创建 `web worker` 文件(js，回传函数等)
 *   创建 `web worker` 对象
 
-## [#](#_10-用一个div模拟textarea的实现) 10 用一个div模拟textarea的实现
+## 10 用一个div模拟textarea的实现
 
 > 给`div`添加`contenteditable=true` 即可
 
-## [#](#_11-介绍下资源预加载-prefetch-preload) 11 介绍下资源预加载 prefetch/preload
+## 11 介绍下资源预加载 prefetch/preload
 
 > 都是告知浏览器提前加载文件(图片、视频、`js`、`css`等)，但执行上是有区别的。
 
@@ -218,7 +218,7 @@ worker: 一个JavaScript的web worker或shared worker。
 video: 视频文件。
 ```
 
-## [#](#_12-介绍下-viewport) 12 介绍下 viewport
+## 12 介绍下 viewport
 
 ```
 <meta name="viewport" content="width=500, initial-scale=1">
@@ -231,7 +231,7 @@ video: 视频文件。
 *   `maximum-scale`：最大缩放比例。
 *   `user-scalable`：是否允许用户缩放。
 
-## [#](#_13-如何解决a标点击后hover事件失效的问题) 13 如何解决a标点击后hover事件失效的问题?
+## 13 如何解决a标点击后hover事件失效的问题?
 
 改变`a`标签`css`属性的排列顺序
 
@@ -263,7 +263,7 @@ a:visited{ /* visited在hover后面，这样的话hover事件就失效了 */
 *   `a:hover`：鼠标移上去时的样式
 *   `a:active`：鼠标按下时的样式
 
-## [#](#_14-点击一个input依次触发的事件) 14 点击一个input依次触发的事件
+## 14 点击一个input依次触发的事件
 
 ```
 const text = document.getElementById('text');
@@ -290,7 +290,7 @@ text.onmouseenter = function (e) {
 'onclick'
 ```
 
-## [#](#_15-有写过原生的自定义事件吗) 15 有写过原生的自定义事件吗
+## 15 有写过原生的自定义事件吗
 
 **创建自定义事件**
 
@@ -372,20 +372,20 @@ setTimeout(() => {
 }, 2000)
 ```
 
-## [#](#_16-addeventlistener和attachevent的区别) 16 addEventListener和attachEvent的区别？
+## 16 addEventListener和attachEvent的区别？
 
 *   前者是标准浏览器中的用法，后者`IE8`以下
 *   `addEventListener`可有冒泡，可有捕获；`attachEvent`只有冒泡，没有捕获。
 *   前者事件名不带`on`，后者带`on`
 *   前者回调函数中的`this`指向当前元素，后者指向`window`
 
-## [#](#_17-addeventlistener函数的第三个参数) 17 addEventListener函数的第三个参数
+## 17 addEventListener函数的第三个参数
 
 第三个参数涉及到冒泡和捕获，是`true`时为捕获，是`false`则为冒泡。
 
 > 或者是一个对象`{passive: true}`，针对的是`Safari`浏览器，禁止/开启使用滚动的时候要用到。
 
-## [#](#_18-dom事件流是什么) 18 DOM事件流是什么？
+## 18 DOM事件流是什么？
 
 事件发生时会在元素节点之间按照**特定的顺序**传播，这个传播过程就叫做DOM事件流。
 
@@ -397,7 +397,7 @@ setTimeout(() => {
 
 (注意⚠️：`JS`代码只能执行捕获或者冒泡其中一个阶段，要么是捕获要么是冒泡)
 
-## [#](#_19-冒泡和捕获的具体过程) 19 冒泡和捕获的具体过程
+## 19 冒泡和捕获的具体过程
 
 > 冒泡指的是：当给某个目标元素绑定了事件之后，这个事件会依次在它的父级元素中被触发(当然前提是这个父级元素也有这个同名称的事件，比如子元素和父元素都绑定了`click`事件就触发父元素的`click`)。
 
@@ -427,7 +427,7 @@ setTimeout(() => {
 *   冒泡结果：`button > li > ul > document > window`
 *   捕获结果：`window > document > ul > li > button`
 
-## [#](#_20-关于一些兼容性) 20 关于一些兼容性
+## 20 关于一些兼容性
 
 1.  `event`的兼容性
 
@@ -451,7 +451,7 @@ setTimeout(() => {
 *   其它浏览器`e.preventDefault()`
 *   `IE`下为`window.event.returnValue = false`
 
-## [#](#_21-如何阻止冒泡和默认事件-兼容写法) 21 如何阻止冒泡和默认事件(兼容写法)
+## 21 如何阻止冒泡和默认事件(兼容写法)
 
 阻止冒泡：
 
@@ -475,7 +475,7 @@ function stopDefault (e) { // 阻止默认事件
 }
 ```
 
-## [#](#_22-所有的事件都有冒泡吗) 22 所有的事件都有冒泡吗？
+## 22 所有的事件都有冒泡吗？
 
 并不是所有的事件都有冒泡的，例如以下事件就没有：
 
@@ -484,13 +484,13 @@ function stopDefault (e) { // 阻止默认事件
 *   `onmouseenter`
 *   `onmouseleave`
 
-## [#](#_23-拖拽有哪些知识点) 23 拖拽有哪些知识点
+## 23 拖拽有哪些知识点
 
 1.  可以通过给标签设置`draggable`属性来实现元素的拖拽，`img和a标签`默认是可以拖拽的
 2.  拖拽者身上的三个事件：`ondragstart`、`ondrag`、`ondragend`
 3.  拖拽要放到的元素：`ondragenter`、`ondragover`、`ondragleave`、`ondrap`
 
-## [#](#_24-offset、scroll、client的区别) 24 offset、scroll、client的区别
+## 24 offset、scroll、client的区别
 
 **client**:
 
@@ -515,7 +515,7 @@ function stopDefault (e) { // 阻止默认事件
 *   `scrollWidth`是指左边看不到的区域加可视区加右边看不到的区域即整个页面的宽度（包括边框）
 *   `scrollHeight`是指上边看不到的区域加可视区加右边看不到的区域即整个页面的高度（包括边框）
 
-## [#](#_25-target-blank-有哪些问题) 25 target="\_blank"有哪些问题？
+## 25 target="\_blank"有哪些问题？
 
 **存在问题：**
 
@@ -529,14 +529,14 @@ function stopDefault (e) { // 阻止默认事件
 2.  如果一定要用，需要加上`rel="noopener"`或者`rel="noreferrer"`。这样新窗口的`window.openner`就是`null`了，而且会让新窗口运行在独立的进程里，不会拖累原来页面的进程。(不过，有些浏览器对性能做了优化，即使不加这个属性，新窗口也会在独立进程打开。不过为了安全考虑，还是加上吧。)
     
 
-## [#](#_26-children以及childnodes的区别) 26 children以及childNodes的区别
+## 26 children以及childNodes的区别
 
 *   `children`和只获取该节点下的所有`element`节点
 *   `childNodes`不仅仅获取`element`节点还会获取元素标签中的空白节点
 *   `firstElementChild`只获取该节点下的第一个`element`节点
 *   `firstChild`会获取空白节点
 
-## [#](#_27-htmlcollection和nodelist的区别) 27 HTMLCollection和NodeList的区别
+## 27 HTMLCollection和NodeList的区别
 
 **Node和Element**
 

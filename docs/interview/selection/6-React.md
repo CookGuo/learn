@@ -1,16 +1,16 @@
 ---
-title: 前端高频面试题-精选篇-React模块 | 前端进阶之旅 - 前端求职面试刷题宝典
+title: 前端高频面试题-精选篇-React模块 
 source: https://interview.poetries.top/docs/excellent-docs/6-React.html
 crawled: 2026-04-08
 ---
 
-# 前端高频面试题-精选篇-React模块 | 前端进阶之旅 - 前端求职面试刷题宝典
+# 前端高频面试题-精选篇-React模块 
 
-> 原文: [https://interview.poetries.top/docs/excellent-docs/6-React.html](https://interview.poetries.top/docs/excellent-docs/6-React.html)
+
 
 ---
 
-## [#](#_0-如何理解react-state不可变性的原则) 0 如何理解React State不可变性的原则
+## 0. 如何理解React State不可变性的原则
 
 在 React 中，不可变性是指数据一旦被创建，就不能被修改。React 推崇使用不可变数据的原则，这意味着在更新数据时，应该创建新的数据对象而不是直接修改现有的数据。
 
@@ -27,7 +27,7 @@ crawled: 2026-04-08
 *   **避免副作用**：可变数据容易引发副作用和难以追踪的 bug。通过使用不可变数据，可以避免许多与副作用相关的问题。
 *   **方便的历史记录和回滚**：不可变数据使得记录和回滚应用状态的历史变得更容易。可以在不改变原始数据的情况下，创建和保存不同时间点的数据快照。
 
-## [#](#_1-jsx本质) 1 JSX本质
+## 1. JSX本质
 
 *   `React.createElement` 即`h`函数，返回`vnode`
     *   **createElement 与 cloneElement 的区别是什么**
@@ -157,7 +157,7 @@ const listElem = React.createElement(
 );
 ```
 
-## [#](#_2-react合成事件机制) 2 React合成事件机制
+## 2. React合成事件机制
 
 *   `React16`事件绑定到`document`上
 *   `React17`事件绑定到`root`组件上，有利于多个`react`版本共存，例如微前端
@@ -266,12 +266,12 @@ class EventDemo extends React.Component {
 }
 ```
 
-## [#](#_3-setstate和batchupdate机制) 3 setState和batchUpdate机制
+## 3. setState和batchUpdate机制
 
 *   `setState`在`react`事件、生命周期中是异步的（在`react`上下文中是异步）；在`setTimeout`、自定义`DOM`事件中是同步的
 *   有时合并（对象形式`setState({})` => 通过`Object.assign`形式合并对象），有时不合并（函数形式`setState((prevState,nextState)=>{})`）
 
-### [#](#setstate主流程) setState主流程
+### setState主流程
 
 *   `setState`是否是异步还是同步，看是否能命中`batchUpdate`机制，判断`isBatchingUpdates`
 *   哪些能命中`batchUpdate`机制
@@ -283,7 +283,7 @@ class EventDemo extends React.Component {
     *   自定义`DOM`事件
     *   总之不在`react`的上下文中，`react`管不到的
 
-### [#](#batchupdate机制) batchUpdate机制
+### batchUpdate机制
 
  
 
@@ -327,7 +327,7 @@ handleClick();
 console.log(state); // 1
 ```
 
-### [#](#transaction事务机制) transaction事务机制
+### transaction事务机制
 
   
 
@@ -526,7 +526,7 @@ function handleClick() {
 }
 ```
 
-### [#](#传入-setstate-函数的第二个参数的作用是什么) 传入 setState 函数的第二个参数的作用是什么
+### 传入 setState 函数的第二个参数的作用是什么
 
 > 该函数会在 `setState` 函数调用完成并且组件开始重渲染的时候被调用，我们可以用该函数来监听渲染是否完成：
 
@@ -545,7 +545,7 @@ this.setState((prevState, props) => {
 })
 ```
 
-### [#](#调用-setstate-之后发生了什么) 调用 setState 之后发生了什么
+### 调用 setState 之后发生了什么
 
 > 在代码中调用 `setState` 函数之后，`React` 会将传入的参数与之前的状态进行合并，然后触发所谓的调和过程（`Reconciliation`）。经过调和过程，`React` 会以相对高效的方式根据新的状态构建 `React` 元素树并且着手重新渲染整个 `UI` 界面。在 `React` 得到元素树之后，`React` 会计算出新的树和老的树之间的差异，然后根据差异对界面进行最小化重新渲染。通过 `diff` 算法，`React` 能够精确制导哪些位置发生了改变以及应该如何改变，这就保证了按需更新，而不是全部重新渲染。
 
@@ -557,7 +557,7 @@ this.setState((prevState, props) => {
 *   当所有节点都 `doWork` 完成后，会触发 `commitRoot` 方法，`React` 进入 `commit` 阶段。
 *   在 `commit` 阶段中，`React` 会根据前面为各个节点打的 `Tag`，一次性更新整个 `dom` 元素
 
-### [#](#setstate总结) setState总结
+### setState总结
 
 **setState到底是异步还是同步** 有时表现出异步,有时表现出同步
 
@@ -589,7 +589,7 @@ this.setState((prevState, props) => {
     *   将数据挂载到外部，通过 `props` 传入，如放到 `Redux` 或 父级中；
     *   在组件内部维护一个状态量 (`isUnmounted`)，`componentWillUnmount`中标记为 `true`，在`setState`前进行判断；
 
-## [#](#_4-组件渲染和更新过程) 4 组件渲染和更新过程
+## 4. 组件渲染和更新过程
 
 *   `JSX`如何渲染为页面
 *   `setState`之后如何更新页面
@@ -622,9 +622,9 @@ this.setState((prevState, props) => {
     *   `DOM`需要渲染时更新，空闲时恢复在执行计算
     *   通过`window.requestIdleCallback`来判断浏览器是否空闲
 
-## [#](#_5-diff算法相关) 5 Diff算法相关
+## 5. Diff算法相关
 
-### [#](#为什么虚拟dom会提高性能) 为什么虚拟dom会提高性能
+### 为什么虚拟dom会提高性能
 
 > 虚拟`dom`相当于在`js`和真实`dom`中间加了一个缓存，利用`dom diff`算法避免了没有必要的`dom`操作，从而提高性能
 
@@ -643,11 +643,11 @@ this.setState((prevState, props) => {
 *   它的优势是在于`diff`算法和批量处理策略,将所有的`DOM`操作搜集起来，一次性去改变真实的`DOM`,但在首次渲染上，虚拟`DOM`会多了一层计算，消耗一些性能，所以有可能会比`html`渲染的要慢
 *   注意，虚拟`DOM`实际上是给我们找了一条最短，最近的路径，并不是说比`DOM`操作的更快，而是路径最简单
 
-### [#](#react-的渲染过程中-兄弟节点之间是怎么处理的-也就是key值不一样的时候) react 的渲染过程中，兄弟节点之间是怎么处理的？也就是key值不一样的时候
+### react 的渲染过程中，兄弟节点之间是怎么处理的？也就是key值不一样的时候
 
 > 通常我们输出节点的时候都是map一个数组然后返回一个`ReactNode`，为了方便`react`内部进行优化，我们必须给每一个`reactNode`添加`key`，这个`key prop`在设计值处不是给开发者用的，而是给`react`用的，大概的作用就是给每一个`reactNode`添加一个身份标识，方便`react`进行识别，在重渲染过程中，如果`key`一样，若组件属性有所变化，则`react`只更新组件对应的属性；没有变化则不更新，如果`key`不一样，则`react`先销毁该组件，然后重新创建该组件
 
-### [#](#diff算法) diff算法
+### diff算法
 
 > 我们知道`React`会维护两个虚拟`DOM`，那么是如何来比较，如何来判断，做出最优的解呢？这就用到了`diff`算法
 
@@ -719,7 +719,7 @@ this.setState((prevState, props) => {
 
 尽量减少类似将最后一个节点移动到列表首部的操作，当节点数量过大或更新操作过于频繁时，会影响`React`的渲染性能
 
-### [#](#diff-的瓶颈以及-react-的应对) Diff 的瓶颈以及 React 的应对
+### Diff 的瓶颈以及 React 的应对
 
 由于 diff 操作本身会带来性能上的损耗，在 React 文档中提到过，即使最先进的算法中，将前后两棵树完全比对的算法复杂度为`O(n3)`，其中 `n` 为树中元素的数量。
 
@@ -731,7 +731,7 @@ this.setState((prevState, props) => {
 2.  两个不同类型的元素会产生出不同的树。如果元素由 `div` 变成 `p`，`React` 会销毁 `div` 及其子孙节点，并新建 `p` 及其子孙节点
 3.  开发者可以通过 `key` 来暗示哪些子元素在不同的渲染下能保持稳定
 
-### [#](#react-中-key-的作用是什么) React 中 key 的作用是什么
+### React 中 key 的作用是什么
 
 *   `Key`是 `React` 用于追踪哪些列表中元素被修改、被添加或者被移除的辅助标识
 *   给每一个 `vnode` 的唯一 `id`，可以依靠 `key`,更准确,更快的拿到 `oldVnode` 中对应的 `vnode` 节点
@@ -755,7 +755,7 @@ this.setState((prevState, props) => {
 *   `key` 是 `React` 用来追踪哪些列表元素被修改、被添加或者被移除的辅助标志。
 *   在开发过程中，我们需要保证某个元素的 `key` 在其同级元素中具有唯一性。在 `React diff` 算法中，`React` 会借助元素的 `Key` 值来判断该元素是新近创建的还是被移动而来的元素，从而减少不必要的元素重新渲染
 
-### [#](#关于fiber) 关于Fiber
+### 关于Fiber
 
 > `React Fiber` 用类似 `requestIdleCallback` 的机制来做异步 `diff`。但是之前数据结构不支持这样的实现异步 `diff`，于是 `React` 实现了一个类似链表的数据结构，将原来的 `递归diff`（不可被中断） 变成了现在的 `遍历diff`，这样就能做到异步可更新并且可以中断恢复执行
 
@@ -824,9 +824,9 @@ requestIdleCallback((deadline) => {
 > *   核心思想是 任务拆分和协同，主动把执行权交给主线程，使主线程有时间空挡处理其他高优先级任务。
 > *   当遇到进程阻塞的问题时，任务分割、异步调用 和 缓存策略 是三个显著的解决思路。
 
-## [#](#_6-受控组件与非受控组件) 6 受控组件与非受控组件
+## 6. 受控组件与非受控组件
 
-### [#](#受控组件) 受控组件
+### 受控组件
 
 *   表单的值，受到`state`控制
 *   需要自行监听`onChange`，更新`state`
@@ -916,7 +916,7 @@ class FormDemo extends React.Component {
 export default FormDemo
 ```
 
-### [#](#非受控组件) 非受控组件
+### 非受控组件
 
 *   `ref` 访问 `DOM`元素或者某个组件实例的句柄
     *   `ref` 有两种使用方式
@@ -984,13 +984,13 @@ class App extends React.Component {
 export default App
 ```
 
-## [#](#_7-组件生命周期) 7 组件生命周期
+## 7. 组件生命周期
 
 [点击查看各个版本的生命周期 ](https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/)
 
 **\>=16.4**
 
-### [#](#react旧版生命周期函数) react旧版生命周期函数
+### react旧版生命周期函数
 
 **初始化阶段**
 
@@ -1014,7 +1014,7 @@ export default App
 
 *   `componentWillUnmount`:组件即将销毁
 
-### [#](#新版生命周期) 新版生命周期
+### 新版生命周期
 
 > 在新版本中，`React` 官方对生命周期有了新的 变动建议:
 
@@ -1110,7 +1110,7 @@ componentDidUpdate(prevProps) {
 *   `getSnapshotBeforeUpdate(prevProps, prevState)`可以在更新之前获取最新的渲染数据，它的调用是在 `render` 之后， `update` 之前；
 *   `shouldComponentUpdate`: 默认每次调用`setState`，一定会最终走到 `diff` 阶段，但可以通过`shouldComponentUpdate`的生命钩子返回`false`来直接阻止后面的逻辑执行，通常是用于做条件渲染，优化渲染的性能。
 
-### [#](#为什么有些react生命周期钩子被标记为unsafe) 为什么有些react生命周期钩子被标记为UNSAFE
+### 为什么有些react生命周期钩子被标记为UNSAFE
 
 **componentWillMount**
 
@@ -1227,14 +1227,14 @@ class ScrollingList extends React.Component {
 *   `React`意识到`componentWillMount`、`componentWillReceiveProps`和`componentWillUpdate`这三个生命周期函数有缺陷，比较容易导致崩溃。但是由于旧的项目已经在用以及有些老开发者习惯用这些生命周期函数，于是通过给它加`UNSAFE_`来提醒用它的人要注意它们的缺陷
 *   `React`加入了两个新的生命周期函数`getSnapshotBeforeUpdate`和`getDerivedStateFromProps`，目的为了即使不使用这三个生命周期函数，也能实现只有这三个生命周期能实现的功能
 
-### [#](#在生命周期中的哪一步你应该发起-ajax-请求) 在生命周期中的哪一步你应该发起 AJAX 请求
+### 在生命周期中的哪一步你应该发起 AJAX 请求
 
 > 我们应当将AJAX 请求放到 `componentDidMount` 函数中执行，主要原因有下
 
 *   `React` 下一代调和算法 `Fiber` 会通过开始或停止渲染的方式优化应用性能，其会影响到 `componentWillMount` 的触发次数。对于 `componentWillMount` 这个生命周期函数的调用次数会变得不确定，`React` 可能会多次频繁调用 `componentWillMount`。如果我们将 `AJAX` 请求放到 `componentWillMount` 函数中，那么显而易见其会被触发多次，自然也就不是好的选择。
 *   如果我们将`AJAX` 请求放置在生命周期的其他函数中，我们并不能保证请求仅在组件挂载完毕后才会要求响应。如果我们的数据请求在组件挂载之前就完成，并且调用了`setState`函数将数据添加到组件状态中，对于未挂载的组件则会报错。而在 `componentDidMount` 函数中进行 `AJAX` 请求则能有效避免这个问题
 
-## [#](#_8-portal传送门) 8 Portal传送门
+## 8. Portal传送门
 
 *   在以前， `react` 中所有的组件都会位于 `#app` 下，组件默认会按照既定层级嵌套渲染，而使用 `Portals` 提供了一种脱离 `#app` 的组件
 *   因此 `Portals` 适合脱离文档流(`out of flow`) 的组件（让组件渲染到父组件以外），特别是 `position: absolute` 与 `position: fixed`的组件。比如模态框，通知，警告，`goTop` 等
@@ -1322,7 +1322,7 @@ class Modal extends React.Component {
 }
 ```
 
-## [#](#_9-context) 9 Context
+## 9. Context
 
 公共信息（语言、主题）传递给每个组件，用`props`太繁琐
 
@@ -1389,7 +1389,7 @@ class App extends React.Component {
 export default App
 ```
 
-## [#](#_10-异步组件) 10 异步组件
+## 10 异步组件
 
 *   `import()`
 *   `React.lazy`
@@ -1428,9 +1428,9 @@ export default App
 
 **react router如何配置懒加载**
 
-## [#](#_11-性能优化) 11 性能优化
+## 11 性能优化
 
-### [#](#使用shouldcomponentupdate优化) 使用shouldComponentUpdate优化
+### 使用shouldComponentUpdate优化
 
 *   `shouldComponentUpdate`(简称`SCU`) 允许我们手动地判断是否要进行组件更新，根据组件的应用场景设置函数的合理返回值能够帮我们避免不必要的更新
 *   `PureComponent`和`React.memo`
@@ -1595,7 +1595,7 @@ class TodoListDemo extends React.Component {
 export default TodoListDemo
 ```
 
-### [#](#purecomponent和react-memo) PureComponent和React.memo
+### PureComponent和React.memo
 
 *   `PureComponent`实现浅比较
 *   `memo`函数组件中的`PureComponent`
@@ -1706,7 +1706,7 @@ class TodoListDemo extends React.Component {
 export default TodoListDemo
 ```
 
-### [#](#优化性能的方式小结) 优化性能的方式小结
+### 优化性能的方式小结
 
 **类组件中的优化手段**
 
@@ -1750,7 +1750,7 @@ export default class CallingLazyComponents extends React.Component {
 }
 ```
 
-### [#](#react实现的移动应用中-如果出现卡顿-有哪些可以考虑的优化方案) React实现的移动应用中，如果出现卡顿，有哪些可以考虑的优化方案
+### React实现的移动应用中，如果出现卡顿，有哪些可以考虑的优化方案
 
 *   增加`shouldComponentUpdate`钩子对新旧`props`进行比较，如果值相同则阻止更新，避免不必要的渲染，或者使用`PureReactComponent`替代`Component`，其内部已经封装了`shouldComponentUpdate`的浅比较逻辑
 *   对于列表或其他结构相同的节点，为其中的每一项增加唯一`key`属性，以方便`React`的`diff`算法中对该节点的复用，减少节点的创建和删除操作
@@ -1758,14 +1758,14 @@ export default class CallingLazyComponents extends React.Component {
 *   组件的`props`如果需要经过一系列运算后才能拿到最终结果，则可以考虑使用`reselect`库对结果进行缓存，如果`props`值未发生变化，则结果直接从缓存中拿，避免高昂的运算代价
 *   `webpack-bundle-analyzer`分析当前页面的依赖包，是否存在不合理性，如果存在，找到优化点并进行优化
 
-## [#](#_12-高阶组件和render-props) 12 高阶组件和Render Props
+## 12 高阶组件和Render Props
 
 **关于组件公共逻辑的抽离**
 
 *   高阶组件`HOC`：模式简单，但增加组件层级
 *   `Render Props`：代码简洁，学习成本较高
 
-### [#](#高阶组件) 高阶组件
+### 高阶组件
 
 > 高阶组件(`Higher Order Componennt`)本身其实不是组件，而是一个函数，这个函数接收一个元组件作为参数，然后返回一个新的增强组件，高阶组件的出现本身也是为了逻辑复用
 
@@ -1997,7 +1997,7 @@ function withTiming(Comp) {
     *   静态方法赋值
 *   **重新渲**染: 由于增强函数每次调用是返回一个新组件，因此如果在 `Render`中使用增强函数，就会导致每次都重新渲染整个`HOC`，而且之前的状态会丢失；
 
-### [#](#render-props) render props
+### render props
 
 ```
 import React from 'react'
@@ -2048,7 +2048,7 @@ const App = (props) => (
 export default App
 ```
 
-### [#](#拓展-vue中实现高阶组件) 拓展：vue中实现高阶组件
+### 拓展：vue中实现高阶组件
 
 ```
 function withAvatarURL (InnerComponent) {
@@ -2082,9 +2082,9 @@ new Vue({
 })
 ```
 
-## [#](#_13-react-hooks相关) 13 React Hooks相关
+## 13 React Hooks相关
 
-### [#](#react-hooks带来了那些便利) React Hooks带来了那些便利
+### React Hooks带来了那些便利
 
 *   代码逻辑聚合，逻辑复用
 *   解决`HOC`嵌套地狱问题
@@ -2263,7 +2263,7 @@ function Home() {
 }
 ```
 
-### [#](#class组件存在哪些问题) class组件存在哪些问题
+### class组件存在哪些问题
 
 *   **函数组件的特点**
     *   没有组件实例
@@ -2278,7 +2278,7 @@ function Home() {
     *   函数更灵活，更易于拆分，更易测试
     *   但函数组件太简单，需要增强能力—— 使用`hooks`
 
-### [#](#用usestate实现state和setstate功能) 用useState实现state和setState功能
+### 用useState实现state和setState功能
 
 **让函数组件实现state和setState**
 
@@ -2353,7 +2353,7 @@ class ClickCounter extends React.Component {
 export default ClickCounter
 ```
 
-### [#](#用useeffect模拟组件生命周期) 用useEffect模拟组件生命周期
+### 用useEffect模拟组件生命周期
 
 **让函数组件模拟生命周期**
 
@@ -2423,7 +2423,7 @@ function LifeCycles() {
 export default LifeCycles
 ```
 
-### [#](#用useeffect模拟willunmount时的注意事项) 用useEffect模拟WillUnMount时的注意事项
+### 用useEffect模拟WillUnMount时的注意事项
 
 **useEffect中返回函数**
 
@@ -2488,9 +2488,9 @@ function FriendStatus({ friendId }) {
 export default FriendStatus
 ```
 
-### [#](#useref和usecontext) useRef和useContext
+### useRef和useContext
 
-#### [#](#useref) useRef
+#### useRef
 
 ```
 import React, { useRef, useEffect } from 'react'
@@ -2513,7 +2513,7 @@ function UseRef() {
 export default UseRef
 ```
 
-#### [#](#usecontext) useContext
+#### useContext
 
 ```
 import React, { useContext } from 'react'
@@ -2556,7 +2556,7 @@ function App() {
 export default App
 ```
 
-### [#](#usereducer能代替redux吗) useReducer能代替redux吗
+### useReducer能代替redux吗
 
 *   `useReducer`是`useState`的代替方案，用于`state`复杂变化
 *   `useReducer`是单个组件状态管理，组件通讯还需要`props`
@@ -2592,7 +2592,7 @@ function App() {
 export default App
 ```
 
-### [#](#使用usememo做性能优化) 使用useMemo做性能优化
+### 使用useMemo做性能优化
 
 *   状态变化，React会默认更新所有子组件
 *   `class`组件使用`shouldComponentUpdate`和`PureComponent`优化
@@ -2645,7 +2645,7 @@ function App() {
 export default App
 ```
 
-### [#](#使用usecallback做性能优化) 使用useCallback做性能优化
+### 使用useCallback做性能优化
 
 *   `Hooks`中使用`useCallback`缓存函数，避免子组件更新
 *   `useCallback`需要配合`React.memo`使用才生效
@@ -2695,7 +2695,7 @@ function App() {
 export default App
 ```
 
-### [#](#什么是自定义hook) 什么是自定义Hook
+### 什么是自定义Hook
 
 *   封装通用的功能
 *   开发和使用第三方`Hooks`
@@ -2776,13 +2776,13 @@ function App() {
 }
 ```
 
-### [#](#使用hooks的两条重要规则) 使用Hooks的两条重要规则
+### 使用Hooks的两条重要规则
 
 *   只能用于函数组件和自定义`Hook`中，其他地方不可以
 *   只能用于顶层代码，不能在判断、循环中使用`Hooks`
 *   `eslint`插件`eslint-plugin-react-hooks`可以帮助检查`Hooks`的使用规则
 
-### [#](#为何hooks要依赖于调用顺序) 为何Hooks要依赖于调用顺序
+### 为何Hooks要依赖于调用顺序
 
 *   无论是`render`还是`re-render`，`Hooks`调用顺序必须一致
 *   如果`Hooks`出现在循环、判断里，则无法保证顺序一致
@@ -2875,7 +2875,7 @@ export default SequentialHooks;
 
 > first 和 second 的状态更新依赖于它们在 `Hooks` 调用中的顺序。如果在其他情况下改变了 `Hooks` 的顺序，会导致 `useEffect` 中的依赖不正确
 
-### [#](#class组件逻辑复用有哪些问题) class组件逻辑复用有哪些问题
+### class组件逻辑复用有哪些问题
 
 *   **高级组件HOC**
     *   组件嵌套层级过多，不易于渲染、调试
@@ -2884,12 +2884,12 @@ export default SequentialHooks;
     *   学习成本高，不利于理解
     *   只能传递纯函数，而默认情况下纯函数功能有限
 
-### [#](#hooks组件逻辑复用有哪些好处) Hooks组件逻辑复用有哪些好处
+### Hooks组件逻辑复用有哪些好处
 
 *   变量作用域很明确
 *   不会产生组件嵌套
 
-### [#](#hooks使用中的几个注意事项) Hooks使用中的几个注意事项
+### Hooks使用中的几个注意事项
 
 *   `useState`初始化值，只有第一次有效
 *   `useEffect`内部不能修改`state`，第二个参数需要是空的依赖`[]`
@@ -2960,9 +2960,9 @@ function UseEffectChangeState() {
 export default UseEffectChangeState
 ```
 
-## [#](#_14-redux相关) 14 Redux相关
+## 14 Redux相关
 
-### [#](#简述flux-思想) 简述flux 思想
+### 简述flux 思想
 
 > `Flux` 的最大特点，就是数据的"单向流动"。
 
@@ -2972,7 +2972,7 @@ export default UseEffectChangeState
 *   `Store` 更新后，发出一个`"change"`事件
 *   `View` 收到`"change"`事件后，更新页面
 
-### [#](#redux中间件) redux中间件
+### redux中间件
 
 > 中间件提供第三方插件的模式，自定义拦截 `action` -> `reducer` 的过程。变为 `action` -> `middlewares` -> `reducer`。这种机制可以让我们改变数据流，实现如异步`action` ，`action` 过滤，日志输出，异常报告等功能
 
@@ -2980,12 +2980,12 @@ export default UseEffectChangeState
 *   `redux-thunk`：处理异步操作
 *   `redux-promise`：处理异步操作，`actionCreator`的返回值是`promise`
 
-### [#](#redux有什么缺点) redux有什么缺点
+### redux有什么缺点
 
 *   一个组件所需要的数据，必须由父组件传过来，而不能像`flux`中直接从`store`取。
 *   当一个组件相关数据更新时，即使父组件不需要用到这个组件，父组件还是会重新`render`，可能会有效率影响，或者需要写复杂的`shouldComponentUpdate`进行判断。
 
-### [#](#redux设计理念) Redux设计理念
+### Redux设计理念
 
 **为什么要用redux**
 
@@ -3050,7 +3050,7 @@ let combineReducers=(renducers)=>{
 export {createStore,combineReducers};
 ```
 
-### [#](#redux怎么实现dispstch一个函数) Redux怎么实现dispstch一个函数
+### Redux怎么实现dispstch一个函数
 
 > 以`redux-thunk`中间件作为例子，下面就是`thunkMiddleware`函数的代码
 
@@ -3076,7 +3076,7 @@ return ({ dispatch, getState }) => {
 *   `redux`中间件：`applyMiddleware`函数中间件的主要目的就是修改`dispatch`函数，返回经过中间件处理的新的`dispatch`函数
 *   `redux`使用：实际就是再次调用循环遍历调用`reducer`函数，更新`state`
 
-### [#](#connect高级组件原理) connect高级组件原理
+### connect高级组件原理
 
 *   首先`connect`之所以会成功，是因为`Provider`组件：
 *   在原应用组件上包裹一层，使原来整个应用成为`Provider`的子组件 接收`Redux`的`store`作为`props`，通过`context`对象传递给子孙组件上的`connect`
@@ -3134,7 +3134,7 @@ export default function connect(mapStateToProps, mapDispatchToProps, mergeProps,
   }
 ```
 
-### [#](#dva工作原理) Dva工作原理
+### Dva工作原理
 
 > 集成`redux+redux-saga`
 
@@ -3142,11 +3142,11 @@ export default function connect(mapStateToProps, mapDispatchToProps, mergeProps,
 
 > 改变发生通常是通过用户交互行为或者浏览器行为（如路由跳转等）触发的，当此类行为会改变数据的时候可以通过 `dispatch` 发起一个 `action`，如果是同步行为会直接通过 `Reducers` 改变 `State` ，如果是异步行为（副作用）会先触发 `Effects` 然后流向 `Reducers` 最终改变 `State`
 
-## [#](#_15-react中ref几种创建方式) 15 React中Ref几种创建方式
+## 15 React中Ref几种创建方式
 
 `React` 提供了 `Refs`，帮助我们访问 `DOM` 节点或在 `render` 方法中创建的 `React` 元素
 
-### [#](#三种使用-ref-的方式) 三种使用 Ref 的方式
+### 三种使用 Ref 的方式
 
 **String Refs**
 
@@ -3229,7 +3229,7 @@ class App extends React.Component {
 }
 ```
 
-### [#](#使用ref获取组件实例) 使用Ref获取组件实例
+### 使用Ref获取组件实例
 
 > `Refs` 除了用于获取具体的 `DOM` 节点外，也可以获取 `Class` 组件的实例，当获取到实例后，可以调用其中的方法，从而强制执行，比如动画之类的效果
 
@@ -3266,7 +3266,7 @@ class Form extends React.Component{
 }
 ```
 
-### [#](#函数组件传递forwardref) 函数组件传递forwardRef
+### 函数组件传递forwardRef
 
 *   我们不能在函数组件上使用 `ref` 属性，因为函数组件没有实例
 *   使用`forwardRef`（`forward`在这里是「传递」的意思）后，就能跨组件传递`ref`。
@@ -3299,7 +3299,7 @@ function Form() {
 }
 ```
 
-### [#](#useimperativehandle) useImperativeHandle
+### useImperativeHandle
 
 > 除了「限制跨组件传递`ref`」外，还有一种「防止`ref`失控的措施」，那就是`useImperativeHandle`，他的逻辑是这样的：既然`「ref失控」`是由于「使用了不该被使用的`DOM`方法」（比如`appendChild`），那我可以限制「`ref`中只存在可以被使用的方法」。用`useImperativeHandle`修改我们的`MyInput`组件：
 
@@ -3332,7 +3332,7 @@ const MyInput = forwardRef((props, ref) => {
 *   为了破除这种限制，可以使用`forwardRef`。
 *   为了减少`ref`对`DOM`的滥用，可以使用`useImperativeHandle`限制`ref`传递的数据结构。
 
-## [#](#_16-为什么-react-元素有一个-typeof-属性) 16 为什么 React 元素有一个 $$typeof 属性
+## 16 为什么 React 元素有一个 $$typeof 属性
 
 > 目的是为了防止 `XSS` 攻击。因为 `Synbol` 无法被序列化，所以 `React` 可以通过有没有 `$$typeof` 属性来断出当前的 `element` 对象是从数据库来的还是自己生成的。
 
@@ -3358,7 +3358,7 @@ let message = { text: expectedTextButGotJSON };
 </p>
 ```
 
-## [#](#_17-react-如何区分-class组件-和-function组件) 17 React 如何区分 Class组件 和 Function组件
+## 17 React 如何区分 Class组件 和 Function组件
 
 一般的方式是借助 `typeof` 和 `Function.prototype.toString` 来判断当前是不是 `class`，如下：
 
@@ -3377,13 +3377,13 @@ function isClass(func) {
 AComponent.prototype instanceof React.Component
 ```
 
-## [#](#_18-react组件的划分业务组件技术组件) 18 react组件的划分业务组件技术组件
+## 18 react组件的划分业务组件技术组件
 
 *   根据组件的职责通常把组件分为UI组件和容器组件。
 *   UI 组件负责 UI 的呈现，容器组件负责管理数据和逻辑。
 *   两者通过`React-Redux` 提供`connect`方法联系起来
 
-## [#](#_19-react如何进行组件-逻辑复用) 19 React如何进行组件/逻辑复用?
+## 19 React如何进行组件/逻辑复用?
 
 > 抛开已经被官方弃用的`Mixin`,组件抽象的技术目前有三种比较主流:
 
@@ -3393,7 +3393,7 @@ AComponent.prototype instanceof React.Component
 *   渲染属性`Render Props`
 *   `react-hooks`
 
-## [#](#_20-说说你用react有什么坑点) 20 说说你用react有什么坑点
+## 20 说说你用react有什么坑点
 
 *   `JSX`做表达式判断时候，需要强转为`boolean`类型
     *   如果不使用 `!!b` 进行强转数据类型，会在页面里面输出 `0`。
@@ -3413,7 +3413,7 @@ AComponent.prototype instanceof React.Component
 *   给组件添加`ref`时候，尽量不要使用匿名函数，因为当组件更新的时候，匿名函数会被当做新的`prop`处理，让`ref`属性接受到新函数的时候，`react`内部会先清空`ref`，也就是会以`null`为回调参数先执行一次`ref`这个`props`，然后在以该组件的实例执行一次`ref`，所以用匿名函数做`ref`的时候，有的时候去`ref`赋值后的属性会取到`null`
 *   遍历子节点的时候，不要用 `index` 作为组件的 `key` 进行传入
 
-## [#](#_21-react和vue的区别) 21 react和vue的区别
+## 21 react和vue的区别
 
 **共同**
 
@@ -3427,9 +3427,9 @@ AComponent.prototype instanceof React.Component
 *   `React`函数式编程，`Vue`是声明式编程
 *   `React`更多的是自力更生，`Vue`把你想要的都给你
 
-## [#](#_22-对react实现原理的理解) 22 对React实现原理的理解
+## 22 对React实现原理的理解
 
-### [#](#前言介绍) 前言介绍
+### 前言介绍
 
 *   `react` 和 `vue` 都是基于 `vdom` 的前端框架，之所以用 `vdom` 是因为可以精准的对比关心的属性，而且还可以跨平台渲染
 *   但是开发不会直接写 `vdom`，而是通过 `jsx` 这种接近 `html` 语法的 `DSL`，编译产生 `render function`，执行后产生 `vdom`
@@ -3451,7 +3451,7 @@ AComponent.prototype instanceof React.Component
 
 下面展开分析
 
-### [#](#vdom) vdom
+### vdom
 
 为什么 `react` 和 `vue` 都要基于 `vdom` 呢？直接操作真实 `dom` 不行么？
 
@@ -3482,7 +3482,7 @@ AComponent.prototype instanceof React.Component
 
 然后用渲染器把它渲染出来，但是要让开发去写这样的 `vdom` 么？那肯定不行，这样太麻烦了，大家熟悉的是 `html` 那种方式，所以我们要引入编译的手段
 
-### [#](#dsl-的编译) dsl 的编译
+### dsl 的编译
 
 *   `dsl` 是 `domain specific language`，领域特定语言的意思，`html`、`css` 都是 `web` 领域的 `dsl`
 *   直接写 `vdom` 太麻烦了，所以前端框架都会设计一套 `dsl`，然后编译成 `render function`，执行后产生 `vdom`。
@@ -3492,7 +3492,7 @@ AComponent.prototype instanceof React.Component
 
 编译成 `render function` 后再执行就是我们需要的 `vdom`。接下来渲染器把它渲染出来就行了。那渲染器怎么渲染 `vdom` 的呢？
 
-### [#](#渲染-vdom) 渲染 vdom
+### 渲染 vdom
 
 渲染 `vdom` 也就是通过 `dom api` 增删改 `dom`。比如一个 `div`，那就要 `document.createElement` 创建元素，然后 `setAttribute` 设置属性，`addEventListener` 设置事件监听器。如果是文本，那就要 `document.createTextNode` 来创建。所以说根据 `vdom` 类型的不同，写个 `if else`，分别做不同的处理就行了。没错，不管 `vue` 还是 `react`，渲染器里这段 `if else` 是少不了的：
 
@@ -3511,7 +3511,7 @@ switch (vdom.tag) {
 
 > `react` 里是通过 `tag` 来区分 `vdom` 类型的，比如 `HostComponent` 就是元素，`HostText` 就是文本，`FunctionComponent`、`ClassComponent` 就分别是函数组件和类组件。那么问题来了，组件怎么渲染呢？这就涉及到组件的原理了：
 
-### [#](#组件) 组件
+### 组件
 
 > 我们的目标是通过 `vdom` 描述界面，在 `react` 里会使用 `jsx`。这样的 `jsx` 有的时候是基于 `state` 来动态生成的。如何把 `state` 和 `jsx` 关联起来呢？封装成 `function`、`class` 或者 `option`对象的形式。然后在渲染的时候执行它们拿到 `vdom`就行了。
 
@@ -3557,7 +3557,7 @@ render(childVdom);
 
 所以组件本质上只是对产生 `vdom` 的逻辑的封装，函数的形式、`option` 对象的形式、`class` 的形式都可以。就像 `vue3` 也有了函数组件一样，组件的形式并不重要。基于 `vdom` 的前端框架渲染流程都差不多，vue 和 react 很多方面是一样的。但是管理状态的方式不一样，`vue` 有响应式，而 `react` 则是 `setState` 的 `api` 的方式。真说起来，vue 和 react 最大的区别就是状态管理方式的区别，因为这个区别导致了后面架构演变方向的不同。
 
-### [#](#状态管理) 状态管理
+### 状态管理
 
 > `react` 是通过 `setState` 的 `api` 触发状态更新的，更新以后就重新渲染整个 `vdom`。而 `vue` 是通过对状态做代理，`get` 的时候收集以来，然后修改状态的时候就可以触发对应组件的 `render` 了。
 
@@ -3569,12 +3569,12 @@ render(childVdom);
 
 那 `vue` 为啥可以做到精准的更新变化的组件呢？因为响应式的代理呀，不管是子组件、父组件、还是其他位置的组件，只要用到了对应的状态，那就会被作为依赖收集起来，状态变化的时候就可以触发它们的 `render`，不管是组件是在哪里的。这就是为什么 `react` 需要重新渲染整个 `vdom`，而 `vue` 不用。这个问题也导致了后来两者架构上逐渐有了差异。
 
-### [#](#react-架构的演变) react 架构的演变
+### react 架构的演变
 
 *   `react15` 的时候，和 `vue` 的渲染流程还是很像的，都是递归渲染 `vdom`，增删改 `dom` 就行。但是因为状态管理方式的差异逐渐导致了架构的差异。
 *   `react` 的 `setState` 会渲染整个 `vdom`，而一个应用的所有 `vdom` 可能是很庞大的，计算量就可能很大。浏览器里 `js` 计算时间太长是会阻塞渲染的，会占用每一帧的动画、重绘重排的时间，这样动画就会卡顿。作为一个有追求的前端框架，动画卡顿肯定是不行的。但是因为 `setState` 的方式只能渲染整个 `vdom`，所以计算量大是不可避免的。那能不能把计算量拆分一下，每一帧计算一部分，不要阻塞动画的渲染呢？顺着这个思路，`react` 就改造为了 `fiber` 架构。
 
-### [#](#fiber-架构) fiber 架构
+### fiber 架构
 
 优化的目标是打断计算，分多次进行，但现在递归的渲染是不能打断的，有两个方面的原因导致的：
 
@@ -3718,9 +3718,9 @@ function workLoop() {
 *   它之后就是 `layout` 阶段了，因为这个阶段已经可以拿到布局信息了，会同步调用 `useLayoutEffect` 的回调函数。而且这个阶段可以拿到新的 `dom` 节点，还会更新下 `ref`。
 *   至此，我们对 `react` 的新架构，`render`、`commit` 两大阶段都干了什么就理清了。
 
-## [#](#_23-react18新增了哪些特性) 23 React18新增了哪些特性
+## 23 React18新增了哪些特性
 
-### [#](#前言) 前言
+### 前言
 
 *   在 `2021` 年 `6` 月份，`React 18 Working Group`（`React 18` 工作组，简称 `reactwg`）成立了，并且公布了 `v18` 版本的发布计划，经过将近一年的迭代和准备，在 `2022` 年 `3` 月 `29` 日，`React 18` 正式版终于发布了
 *   `react 17` 的发布时间是 `2020` 年 `10` 月 `20`号，距离 `React 18` 发布足足间隔一年半，并且`v17`中只有三个小版本，分别是`17.0.0`、`17.0.1`、`17.0.2`
@@ -3735,7 +3735,7 @@ function workLoop() {
 
 > `React 18` 中引入的新特性是使用现代浏览器的特性构建的，在`IE`中无法支持的`polyfill`，比如`micro-tasks`
 
-### [#](#新特性一览) 新特性一览
+### 新特性一览
 
 *   新增了`useId`，`startTransition`，`useTransition`，`useDeferredValue`，`useSyncExternalStore`，`useInsertionEffect`等新的 `hook API`
 *   针对浏览器和服务端渲染的 `React DOM API` 都有新的变化
@@ -3750,7 +3750,7 @@ function workLoop() {
     *   `setState`自动批处理
     *   `Stricter Strict Mode`严格模式
 
-### [#](#render-api) Render API
+### Render API
 
 为了更好的管理`root`节点，`React 18` 引入了一个新的 `root API`，新的 `root API` 还支持 `new concurrent renderer`（并发模式的渲染），它允许你进入`concurrent mode`（并发模式）
 
@@ -3848,7 +3848,7 @@ const MyButton: React.FC<MyButtonProps> = ({ children }) => {
 export default MyButton;
 ```
 
-### [#](#setstate合并更新) setState合并更新
+### setState合并更新
 
 *   `React 18` 通过在默认情况下执行批处理来实现了开箱即用的性能改进
 *   批处理是指为了获得更好的性能，在数据层，将`多个状态更新`批量处理，合并成`一次更新`（在视图层，将`多个渲染`合并成`一次渲染`）
@@ -3896,7 +3896,7 @@ function handleClick() {
 *   在 `18` 之前，只有在`react`事件处理函数中，才会自动执行批处理，其它情况会多次更新
 *   在 `18` 之后，任何情况都会自动执行批处理，多次更新始终合并为一次
 
-### [#](#flushsync) flushSync
+### flushSync
 
 > 批处理是一个`破坏性改动`，如果你想退出批量更新，你可以使用 `flushSync`，建议尽量不要这么做
 
@@ -3928,7 +3928,7 @@ export default App;
 
 > 注意：`flushSync` 函数内部的多个 `setState` 仍然为批量更新
 
-### [#](#改进suspense) 改进Suspense
+### 改进Suspense
 
 `Suspense`用于数据获取，可以“等待”目标代码加载，并且可以直接指定一个加载的界面（像是个 `spinner`），让它在用户等待的时候显示。
 
@@ -3987,7 +3987,7 @@ export default class ErrorBoundaryPage extends React.Component {
 }
 ```
 
-### [#](#支持concurrent模式) 支持Concurrent模式
+### 支持Concurrent模式
 
 带来新的`API`，如`startTransition`、`useDeferredValue`等
 
@@ -4009,7 +4009,7 @@ export default class ErrorBoundaryPage extends React.Component {
 
 `Concurrent` 模式减少了防抖和节流在 `UI` 中的需求。因为渲染是可以中断的，`React` 不需要人为地 延迟 工作以避免卡顿（比如使用`setTimeout`）。它可以立即开始渲染，但是当需要保持应用响应时中断这项工作
 
-### [#](#组件返回undefined不再报错) 组件返回undefined不再报错
+### 组件返回undefined不再报错
 
 ```
 export default function UndefinedPage(props) {
@@ -4021,7 +4021,7 @@ export default function UndefinedPage(props) {
 
 并且还有一点，这个改动和`React18`之后的特性也相关。比如`Suspense`，如果我不想要`fallback`所以才赋值`undefined`，但是`React`报错，这理论上有点矛盾
 
-### [#](#starttransition) startTransition
+### startTransition
 
 `startTransition`包裹里的更新函数被当做是非紧急事件，如果有别的紧急更新（`urgent update`）进来，那么这个`startTransition`包裹里的更新则会被打断
 
@@ -4117,7 +4117,7 @@ const [isPending, startTransition] = useTransition();
 
 如果`transition`未完成，`isPending`值为`true`，否则为`false`
 
-### [#](#usedeferredvalue) useDeferredValue
+### useDeferredValue
 
 > 使得我们可以延迟更新某个不那么重要的部分
 
@@ -4181,9 +4181,9 @@ export default memo(function MySlowList({text}) {
 
 **源码**
 
-## [#](#_24-react19新增了哪些特性) 24 React19新增了哪些特性
+## 24 React19新增了哪些特性
 
-### [#](#文档元数据和样式表支持) 文档元数据和样式表支持
+### 文档元数据和样式表支持
 
 **原生支持元数据标签：**
 
@@ -4213,7 +4213,7 @@ function BlogPost({post}) {
 }
 ```
 
-### [#](#server-components与服务器端渲染) Server Components与服务器端渲染
+### Server Components与服务器端渲染
 
 *   `Server Components`提供了一种全新的组件渲染模式，允许在服务器上提前渲染组件，这减少了客户端的渲染负担，提升了页面的加载速度和性能
 *   静态HTML生成
@@ -4253,7 +4253,7 @@ function MyPage() {
 export default MyPage;
 ```
 
-### [#](#hooks相关) Hooks相关
+### Hooks相关
 
 React 19 的最重要改动，是新增了几个 Hook，均是针对 form 和异步网络请求通用能力的封装。有点类似 react-query 的 useQuery，或者 ahooks 的 useRequest
 
@@ -4290,7 +4290,7 @@ function BasicDemo() {
 
 上面是一个最简单的网络请求示例，点击按钮后，请求 `updateName` 接口，同时维护了 `isPending` 和 `error` 两个请求相关的状态
 
-#### [#](#usetransition-支持异步函数) useTransition 支持异步函数
+#### useTransition 支持异步函数
 
 > `useTransition` 是 `React 18` 新增的一个 Hook，主要用来标记低优先级更新，低优先级更新是可以被中断的。在 React 18 中，`useTransition` 返回的 `isPending` 代表这次低优先级的更新正在等待中。
 
@@ -4334,7 +4334,7 @@ export default function BasicDemo() {
 *   自动维护了 `isPending` 状态
 *   标记 `updateName` 触发的更新为低优先更新，不会阻塞 UI 渲染
 
-#### [#](#useactionstate-管理异步函数状态) useActionState 管理异步函数状态
+#### useActionState 管理异步函数状态
 
 `useActionState` 是 `React 19` 新增的一个 `Hook`，用来管理异步函数，自动维护了 `data`、`action`、`pending` 等状态。 经过 `useActionState` 改造的代码如下：
 
@@ -4404,7 +4404,7 @@ const [state, formAction, isPending] = useActionState(fn, initialState, permalin
 <form action={handleSubmit}></form>
 ```
 
-#### [#](#use) use
+#### use
 
 > React19 最优雅的异步解决方案 use + Suspense
 
@@ -4499,7 +4499,7 @@ function HorizontalRule({ show }) {
 *   这将简化某些用例的组件层次结构，因为在循环或条件语句中读取上下文的唯一方法是将组件拆分为两部分。
 *   它在性能方面也是一个巨大的进步，因为即使上下文发生了变化，你现在也可以有条件地跳过组件的重新渲染
 
-#### [#](#使用-useoptimistic-进行乐观更新) 使用 useOptimistic 进行乐观更新
+#### 使用 useOptimistic 进行乐观更新
 
 > 乐观更新是一种常见的体验优化手段，在发送异步请求之前，我们默认请求是成功的，让用户立即看到成功后的状态。
 
@@ -4652,7 +4652,7 @@ const handleLike = async () => {
 
 我觉得在实际业务开发中，几乎不会用到上述 Hook。
 
-#### [#](#useformstatus-获取表单状态) useFormStatus 获取表单状态
+#### useFormStatus 获取表单状态
 
 `useFormStatus` 是 `React 19` 新增的一个 `Hook`，主要用来快捷读取到最近的父级 `form` 表单的数据，其实就是类似 `Context` 的封装。
 
@@ -4686,7 +4686,7 @@ const { pending, data, method, action } = useFormStatus();
 *   `action`：`form` 的 `action` 属性，如果 `action` 不是函数，则为 `null`
 *   `useFormStatus` 使用场景较窄，绝大部分开发者不会用到。
 
-### [#](#预加载资源) 预加载资源
+### 预加载资源
 
 *   在初始文档加载和客户端更新期间，告诉浏览器有关资源可能需要尽早加载的资源可能会对页面性能产生巨大影响
 *   React 19包括许多用于加载和预加载浏览器资源的新API，以使其尽可能容易地建立不受效率低下的资源加载来阻止的出色体验
@@ -4721,7 +4721,7 @@ function MyComponent() {
 
 > 这些API可用于通过从样式表加载中移动其他资源（例如字体）来优化初始页面加载。他们还可以通过预取预约的资源列表来使客户更新更快，然后在单击甚至悬停时急切地对这些资源进行预加载
 
-### [#](#ref) ref
+### ref
 
 在之前，父组件传递 `ref` 给子组件，子组件如果要消费，则必须通过 `forwardRef` 来消费。
 
@@ -4773,7 +4773,7 @@ export const Input = ({ ref }) => {
 />
 ```
 
-### [#](#context) Context
+### Context
 
 在 `React 19` 之前，我们需要使用 `Context.Provider`，比如
 

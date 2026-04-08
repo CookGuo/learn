@@ -1,22 +1,22 @@
 ---
-title: 前端高频面试题-精选篇-前端安全模块 | 前端进阶之旅 - 前端求职面试刷题宝典
+title: 前端高频面试题-精选篇-前端安全模块 
 source: https://interview.poetries.top/docs/excellent-docs/13-前端安全模块.html
 crawled: 2026-04-08
 ---
 
-# 前端高频面试题-精选篇-前端安全模块 | 前端进阶之旅 - 前端求职面试刷题宝典
+# 前端高频面试题-精选篇-前端安全模块 
 
-> 原文: [https://interview.poetries.top/docs/excellent-docs/13-前端安全模块.html](https://interview.poetries.top/docs/excellent-docs/13-前端安全模块.html)
+
 
 ---
 
-## [#](#_1-代码注入xss) 1 代码注入XSS
+## 1. 代码注入XSS
 
 > 跨网站指令码（英语：`Cross-site scripting`，通常简称为：`XSS`）是一种网站应用程式的安全漏洞攻击，是代码注入的一种。它允许恶意使用者将程式码注入到网页上，其他使用者在观看网页时就会受到影响。这类攻击通常包含了 `HTML` 以及使用者端脚本语言
 
 > `XSS` 分为三种：反射型，存储型和 `DOM-based`
 
-### [#](#_1-1-如何攻击) 1.1 如何攻击
+### 1.1 如何攻击
 
 *   `XSS` 通过修改 `HTML`节点或者执行 `JS`代码来攻击网站。
 *   例如通过 `URL` 获取某些参数
@@ -28,7 +28,7 @@ crawled: 2026-04-08
 
 > 上述 `URL` 输入可能会将 `HTML` 改为 `<div><script>alert(1)</script></div>` ，这样页面中就凭空多了一段可执行脚本。这种攻击类型是反射型攻击，也可以说是 `DOM-based` 攻击
 
-### [#](#_1-2-如何防御) 1.2 如何防御
+### 1.2 如何防御
 
 > 最普遍的做法是转义输入输出的内容，对于引号，尖括号，斜杠进行转义
 
@@ -63,14 +63,14 @@ console.log(html);
 
 > 以上示例使用了 `js-xss`来实现。可以看到在输出中保留了 `h1` 标签且过滤了 `script` 标签
 
-### [#](#_1-3-cookie-如何防范-xss-攻击) 1.3 cookie 如何防范 XSS 攻击
+### 1.3 cookie 如何防范 XSS 攻击
 
 > XSS(跨站脚本攻击)是指攻击者在返回的 HTML 中嵌入 javascript 脚本，为了减轻这些 攻击，需要在 HTTP 头部配上，set-cookie
 
 *   `httpOnly` 这个属性可以防止 XSS,它会禁止 javascript 脚本来访问 `cookie`
 *   `secure`\- 这个属性告诉浏览器仅在请求为 `https` 的时候发送 `cookie`
 
-## [#](#_2-跨站请求伪造csrf) 2 跨站请求伪造CSRF
+## 2. 跨站请求伪造CSRF
 
 > *   `CSRF` 就是利用用户的登录态发起恶意请求
 > *   `CSRF（Cross-site request forgery）` 跨站请求伪造，是一种常见的攻击方式。是指 `A` 网站正常登陆后，`cookie` 正常保存登录信息，其他网站 B 通过某种方式调用 A 网站接口进行操作，`A` 的接口会在请求时会自动带上 `cookie`。
@@ -144,11 +144,11 @@ res.setHeader('Set-Cookie', `username=poetry;sameSite=strict;path=/;httpOnly;exp
 *   http请求，会自动携带Cookie。
 *   携带的cookie，还是http请求所在域名的cookie。
 
-### [#](#csrf怎么获取用户的登录态) CSRF怎么获取用户的登录态
+### CSRF怎么获取用户的登录态
 
 > 攻击全称不需要获取cookie，只是在危险的网站欺骗用户去点击已登录的网站链接，利用已登录的网站的自动发送cookie达到目的。因为http请求都会带着请求目标域下的`cookie`的，向同一个服务器发请求时会带上浏览器保存的对于那个服务器的cookie，而不管你从哪个网站向目标网站发请求
 
-### [#](#cookie通常是不能跨域访问的-那问什么会有csrf攻击) cookie通常是不能跨域访问的，那问什么会有csrf攻击
+### cookie通常是不能跨域访问的，那问什么会有csrf攻击
 
 **疑问：**
 
@@ -159,7 +159,7 @@ res.setHeader('Set-Cookie', `username=poetry;sameSite=strict;path=/;httpOnly;exp
 *   浏览器会依据加载的域名附带上对应域名`cookie`，又不是发送b站的`cookie`。
 *   就是如果用户在`a`站登录了生成了授权的`cookie` 之类的，然后访问`b`站，b站故意构造请求a站的请求，如删除操作之类的，用`script`，`img`或者`iframe`之类的加载`a`站着个地址，浏览器会附带上`a`站此登录用户的授权`cookie`信息，这样就构成`crsf`，会删除掉当前用户的数据
 
-### [#](#总结) 总结
+### 总结
 
 *   `XSS`攻击: 注入恶意代码
     *   `cookie` 设置 `httpOnly`
@@ -170,9 +170,9 @@ res.setHeader('Set-Cookie', `username=poetry;sameSite=strict;path=/;httpOnly;exp
     *   设置白名单，不被第三方网站请求
     *   请求校验
 
-## [#](#_3-浏览器同源策略-sop) 3 浏览器同源策略 SOP
+## 3. 浏览器同源策略 SOP
 
-### [#](#_3-1-同源) 3.1 同源
+### 3.1 同源
 
 > 先解释何为同源：协议、域名、端口都一样，就是同源。
 
@@ -184,7 +184,7 @@ res.setHeader('Set-Cookie', `username=poetry;sameSite=strict;path=/;httpOnly;exp
 | http://niconico.com/spirit | x |
 | https://niconico.com:8080/spirit | x |
 
-### [#](#_3-2-限制) 3.2 限制
+### 3.2 限制
 
 *   你之所以会遇到 **跨域问题**，正是因为 SOP 的各种限制。但是具体来说限制了什么呢？
 *   如果你说 SOP 就是“限制非同源资源的获取”，这不对，最简单的例子是引用图片、css、js 文件等资源的时候就允许跨域。
@@ -209,7 +209,7 @@ res.setHeader('Set-Cookie', `username=poetry;sameSite=strict;path=/;httpOnly;exp
 *   更加肆意地进行 `CSRF`
 *   接口被第三方滥用
 
-### [#](#_3-3-绕过跨域) 3.3 绕过跨域
+### 3.3 绕过跨域
 
 > `SOP` 虽然让用户更安全，同时也会对程序员带来一定程度的麻烦，因为有时候业务上就是有跨域的需求。绕过跨域的方案由于篇幅所限，并且网上也很多相关文章，所以不在这里展开解决跨域的方案，只给出几个关键词：
 
@@ -225,7 +225,7 @@ res.setHeader('Set-Cookie', `username=poetry;sameSite=strict;path=/;httpOnly;exp
 *   使用 `location.hash` 或 `window.name` 进行信息交流
 *   使用 `postMessage`
 
-### [#](#_3-4-浏览器同源策略与ajax) 3.4 浏览器同源策略与ajax
+### 3.4 浏览器同源策略与ajax
 
 > 对于 ajax 请求，在获得数据之后你能肆意进行 js 操作。这时候虽然同源策略会阻止响应，但依然会发出请求。因为**执行响应拦截的是浏览器**而不是后端程序。事实上你的**请求已经发到服务器**并返回了结果，但是迫于安全策略，浏览器不允许你**继续进行 js 操作**，所以报出你熟悉的 `blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.`。
 
@@ -233,7 +233,7 @@ res.setHeader('Set-Cookie', `username=poetry;sameSite=strict;path=/;httpOnly;exp
 
 不过**可以防范 CSRF 的例外**还是有的，浏览器并不是让所有请求都发送成功，上述情况仅限于**简单请求**，相关知识会在下面 CORS 一节详细解释。
 
-## [#](#_4-跨域资源共享-cors) 4 跨域资源共享 CORS
+## 4. 跨域资源共享 CORS
 
 跨域是浏览器限制，跨域资源共享（Cross-origin resource sharing）也是服务器与浏览器协调的结果。
 
@@ -252,14 +252,14 @@ Content-Length: 423
 
 对于 CORS，请求分两种。
 
-### [#](#_4-1-简单请求) 4.1 简单请求
+### 4.1 简单请求
 
 *   请求方法使用 `GET`、`POST` 或 `HEAD`
 *   `Content-Type` 设为 `application/x-www-form-urlencoded`、`multipart/form-data` 或 `text/plain`
 
 符合上面两个条件的都为 `CORS` 简单请求。简单请求都会直接发到服务器，会造成 `CSRF`。
 
-### [#](#_4-2-预检请求) 4.2 预检请求
+### 4.2 预检请求
 
 > 不符合简单请求要求的请求都需要先发送预检请求（Preflight Request）。浏览器会在真正请求前发送 OPTION 方法的请求向服务器询问当前源是否符合 CORS 目标，验证通过后才会发送正式请求。
 
@@ -269,7 +269,7 @@ Content-Length: 423
 
 上面提到的**可以防范 CSRF 的例外**，就是指预检请求。即使跨域成功请求预检，但真正请求并不能发出去，这就保证了 `CSRF` 无法成功。
 
-### [#](#_4-3-cors-与-cookie) 4.3 CORS 与 cookie
+### 4.3 CORS 与 cookie
 
 *   与同域不同，用于跨域的 `CORS` 请求默认不发送 `Cookie` 和 `HTTP` 认证信息，前后端都要在配置中设定请求时带上 `cookie`。
 *   这就是为什么在进行 `CORS` 请求时 `axios` 需要设置 `withCredentials: true`。
@@ -295,7 +295,7 @@ Content-Length: 423
 
 > 顺带一提，`Access-Control-Allow-Credentials` 设为 `true` 时，`Access-Control-Allow-Origin` 强制不能设为 `*`，为了安全，也是挺麻烦
 
-## [#](#_5-密码安全) 5 密码安全
+## 5. 密码安全
 
 **加盐**
 

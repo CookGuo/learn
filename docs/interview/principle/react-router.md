@@ -1,18 +1,18 @@
 ---
-title: React Router原理与实现详解|原理篇 | 前端进阶之旅 - 前端求职面试刷题宝典
+title: React Router原理与实现详解|原理篇 
 source: https://interview.poetries.top/principle-docs/react/01-React%20router原理.html
 crawled: 2026-04-08
 ---
 
-# React Router原理与实现详解|原理篇 | 前端进阶之旅 - 前端求职面试刷题宝典
+# React Router原理与实现详解|原理篇 
 
-> 原文: [https://interview.poetries.top/principle-docs/react/01-React%20router原理.html](https://interview.poetries.top/principle-docs/react/01-React%20router原理.html)
+
 
 ---
 
-## [#](#一、react-router基础之history) 一、React Router基础之history
+## 一、React Router基础之history
 
-### [#](#_1-1-history介绍) 1.1 History介绍
+### 1.1 History介绍
 
 > `history`是一个独立的第三方js库，可以用来兼容在不同浏览器、不同环境下对历史记录的管理，拥有统一的`API`。具体来说里面的`history`分为三类
 
@@ -58,7 +58,7 @@ function createLocation() {
 }
 ```
 
-### [#](#_1-2-内部解析) 1.2 内部解析
+### 1.2 内部解析
 
 > 三个`API`的大致的技术实现如下
 
@@ -66,7 +66,7 @@ function createLocation() {
 *   `createHashHistory`: 通过`hash`来存储在不同状态下的`history`信息
 *   `createMemoryHistory`: 在内存中进行历史记录的存储\`
 
-#### [#](#_1-2-1-执行url前进) 1.2.1 执行URL前进
+#### 1.2.1 执行URL前进
 
 *   `createBrowserHistory`: `pushState`、`replaceState`
 *   `createHashHistory`: `location.hash=*** location.replace()`
@@ -111,7 +111,7 @@ function finishTransition(location) {
 }
 ```
 
-#### [#](#_1-2-2-检测url回退) 1.2.2 检测URL回退
+#### 1.2.2 检测URL回退
 
 *   `createBrowserHistory`: `popstate`
 *   `createHashHistory`: `hashchange`
@@ -151,7 +151,7 @@ function go(n) {
 }
 ```
 
-#### [#](#_1-2-3-state的存储) 1.2.3 state的存储
+#### 1.2.3 state的存储
 
 > 为了维护`state`的状态，将其存储在`sessionStorage`里面:
 
@@ -177,7 +177,7 @@ function readState(key) {
 }
 ```
 
-### [#](#_1-3-小结) 1.3 小结
+### 1.3 小结
 
 **路由原理**
 
@@ -189,11 +189,11 @@ function readState(key) {
 > *   `www.test.com/##/` 就是 `Hash URL`，当 `##` 后面的哈希值发生变化时，不会向服务器请求数据，可以通过 `hashchange` 事件来监听到 `URL` 的变化，从而进行跳转页面。
 > *   `History`模式是 `HTML5`新推出的功能，比之 `Hash URL` 更加美观
 
-## [#](#二、react-router的基本原理) 二、react-router的基本原理
+## 二、react-router的基本原理
 
 > 实现`URL`与`UI`界面的同步。其中在`react-router`中，`URL`对应`Location`对象，而`UI`是由`react components`来决定的，这样就转变成`location`与`components`之间的同步问题
 
-### [#](#_2-1-优点) 2.1 优点
+### 2.1 优点
 
 *   与`React`融为一体,专为`react`量身打造，编码风格与`react`保持一致，例如路由的配置可以通过`component`来实现
 *   不需要手工维护路由`state`，使代码变得简单
@@ -203,7 +203,7 @@ function readState(key) {
     *   路由加载: 可以同步记载，也可以异步加载，这样就可以实现按需加载
 *   使用方式: 不仅可以在浏览器端的使用，而且可以在服务器端的使用
 
-### [#](#_2-2-react-router具体实现) 2.2 react-router具体实现
+### 2.2 react-router具体实现
 
 > `react-router`在`history`库的基础上，实现了`URL`与`UI`的同步，分为两个层次来描述具体的实现。
 
@@ -269,7 +269,7 @@ React.render(<App />, document.body)
 
 > 为了简单说明，只描述使用`browserHistory`的实现，`hashHistory`的实现过程是类似的，就不在说明
 
-### [#](#_2-3-用户点击了link组件后路由系统中到底发生了哪些变化) 2.3 用户点击了Link组件后路由系统中到底发生了哪些变化
+### 2.3 用户点击了Link组件后路由系统中到底发生了哪些变化
 
 > `Link` 组件最终会渲染为 `HTML` 标签 `<a>`，它的 `to`、`query`、`hash`属性会被组合在一起并渲染为 `href` 属性。虽然 `Link` 被渲染为超链接，但在内部实现上使用脚本拦截了浏览器的默认行为，然后调用了`history.pushState` 方法
 
