@@ -1,0 +1,149 @@
+/* 自定义 CSS 变量覆盖 */
+:root {
+  --vp-c-brand-1: #646cff;
+  --vp-c-brand-2: #747bff;
+  --vp-c-brand-3: #858cff;
+  --vp-c-brand-soft: rgba(100, 108, 255, 0.14);
+}
+
+/* 首页 Hero 区域样式 */
+.VPHero {
+  padding: calc(var(--vp-nav-height) + 80px) 0 80px !important;
+}
+
+.VPHero .name {
+  font-size: 56px !important;
+  background: linear-gradient(120deg, #646cff 30%, #42d392);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.VPHero .tagline {
+  font-size: 20px !important;
+  color: var(--vp-c-text-2);
+}
+
+/* 特性卡片样式 */
+.VPFeatures {
+  padding: 40px 0 !important;
+}
+
+.VPFeatures .VPFeature {
+  background: var(--vp-c-bg-soft);
+  border-radius: 12px;
+  padding: 24px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.VPFeatures .VPFeature:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
+}
+
+/* 导航栏样式 */
+.VPNav {
+  backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.8) !important;
+}
+
+.dark .VPNav {
+  background: rgba(30, 30, 30, 0.8) !important;
+}
+
+/* 侧边栏样式 */
+.VPSidebar {
+  background: var(--vp-c-bg) !important;
+}
+
+.VPSidebarItem .text {
+  font-size: 14px;
+}
+
+.VPSidebarItem.is-active .text {
+  font-weight: 600;
+}
+
+/* 代码块样式 */
+.vp-doc div[class*='language-'] {
+  border-radius: 8px;
+  margin: 16px 0;
+}
+
+.vp-doc pre {
+  padding: 20px 24px;
+}
+
+/* 自定义块样式 */
+.vp-doc .custom-block {
+  border-radius: 8px;
+  padding: 16px 20px;
+  margin: 16px 0;
+}
+
+.vp-doc .custom-block.tip {
+  border: 1px solid var(--vp-c-brand);
+  background: var(--vp-c-brand-soft);
+}
+
+/* 链接样式 */
+.vp-doc a {
+  color: var(--vp-c-brand-1);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.vp-doc a:hover {
+  color: var(--vp-c-brand-2);
+  text-decoration: underline;
+}
+
+/* 表格样式 */
+.vp-doc table {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.vp-doc th {
+  background: var(--vp-c-bg-soft);
+  font-weight: 600;
+}
+
+/* 模块卡片网格 */
+.module-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+/* 搜索框样式 */
+.VPLocalSearchBox .search-input {
+  border-radius: 8px;
+  border: 1px solid var(--vp-c-divider);
+}
+
+/* 页脚样式 */
+.VPFooter {
+  background: var(--vp-c-bg-soft) !important;
+  padding: 24px 0 !important;
+}
+
+/* 滚动条样式 */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--vp-c-bg-soft);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--vp-c-gray-3);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--vp-c-gray-2);
+}

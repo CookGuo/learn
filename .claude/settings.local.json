@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:interview.poetries.top)",
+      "Bash(curl -s \"https://interview.poetries.top/docs/base.html\")",
+      "Read(//tmp/**)",
+      "Bash(pnpm build:*)"
+    ]
+  }
+}
