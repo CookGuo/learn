@@ -57,7 +57,9 @@ function buildNav() {
     },
     { text: '✅ 自检篇', link: '/interview/self-check/' },
     { text: '📅 每日一题', link: '/interview/daily/' },
-    { text: '🟢 Node.js', link: '/node-interview/' }
+    { text: '🟢 Node.js', link: '/node-interview/' },
+    { text: '⚙️ 工程化', link: '/engineering/' },
+    { text: '💚 Vue', link: '/vue-interview/' }
   ]
   return nav
 }
