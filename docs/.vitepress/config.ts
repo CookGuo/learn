@@ -56,7 +56,8 @@ function buildNav() {
       ]
     },
     { text: '✅ 自检篇', link: '/interview/self-check/' },
-    { text: '📅 每日一题', link: '/interview/daily/' }
+    { text: '📅 每日一题', link: '/interview/daily/' },
+    { text: '🟢 Node.js', link: '/node-interview/' }
   ]
   return nav
 }
