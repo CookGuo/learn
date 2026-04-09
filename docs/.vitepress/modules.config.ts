@@ -412,4 +412,89 @@ export const modules: ModuleConfig[] = [
       },
     ],
   },
+  {
+    id: 'react-interview',
+    title: 'React 面试',
+    description: 'React 基础、优化、原理、生态、实践',
+    icon: '⚛️',
+    order: 12,
+    enabled: true,
+    access: 'public',
+    sidebar: [
+      {
+        text: '前言',
+        items: [
+          { text: '前言', link: '/react-interview/01-preface' },
+        ],
+      },
+      {
+        text: '基础篇',
+        items: [
+          { text: '认识 JSX', link: '/react-interview/02-jsx' },
+          { text: 'Component', link: '/react-interview/03-component' },
+          { text: 'State', link: '/react-interview/04-state' },
+          { text: 'Props', link: '/react-interview/05-props' },
+          { text: 'LifeCycle', link: '/react-interview/06-lifecycle' },
+          { text: 'Ref', link: '/react-interview/07-ref' },
+          { text: 'Context', link: '/react-interview/08-context' },
+          { text: '模块化 CSS', link: '/react-interview/09-css' },
+          { text: '高阶组件', link: '/react-interview/10-hoc' },
+        ],
+      },
+      {
+        text: '优化篇',
+        items: [
+          { text: '渲染控制', link: '/react-interview/11-render-control' },
+          { text: '渲染调优', link: '/react-interview/12-render-optimize' },
+          { text: '处理海量数据', link: '/react-interview/13-data' },
+          { text: '细节处理', link: '/react-interview/14-detail' },
+        ],
+      },
+      {
+        text: '原理篇',
+        items: [
+          { text: '事件原理', link: '/react-interview/15-event' },
+          { text: '调度与时间片', link: '/react-interview/16-scheduler' },
+          { text: '调和与 Fiber', link: '/react-interview/17-fiber' },
+          { text: 'Hooks 原理', link: '/react-interview/18-hooks' },
+          { text: 'Context 原理', link: '/react-interview/29-context原理' },
+          { text: 'beginWork 和 render', link: '/react-interview/30-beginWork' },
+          { text: '更新流程进入调度', link: '/react-interview/33-schedule' },
+        ],
+      },
+      {
+        text: '生态篇',
+        items: [
+          { text: 'React Router', link: '/react-interview/19-router' },
+          { text: 'React Redux', link: '/react-interview/20-redux' },
+          { text: 'React Mobx', link: '/react-interview/21-mobx' },
+        ],
+      },
+      {
+        text: '实践篇',
+        items: [
+          { text: '实现 Mini Router', link: '/react-interview/22-mini-router' },
+          { text: '表单验证上', link: '/react-interview/23-form-1' },
+          { text: '表单验证下', link: '/react-interview/24-form-2' },
+          { text: '自定义弹窗', link: '/react-interview/25-modal' },
+          { text: '自定义 Hooks 设计', link: '/react-interview/26-hooks-design' },
+          { text: '自定义 Hooks 实践', link: '/react-interview/27-hooks-practice' },
+        ],
+      },
+      {
+        text: '总结篇',
+        items: [
+          { text: '如何有效阅读源码', link: '/react-interview/28-source' },
+        ],
+      },
+      {
+        text: 'V18 特性篇',
+        items: [
+          { text: 'useMutableSource', link: '/react-interview/31-mutable-source' },
+          { text: 'Transition', link: '/react-interview/32-transition' },
+          { text: 'Concurrent 模式', link: '/react-interview/34-concurrent' },
+        ],
+      },
+    ],
+  },
 ]

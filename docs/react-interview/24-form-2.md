@@ -1,0 +1,529 @@
+---
+title: 实践篇 表单验证下|React进阶专题 | 前端进阶学习
+source: https://interview.poetries.top/fe-improve-docs/react/react-improve/docs/24-实践篇%20表单验证下.html
+crawled: 2026-04-09
+---
+
+# 实践篇 表单验证下|React进阶专题 | 前端进阶学习
+
+> 原文: [https://interview.poetries.top/fe-improve-docs/react/react-improve/docs/24-实践篇%20表单验证下.html](https://interview.poetries.top/fe-improve-docs/react/react-improve/docs/24-实践篇%20表单验证下.html)
+
+---
+
+## [#](#一-前言) 一 前言
+
+上一章节主要讲了 Form 表单的设计原则，以及状态管理 FormStore 和自定义 hooks useForm 的编写，本章节将继续上一章节没有讲完的部分。
+
+通过本章节的学习，你将收获以下知识点：
+
+*   Form 设计及其编写。
+*   FormItem 设计及其编写。
+
+## [#](#二-form-编写) 二 Form 编写
+
+### [#](#_1-属性分析) 1 属性分析
+
+**属性设定**
+
+| 属性名称 | 作用 | 类型 |
+| --- | --- | --- |
+| `form` | 传入`useForm` 创建的 `FormStore`实例 | `FormStore` 实例对象 |
+| `onFinish` | 表单提交成功调用 | function ，一个参数，为表单的数据层 |
+| `onFinishFailed` | 表单提交失败调用 | function ，一个参数，为表单的数据层 |
+| `initialValues` | 设置表单初始化的值 | object |
+
+**细节问题**
+
+*   Form 接收类似 `onFinish` ｜ `onFinishFailed` 监听回调函数。
+*   Form 可以被 ref 标记，ref 可以获取 `FormStore` 核心方法。
+*   Form 要保留原生的 form 属性，当 submit 或者 reset 触发，自动校验/重置。
+
+### [#](#_2-代码实现) 2 代码实现
+
+**创建 context 保存 `FormStore` 核心 Api**。
+
+```
+import {  createContext  } from 'react'
+/* 创建一个 FormContext */
+const  FormContext = createContext()
+
+export default FormContext
+```
+
+*   创建一个 context 用来保存 `FormStore` 的核心 API 。
+
+**接下来就是重点 `Form` 编写**
+
+```
+function Form ({
+    form,
+    onFinish,
+    onFinishFailed,
+    initialValues,
+    children
+},ref){
+    /* 创建 form 状态管理实例 */
+    const formInstance = useForm(form,initialValues)
+    /* 抽离属性 -> 抽离 dispatch ｜ setCallback 这两个方法不能对外提供。  */
+    const { setCallback, dispatch  ,...providerFormInstance } = formInstance
+
+    /* 向 form 中注册回调函数 */
+    setCallback({
+        onFinish,
+        onFinishFailed
+    })
+
+    /* Form 能够被 ref 标记，并操作实例。 */
+    useImperativeHandle(ref,() => providerFormInstance , [])
+    /* 传递 */
+    const RenderChildren = <FormContext.Provider value={formInstance} > {children} </FormContext.Provider>
+
+    return <form
+        onReset={(e)=>{
+            e.preventDefault()
+            e.stopPropagation()
+            formInstance.resetFields() /* 重置表单 */
+        }}
+        onSubmit={(e)=>{
+            e.preventDefault()
+            e.stopPropagation()
+            formInstance.submit()      /* 提交表单 */
+        }}
+           >
+           {RenderChildren}
+        </form>
+}
+
+export default forwardRef(Form)
+```
+
+Form 实现细节分析：
+
+*   首先通过 useForm 创建一个 `formInstance` ，里面保存着操纵表单状态的方法，比如 `getFieldValue` ， `setFieldsValue` 等。
+*   从 `formInstance` 抽离出 setCallback ，dispatch 等方法，得到 `providerFormInstance` ，因为这些 api 不期望直接给开发者使用。通过 forwardRef + useImperativeHandle 来转发 ref， 将 providerFormInstance 赋值给 ref ， 开发者通过 ref 标记 Form ，本质上就是获取的 providerFormInstance 对象。
+*   通过 Context.Provider 将 `formInstance` 传递下去，提供给 `FormItem` 使用。
+*   创建原生 form 标签，绑定 React 事件 —— `onReset` 和 `onSubmit`，在事件内部分别调用， 重置表单状态的 `resetFields` 和提交表单的 `onSubmit`方法。
+
+## [#](#三-formitem-编写) 三 FormItem 编写
+
+接下来就是 `FormItem` 的具体实现细节。
+
+### [#](#_1-属性分析-2) 1 属性分析
+
+相比 antd 中的 FormItem ，属性要精简的多，这里我保留了一些核心的属性。
+
+| 属性名称 | 作用 | 类型 |
+| --- | --- | --- |
+| `name` (重要属性) | 证明表单单元项的键 name | string |
+| `label` | 表单标签属性 | string |
+| `height` | 表单单元项高度 | number |
+| `labelWidth` | lable 宽度 | number |
+| `required` | 是否必填 | boolean |
+| `trigger` | 收集字段值变更的方法 | string ， 默认为 onChange |
+| `validateTrigger` | 验证校验触发的方法 | string，默认为 onChange |
+| `rules` | 验证信息 | 里面包括验证方法 rule 和 验证失败提示文案 message |
+
+### [#](#_2-代码实现-2) 2 代码实现
+
+接下来就是 FormItem 的代码实现。
+
+```
+function FormItem ({
+    name,
+    children,
+    label,
+    height = 50 ,
+    labelWidth,
+    required = false ,
+    rules = {},
+    trigger = 'onChange',
+    validateTrigger = 'onChange'
+}){
+    const formInstance  = useContext(FormContext)
+    const { registerValidateFields , dispatch , unRegisterValidate } = formInstance
+    const [ , forceUpdate ] = useState({})
+    const onStoreChange = useMemo(()=>{
+        /* 管理层改变 => 通知表单项 */
+        const onStoreChange = {
+            changeValue(){
+                forceUpdate({})
+            }
+         }
+        return onStoreChange
+
+    },[ formInstance ])
+    useEffect(()=>{
+         /* 注册表单 */
+        name && registerValidateFields(name,onStoreChange,{ ...rules , required })
+        return function(){
+            /* 卸载表单 */
+           name &&  unRegisterValidate(name)
+        }
+    },[ onStoreChange ])
+     /* 使表单控件变成可控制的 */
+    const getControlled = (child)=> {
+        const mergeChildrenProps = { ...child.props }
+        if(!name) return mergeChildrenProps
+         /* 改变表单单元项的值 */
+        const handleChange  = (e)=> {
+             const value = e.target.value
+              /* 设置表单的值 */
+             dispatch({ type:'setFieldsValue' },name ,value)
+         }
+        mergeChildrenProps[trigger] = handleChange
+        if(required || rules ){
+             /* 验证表单单元项的值 */
+            mergeChildrenProps[validateTrigger] = (e) => {
+                 /* 当改变值和验证表单，用统一一个事件 */
+                if(validateTrigger === trigger){
+                    handleChange(e)
+                }
+                /* 触发表单验证 */
+                dispatch({ type:'validateFieldValue' },name)
+            }
+        }
+        /* 获取 value */
+        mergeChildrenProps.value = dispatch({ type:'getFieldValue' }, name) || ''
+        return mergeChildrenProps
+    }
+    let renderChildren
+    if(isValidElement(children)){
+        /* 获取 | 合并 ｜ 转发 | =>  props  */
+        renderChildren = cloneElement(children, getControlled(children))
+    }else{
+        renderChildren = children
+    }
+    return <Label
+        height={height}
+        label={label}
+        labelWidth={labelWidth}
+        required={required}
+           >
+         {renderChildren}
+         <Message
+             name={name}
+             {...dispatch({ type :'getFieldModel'},name)}
+         />
+     </Label>
+}
+```
+
+**FormItem** 的流程比较复杂，接下来我将一一讲解其流程。
+
+*   第一步： FormItem 会通过 useContext 获取到表单实例下的方法。
+*   第二步： 创建一个 useState 作为 FormItem 的更新函数 onStoreChange。
+*   第三步： 在 useEffect 中调用 `registerValidateFields` 注册表单项。此时的 FormItem 的更新函数 onStoreChange 会传入到 FormStore 中，上一章节讲到过，更新方法最终会注册到 FormStore 的 control 属性下，这样 FormStore 就可以选择性的让对应的 FormItem 更新。在 useEffect 销毁函数中，解绑表单项。
+*   第四步： 让 FormItem 包裹的表单控件变成受控的， 通过 `cloneElement` 向表单控件（ 比如 Input ） props 中，注册监听值变化的方法，默认为 onChange ，以及表单验证触发的方法 ，默认也是 onChange ，比如如下例子🌰：
+
+```
+   <FormItem
+        label="请输入小册名称"
+        labelWidth={150}
+        name="name"
+        required
+        rules={{
+            rule:/^[a-zA-Z0-9_\u4e00-\u9fa5]{4,32}$/,
+            message:'名称仅支持中文、英文字母、数字和下划线，长度限制4~32个字'
+        }}
+        trigger="onChange"
+        validateTrigger="onBlur"
+    >
+        <Input
+            placeholder="小册名称"
+        />
+    </FormItem>
+```
+
+如上，向 FormItem 中， 绑定监听变化的事件为 `onChange`，表单验证的事件为 `onBlur` 。
+
+**更新流程** ：那么整个流程，当组件值改变的时候，会触发 `onChange` 事件，本质上被上面的 `getControlled` 拦截，实质用 dispatch 触发 setFieldsValue ，改变 FormStore 表单的值，然后 FormStore 会用 onStoreChange 下的 changeValue 通知当前 FormItem 更新，FormItem 更新通过 dispatch 调用 getFieldValue 获取表单的最新值，并渲染视图。这样完成整个受控组件状态更新流程。
+
+**验证流程：** 当触发 `onBlur` 本质上用 dispatch 调用 validateFieldValue 事件，验证表单，然后 FormStore 会下发验证状态（是否验证通过）。
+
+完成**更新/验证**流程。
+
+*   第五步：渲染 `Label` 和 `Message` UI 视图。
+
+## [#](#四-index文件及其他组件) 四 Index文件及其他组件
+
+还有一些负责 UI 渲染的组件，以及表单控件，这里就简单介绍一下：
+
+### [#](#label) Label
+
+```
+function Label({ children , label ,labelWidth , required ,height}){
+    return <div className="form-label"
+        style={{ height:height + 'px'  }}
+           >
+       <div
+           className="form-label-name"
+           style={{ width : `${labelWidth}px` }}
+       >
+           {required ? <span style={{ color:'red' }} >*</span> : null}
+           {label}:
+        </div>  {children}
+    </div>
+}
+```
+
+*   Label 的作用就是渲染表单的标签。
+
+### [#](#message) Message
+
+```
+function Message(props){
+    const { status , message , required , name , value } = props
+    let showMessage = ''
+    let color = '#fff'
+    if(required && !value && status === 'reject'  ){
+        showMessage = `${name} 为必填项`
+        color = 'red'
+    }else if(status === 'reject'){
+        showMessage = message
+        color = 'red'
+    }else if(status === 'pendding'  ){
+        showMessage = null
+    }else if( status === 'resolve' ){
+        showMessage = '校验通过'
+        color = 'green'
+    }
+    return <div className="form-message" >
+       <span style={{ color  }}  >{showMessage}</span>
+    </div>
+}
+```
+
+*   message 显示表单验证的状态，比如失败时候的提示文案等，成功时候的提示文案。
+
+### [#](#input) Input
+
+```
+const Input = (props) => {
+    return <input
+        className="form-input"
+        {...props}
+           />
+}
+```
+
+*   Input 本质上就是 input 标签。
+
+### [#](#select-组件) Select 组件
+
+```
+function Select({ children,...props }){
+    return <select {...props}
+        className="form-input"
+           >
+        <option label={props.placeholder}
+            value={null}
+        >{props.placeholder}</option>
+        {children}
+    </select>
+}
+/* 绑定静态属性   */
+Select.Option = function ( props ){
+    return <option {...props}
+        className=""
+        label={props.children}
+           ></option>
+}
+
+export default Select
+```
+
+### [#](#index文件) Index文件
+
+Index 文件对组件整理，并暴露给开发者使用。
+
+```
+import Form from './component/Form'
+import FormItem from './component/FormItem'
+import Input from './component/Input'
+import Select from './component/Select'
+
+Form.FormItem = FormItem
+
+export {
+    Form,
+    Select,
+    Input,
+    FormItem
+}
+
+export default Form
+```
+
+## [#](#五-验证功能) 五 验证功能
+
+### [#](#验证-demo-编写) 验证 demo 编写
+
+```
+import React , { useRef , useEffect } from 'react'
+
+import Form , { Input , Select } from './form'
+
+const FormItem = Form.FormItem
+const Option = Select.Option
+
+function Index(){
+    const form = useRef(null)
+    useEffect(()=>{
+        console.log(form.current,'form.current')
+    },[])
+    const handleClick = () => {
+         form.current.submit((res)=>{
+             console.log(res)
+         })
+    }
+    const handleGetValue = ()=>{
+        console.log( form.current , 'form.current ' )
+    }
+    return <div style={{ marginTop:'50px' }} >
+        <Form  initialValues={{ author : '我不是外星人' }}
+            ref={form}
+        >
+            <FormItem
+                label="请输入小册名称"
+                labelWidth={150}
+                name="name"
+                required
+                rules={{
+                    rule:/^[a-zA-Z0-9_\u4e00-\u9fa5]{4,32}$/,
+                    message:'名称仅支持中文、英文字母、数字和下划线，长度限制4~32个字'
+                }}
+                validateTrigger="onBlur"
+            >
+                 <Input
+                     placeholder="小册名称"
+                 />
+            </FormItem>
+            <FormItem
+                label="作者"
+                labelWidth={150}
+                name="author"
+                required
+                validateTrigger="onBlur"
+            >
+                 <Input
+                     placeholder="请输入作者"
+                 />
+            </FormItem>
+            <FormItem label="邮箱"
+                labelWidth={150}
+                name="email"
+                rules={{ rule: /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/ ,message:'邮箱格式错误！'  }}
+                validateTrigger="onBlur"
+            >
+                <Input
+                    placeholder="请输入邮箱"
+                />
+            </FormItem>
+            <FormItem label="手机"
+                labelWidth={150}
+                name="phone"
+                rules={{ rule: /^1[3-9]\d{9}$/ ,message:'手机格式错误！'  }}
+                validateTrigger="onBlur"
+            >
+                <Input
+                    placeholder="请输入邮箱"
+                />
+            </FormItem>
+            <FormItem label="简介"
+                labelWidth={150}
+                name="des"
+                rules={{ rule: (value='') => value.length < 5   ,message:'简介不超过五个字符'  }}
+                validateTrigger="onBlur"
+            >
+                <Input placeholder="输入简介"  />
+            </FormItem>
+            <FormItem label="你最喜欢的前端框架"
+                labelWidth={150}
+                name="likes"
+                required
+            >
+                <Select  defaultValue={null}
+                    placeholder="请选择"
+                    width={120}
+                >
+                    <Option
+                        value={1}
+                    > React.js </Option>
+                    <Option value={2} > Vue.js </Option>
+                    <Option value={3} > Angular.js </Option>
+                </Select>
+            </FormItem>
+            <button className="searchbtn"
+                onClick={handleClick}
+                type="button"
+            >提交</button>
+            <button className="concellbtn"
+                type="reset"
+            >重置</button>
+        </Form>
+       <div style={{ marginTop:'20px' }} >
+            <span>验证表单功能</span>
+            <button className="searchbtn"
+                onClick={handleGetValue}
+                style={{ background:'green' }}
+            >获取表单数层</button>
+            <button className="searchbtn"
+                onClick={()=> form.current.validateFields((res)=>{ console.log('是否通过验证：' ,res ) })}
+                style={{ background:'orange' }}
+            >动态验证表单</button>
+            <button className="searchbtn" onClick={() => { form.current.setFieldsValue('des',{
+                    rule: (value='') => value.length < 10,
+                    message:'简介不超过十个字符'
+                }) }}
+                style={{ background:'purple' }}
+            >动态设置校验规则</button>
+       </div>
+    </div>
+}
+
+export default Index
+```
+
+### [#](#验证效果) 验证效果
+
+接下来就是验证环节：
+
+**① 表单验证未通过**
+
+![fail.gif](https://s.poetries.top/md/e64e5028369f4e2ea0d93d8007d0d842~tplv-k3u1fbpfcp-zoom-in-crop-mark_1304_0_0_0.png)
+
+调用 submit ，验证失败的情况。
+
+**② 表单验证通过**
+
+![success.gif](https://s.poetries.top/md/200b9221b3a7444b85b11a71276f7680~tplv-k3u1fbpfcp-zoom-in-crop-mark_1304_0_0_0.png)
+
+验证成功！
+
+**③ 获取表单的数据层**
+
+![get.gif](https://s.poetries.top/md/a708afa9565b427ab545a7890d910e09~tplv-k3u1fbpfcp-zoom-in-crop-mark_1304_0_0_0.png)
+
+通过 getFieldsValue 获取表单数据层。
+
+**④ 重置表单的数据层**
+
+![reset.gif](https://s.poetries.top/md/d22e76ea1f0e4cde9ee2eb01013855f3~tplv-k3u1fbpfcp-zoom-in-crop-mark_1304_0_0_0.png)
+
+通过 resetFields 重置表单。
+
+**⑤ 动态添加表单验证规则**
+
+![dongtai.gif](https://s.poetries.top/md/14e6d60035764c06b66a9eb877d5b1e8~tplv-k3u1fbpfcp-zoom-in-crop-mark_1304_0_0_0.png)
+
+通过 setFieldsValue 动态设置规则。
+
+之前规则和提示文案 `{ rule: (value='') => value.length < 5 ,message:'简介不超过五个字符' }`
+
+动态设置规则 `{ rule: (value='') => value.length < 10, message:'简介不超过十个字符' }`
+
+## [#](#六-总结) 六 总结
+
+以上就是从 0 到 1 设计的表单验证系统，希望读者能够对着项目 demo 敲一遍，在实现过程中，我相信会有很多收获。
+
+阅读全文

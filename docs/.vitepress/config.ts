@@ -59,7 +59,8 @@ function buildNav() {
     { text: '📅 每日一题', link: '/interview/daily/' },
     { text: '🟢 Node.js', link: '/node-interview/' },
     { text: '⚙️ 工程化', link: '/engineering/' },
-    { text: '💚 Vue', link: '/vue-interview/' }
+    { text: '💚 Vue', link: '/vue-interview/' },
+    { text: '⚛️ React', link: '/react-interview/' }
   ]
   return nav
 }
