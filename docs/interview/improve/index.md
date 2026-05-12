@@ -2751,7 +2751,167 @@ asyncFun(func);
 *   在执行的过程中，判断一个函数的`promise`是否完成，如果已经完成，将结果传入下一个函数，继续重复此步骤
 *   每一个 `next()` 方法返回值的 `value` 属性为一个 `Promise` 对象，所以我们为其添加 `then` 方法， 在 `then` 方法里面接着运行 `next` 方法挪移遍历器指针，直到 `Generator`函数运行完成
 
-### 18 事件循环
+### 18 Promise、Generator 和 async/await 的联系
+
+它们的关系可以一句话概括：
+
+- `Promise` 负责“异步结果”的表示
+- `Generator` 负责“可暂停、可恢复”的控制流
+- `async/await` 是把这两者的能力组合成更自然的语法
+
+更准确地说：
+
+#### 1. Promise 是“结果容器”
+
+Promise 解决的是“未来才知道结果”的问题。
+
+```js
+const p = fetch('/api/user')
+p.then(res => res.json()).then(data => {
+  console.log(data)
+})
+```
+
+它不关心你怎么写流程，只关心：
+
+- 成功时给你什么值
+- 失败时给你什么错误
+- 什么时候完成
+
+#### 2. Generator 是“可中断的函数”
+
+Generator 解决的是“函数执行到一半能停下来，之后还能接着跑”的问题。
+
+```js
+function* gen() {
+  const a = yield 1
+  const b = yield a + 2
+  return b + 3
+}
+```
+
+`yield` 的作用是：
+
+- 暂停执行
+- 把控制权交出去
+- 下次再通过 `next()` 继续
+
+它本身不负责异步，只负责“流程控制”。
+
+#### 3. async/await 是“Promise + 暂停/恢复语法糖”
+
+`async function` 返回值一定是 `Promise`。
+
+```js
+async function foo() {
+  const res = await fetch('/api/user')
+  const data = await res.json()
+  return data
+}
+```
+
+这段本质上还是 Promise 链，只是写起来像同步代码。
+
+`await` 的本质是：
+
+- 把后面的执行暂停
+- 等待 Promise resolve/reject
+- 再恢复执行
+
+而且：
+
+- `await` 后面不一定非要是 Promise
+- 如果是普通值，会被 `Promise.resolve` 包一层
+
+```js
+await 123
+```
+
+等价于“等待一个立即成功的 Promise”。
+
+#### 4. Generator 和 async/await 的历史关系
+
+从“实现思路”上看，`async/await` 很像 `Generator + Promise`。
+
+早期编译器/转译器通常会把：
+
+```js
+async function foo() {
+  const a = await p1
+  const b = await p2
+  return a + b
+}
+```
+
+转成类似：
+
+```js
+function* foo() {
+  const a = yield p1
+  const b = yield p2
+  return a + b
+}
+```
+
+然后再写一个“驱动器”不断执行这个 generator，等 Promise 完成后再 `next()` 继续。
+
+也就是说：
+
+- `Generator` 提供“暂停点”
+- `Promise` 提供“异步完成通知”
+- 驱动器把两者串起来
+- `async/await` 把这套机制变成了原生语法
+
+#### 5. 它们之间的分工
+
+可以这样理解：
+
+- `Promise` 解决“值什么时候到”
+- `Generator` 解决“代码怎么暂停和恢复”
+- `async/await` 解决“怎么优雅地写 Promise 流程”
+
+#### 6. 一个直观对比
+
+##### Promise 写法
+
+```js
+fetchUser()
+  .then(user => fetchPosts(user.id))
+  .then(posts => console.log(posts))
+  .catch(err => console.error(err))
+```
+
+##### async/await 写法
+
+```js
+try {
+  const user = await fetchUser()
+  const posts = await fetchPosts(user.id)
+  console.log(posts)
+} catch (err) {
+  console.error(err)
+}
+```
+
+##### Generator + Promise 驱动思路
+
+```js
+function* main() {
+  const user = yield fetchUser()
+  const posts = yield fetchPosts(user.id)
+  console.log(posts)
+}
+```
+
+外面需要一个 runner 去把 Promise 的结果喂回去。
+
+#### 7. 最关键的结论
+
+- `async/await` 本质上是“基于 Promise 的更好写法”
+- `Generator` 不是 `async/await` 的语法基础，但它非常适合表达“暂停/恢复”的执行模型
+- 在历史上，很多 `async/await` 的编译产物确实是 `Generator + Promise` 驱动出来的
+
+### 19 事件循环
 
 *   默认代码从上到下执行，执行环境通过`script`来执行（宏任务）
 *   在代码执行过程中，调用定时器 `promise` `click`事件...不会立即执行，需要等待当前代码全部执行完毕
