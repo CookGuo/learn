@@ -140,7 +140,7 @@ export const modules: ModuleConfig[] = [
       {
         text: '面经篇',
         items: [
-          { text: '面经汇总', link: '/interview/experience.html', target: '_self' },
+          { text: '面经汇总', link: '/interview/experience/' },
         ],
       },
     ],

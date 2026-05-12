@@ -28,7 +28,7 @@ function buildNav() {
         { text: '📝 高频篇', link: '/interview/high-frequency/' },
         { text: '✍️ 手写篇', link: '/interview/handwritten/' },
         { text: '⚙️ 原理篇', link: '/interview/principle/react-router' },
-        { text: '📋 面经篇', link: '/interview/experience.html', target: '_self' },
+        { text: '📋 面经篇', link: '/interview/experience/' },
       ]
     },
     {
