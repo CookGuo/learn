@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { withBase } from 'vitepress'
 import type { ModuleConfig } from '../modules.config'
 
 interface Props {
@@ -6,11 +7,15 @@ interface Props {
 }
 
 defineProps<Props>()
+
+function getModuleLink(module: ModuleConfig) {
+  return withBase(module.link ?? `/${module.id}/`)
+}
 </script>
 
 <template>
-  <a 
-    :href="`/${module.id}/`" 
+  <a
+    :href="getModuleLink(module)"
     class="module-card"
     :class="{ 'disabled': !module.enabled }"
   >

@@ -4,10 +4,7 @@ source: https://interview.poetries.top/principle-docs/react/01-React%20router原
 crawled: 2026-04-08
 ---
 
-# React Router原理与实现详解|原理篇 
-
-
-
+# React Router原理与实现详解
 ---
 
 ## 一、React Router基础之history

@@ -22,13 +22,13 @@ features:
     details: 深入理解浏览器渲染管线、V8引擎、事件循环和网络栈，掌握前端性能优化的底层逻辑。
     link: /browser/
   - icon: 📖
-    title: 基础篇
-    details: 系统学习 HTML、CSS、JavaScript 核心知识，夯实前端开发基础，提升代码质量。
-    link: /basic/
+    title: 面试合集
+    details: 覆盖基础、高频、手写、原理和面经内容，按主题逐步补齐前端面试知识。
+    link: /interview/base/
   - icon: 🚀
-    title: 进阶篇
-    details: 探索性能优化、工程化实践、安全防护等高级话题，成为专业的前端工程师。
-    link: /advanced/
+    title: 前端工程化
+    details: 梳理 npm scripts、Webpack、Docker、CI/CD 和 Kubernetes 等工程实践。
+    link: /engineering/
 ---
 
 <script setup>

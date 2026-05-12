@@ -1,6 +1,7 @@
 export interface SidebarItem {
   text: string
   link?: string
+  target?: string
   items?: SidebarItem[]
 }
 
@@ -12,6 +13,7 @@ export interface ModuleConfig {
   order: number                 // 排序
   enabled: boolean              // false = 整个模块不可访问
   access: 'public' | 'token'    // public = 完全开放；token = 需要访问码（预留）
+  link?: string                  // 首页卡片入口，默认使用 /{id}/
   sidebar: SidebarItem[]        // 该模块的侧边栏结构
 }
 
@@ -24,6 +26,7 @@ export const modules: ModuleConfig[] = [
     order: 1,
     enabled: true,
     access: 'public',
+    link: '/browser/',
     sidebar: [
       {
         text: '第一部分：Chrome架构与进程',
@@ -101,6 +104,7 @@ export const modules: ModuleConfig[] = [
     order: 4,
     enabled: true,
     access: 'public',
+    link: '/interview/base/',
     sidebar: [
       {
         text: '基础篇',
@@ -130,12 +134,13 @@ export const modules: ModuleConfig[] = [
         text: '原理篇',
         items: [
           { text: 'React Router原理', link: '/interview/principle/react-router' },
+          { text: 'Vue3 响应式原理', link: '/interview/principle/vue3-reactivity' },
         ],
       },
       {
         text: '面经篇',
         items: [
-          { text: '面经汇总', link: '/interview/experience.html' },
+          { text: '面经汇总', link: '/interview/experience.html', target: '_self' },
         ],
       },
     ],
@@ -148,6 +153,7 @@ export const modules: ModuleConfig[] = [
     order: 5,
     enabled: true,
     access: 'public',
+    link: '/node-interview/',
     sidebar: [
       {
         text: '基础篇',
@@ -270,6 +276,7 @@ export const modules: ModuleConfig[] = [
     order: 7,
     enabled: true,
     access: 'public',
+    link: '/interview/selection/1-HTML.html',
     sidebar: [
       {
         text: '精选篇',
@@ -305,6 +312,7 @@ export const modules: ModuleConfig[] = [
     order: 8,
     enabled: true,
     access: 'public',
+    link: '/interview/self-check/',
     sidebar: [
       {
         text: '自检篇',
@@ -322,6 +330,7 @@ export const modules: ModuleConfig[] = [
     order: 9,
     enabled: true,
     access: 'public',
+    link: '/interview/daily/',
     sidebar: [
       {
         text: '每日一题',
@@ -339,6 +348,7 @@ export const modules: ModuleConfig[] = [
     order: 10,
     enabled: true,
     access: 'public',
+    link: '/engineering/',
     sidebar: [
       {
         text: '工程基础',
@@ -382,6 +392,7 @@ export const modules: ModuleConfig[] = [
     order: 11,
     enabled: true,
     access: 'public',
+    link: '/vue-interview/',
     sidebar: [
       {
         text: '基础 Vue',
@@ -420,6 +431,7 @@ export const modules: ModuleConfig[] = [
     order: 12,
     enabled: true,
     access: 'public',
+    link: '/react-interview/',
     sidebar: [
       {
         text: '前言',
