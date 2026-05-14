@@ -1,0 +1,22 @@
+<svg width="960" height="420" viewBox="0 0 960 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg4" x1="0" y1="0" x2="960" y2="420" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F0FDFA"/>
+      <stop offset="1" stop-color="#CCFBF1"/>
+    </linearGradient>
+  </defs>
+  <rect width="960" height="420" rx="28" fill="url(#bg4)"/>
+  <text x="56" y="72" fill="#0F172A" font-size="30" font-weight="700">垂直居中</text>
+  <text x="56" y="104" fill="#0F766E" font-size="17">子元素沿着父容器高度方向上下留白相等</text>
+
+  <rect x="120" y="136" width="720" height="200" rx="24" fill="#FFFFFF" stroke="#99F6E4" stroke-width="2"/>
+  <rect x="322" y="192" width="316" height="88" rx="18" fill="#14B8A6" opacity="0.92"/>
+  <text x="427" y="244" fill="#FFFFFF" font-size="22" font-weight="700">center</text>
+
+  <path d="M480 136V192" stroke="#0F766E" stroke-width="3" stroke-dasharray="7 7"/>
+  <path d="M480 136L474 148M480 136L486 148M480 192L474 180M480 192L486 180" stroke="#0F766E" stroke-width="3"/>
+  <path d="M480 280V336" stroke="#0F766E" stroke-width="3" stroke-dasharray="7 7"/>
+  <path d="M480 280L474 292M480 280L486 292M480 336L474 324M480 336L486 324" stroke="#0F766E" stroke-width="3"/>
+  <text x="504" y="164" fill="#0F766E" font-size="15">上方空白</text>
+  <text x="504" y="316" fill="#0F766E" font-size="15">下方空白</text>
+</svg>

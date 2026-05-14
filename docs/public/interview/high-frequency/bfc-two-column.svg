@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="420" viewBox="0 0 1200 420" role="img" aria-labelledby="title desc">
+  <title id="title">BFC 两栏自适应效果图</title>
+  <desc id="desc">左侧展示普通布局下主内容会被浮动列影响，右侧展示主内容触发 BFC 后自动避开浮动列。</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fbfaf7"/>
+      <stop offset="100%" stop-color="#f3f7fb"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#1f2937" flood-opacity="0.10"/>
+    </filter>
+    <style>
+      .title { font: 700 26px/1.2 -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif; fill: #111827; }
+      .text { font: 600 15px/1.2 -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif; fill: #374151; }
+      .small { font: 500 13px/1.2 -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif; fill: #6b7280; }
+      .label { font: 700 18px/1 -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif; fill: #111827; }
+    </style>
+  </defs>
+  <rect width="1200" height="420" rx="24" fill="url(#bg)"/>
+  <text x="600" y="44" text-anchor="middle" class="title">BFC 让主内容自动避开浮动列</text>
+
+  <g filter="url(#shadow)">
+    <rect x="70" y="90" width="500" height="280" rx="22" fill="#fff"/>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="630" y="90" width="500" height="280" rx="22" fill="#fff"/>
+  </g>
+
+  <text x="320" y="126" text-anchor="middle" class="label">没有 BFC</text>
+  <text x="880" y="126" text-anchor="middle" class="label">main 触发 BFC</text>
+
+  <rect x="120" y="165" width="110" height="130" rx="14" fill="#fecaca" stroke="#ef4444" stroke-width="2"/>
+  <text x="175" y="235" text-anchor="middle" class="text">aside</text>
+  <text x="175" y="257" text-anchor="middle" class="small">float left</text>
+  <rect x="220" y="165" width="300" height="130" rx="14" fill="#fde68a" stroke="#f59e0b" stroke-width="2"/>
+  <text x="370" y="223" text-anchor="middle" class="text">main</text>
+  <text x="370" y="245" text-anchor="middle" class="small">内容会被浮动列挤压 / 环绕</text>
+
+  <rect x="680" y="165" width="110" height="130" rx="14" fill="#fecaca" stroke="#ef4444" stroke-width="2"/>
+  <text x="735" y="235" text-anchor="middle" class="text">aside</text>
+  <text x="735" y="257" text-anchor="middle" class="small">float left</text>
+  <rect x="800" y="165" width="280" height="130" rx="14" fill="#dbeafe" stroke="#3b82f6" stroke-width="2"/>
+  <text x="940" y="223" text-anchor="middle" class="text">main (BFC)</text>
+  <text x="940" y="245" text-anchor="middle" class="small">自动占据剩余空间，不与浮动列重叠</text>
+</svg>

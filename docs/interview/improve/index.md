@@ -4952,6 +4952,9 @@ console.timeEnd('innerHTML')
 *   `border-box`：盒子宽度包含 `padding` 和 `border`，`总宽度 = margin + width`
 *   `inherit`：从父元素继承 `box-sizing` 属性
 
+![盒模型效果图](/interview/css/box-model-content-box.svg)
+![border-box 效果图](/interview/css/box-model-border-box.svg)
+
 ### 2. BFC
 
 > 块级格式化上下文，是一个独立的渲染区域，让处于 `BFC` 内部的元素与外部的元素相互隔离，使内外元素的定位不会相互影响。
@@ -4974,6 +4977,8 @@ console.timeEnd('innerHTML')
 *   `BFC` 的区域不会与 `float` 的元素区域重叠
 *   计算 `BFC` 的高度时，浮动子元素也参与计算
 *   文字层不会被浮动层覆盖，环绕于周围
+
+![BFC 效果图](/interview/high-frequency/bfc-margin-collapse.svg)
 
 **应用:**
 
@@ -5002,6 +5007,8 @@ console.timeEnd('innerHTML')
 
 *   在同一层叠上下文中，层叠等级才有意义
 *   `z-index`的优先级最高
+
+![层叠上下文效果图](/interview/css/stacking-context.svg)
 
 ### 4. 左右居中方案
 
@@ -5034,6 +5041,8 @@ console.timeEnd('innerHTML')
   transform: translateX(-50%);
 }
 ```
+
+![水平居中效果图](/interview/css/center-horizontal.svg)
 
 ### 5. 上下垂直居中方案
 
@@ -5083,6 +5092,8 @@ console.timeEnd('innerHTML')
   vertical-align: middle;
 }
 ```
+
+![垂直居中效果图](/interview/css/center-vertical.svg)
 
 ### 6. 选择器权重计算方式
 
@@ -5154,6 +5165,8 @@ console.timeEnd('innerHTML')
 
 > 推荐使用第三种方法，不会在页面新增div，文档结构更加清晰
 
+![清除浮动效果图](/interview/high-frequency/bfc-clear-float.svg)
+
 ### 8. 左边定宽，右边自适应方案
 
 > float + margin，float + calc
@@ -5177,6 +5190,8 @@ console.timeEnd('innerHTML')
   float: left;
 }
 ```
+
+![两栏布局效果图](/interview/css/two-column-layout.svg)
 
 ### 9. 左右两边定宽，中间自适应
 
@@ -5229,6 +5244,8 @@ console.timeEnd('innerHTML')
   flex: 1;
 }
 ```
+
+![三栏布局效果图](/interview/css/three-column-layout.svg)
 
 ### 10 CSS动画和过渡
 

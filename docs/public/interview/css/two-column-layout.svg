@@ -1,0 +1,24 @@
+<svg width="960" height="460" viewBox="0 0 960 460" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg6" x1="0" y1="0" x2="960" y2="460" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F8FAFC"/>
+      <stop offset="1" stop-color="#EFF6FF"/>
+    </linearGradient>
+  </defs>
+  <rect width="960" height="460" rx="28" fill="url(#bg6)"/>
+  <text x="56" y="72" fill="#0F172A" font-size="30" font-weight="700">两栏布局：左边定宽，右边自适应</text>
+  <text x="56" y="104" fill="#1D4ED8" font-size="17">左侧 sidebar 固定宽度，右侧 main 占据剩余空间</text>
+
+  <rect x="120" y="144" width="720" height="210" rx="24" fill="#FFFFFF" stroke="#BFDBFE" stroke-width="2"/>
+  <rect x="152" y="176" width="160" height="146" rx="18" fill="#60A5FA"/>
+  <text x="188" y="256" fill="#FFFFFF" font-size="22" font-weight="700">aside</text>
+  <text x="180" y="282" fill="#DBEAFE" font-size="14">200px 定宽</text>
+
+  <rect x="336" y="176" width="472" height="146" rx="18" fill="#FCA5A5"/>
+  <text x="532" y="244" fill="#FFFFFF" font-size="22" font-weight="700">main</text>
+  <text x="474" y="272" fill="#FEF2F2" font-size="14">剩余空间自适应</text>
+
+  <path d="M312 220H336" stroke="#1D4ED8" stroke-width="3" stroke-dasharray="7 7"/>
+  <path d="M312 220L324 214M312 220L324 226M336 220L324 214M336 220L324 226" stroke="#1D4ED8" stroke-width="3"/>
+  <text x="286" y="198" fill="#1D4ED8" font-size="15">定宽</text>
+</svg>

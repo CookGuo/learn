@@ -61,6 +61,8 @@ crawled: 2026-04-08
 
 那么 `width: 200px` 和 `height: 100px` 就会把 `padding` 和 `border` 一起算进去，内容区会被压缩。
 
+![content-box 效果图](/interview/css/box-model-content-box.svg)
+
 **IE 怪异盒子模型**
 
 从上图可以看到：
@@ -93,6 +95,8 @@ crawled: 2026-04-08
 *   总高度仍然是 `100 + 16 * 2 = 132px`
 
 和上面的 `content-box` 对比，`border-box` 会把内容区压小，但元素最终占位更可控，布局里更常用。
+
+![border-box 效果图](/interview/css/box-model-border-box.svg)
 
 > 页面渲染时，`dom` 元素所采用的 布局模型。可通过`box-sizing`进行设置
 
@@ -235,6 +239,8 @@ CSS (`styles.css`):
 
 这时候，边距则不会重叠：
 
+![BFC 防止 margin 重叠效果图](/interview/high-frequency/bfc-margin-collapse.svg)
+
 **2\. 清除内部浮动**
 
 ```
@@ -260,6 +266,8 @@ CSS (`styles.css`):
 ```
 
 而`BFC`在计算高度时，浮动元素也会参与，所以我们可以触发`.par`元素生成`BFC`，则内部浮动元素计算高度时候也会计算
+
+![BFC 清除浮动效果图](/interview/high-frequency/bfc-clear-float.svg)
 
 ```
 .par {
@@ -307,6 +315,8 @@ CSS (`styles.css`):
 ```
 
 这时候，新的`BFC`不会与浮动的`.aside`元素重叠。因此会根据包含块的宽度，和`.aside`的宽度，自动变窄
+
+![BFC 两栏自适应效果图](/interview/high-frequency/bfc-two-column.svg)
 
 ### 选择器权重计算方式
 
@@ -452,6 +462,8 @@ CSS (`styles.css`):
 </div>
 ```
 
+![flex 布局效果图](/interview/css/flex-two-column.svg)
+
 5.  **grid网格布局**
 
 ```
@@ -475,6 +487,8 @@ CSS (`styles.css`):
   <div class="son"></div>
 </div>
 ```
+
+![垂直居中效果图](/interview/css/center-vertical.svg)
 
 6.  **table布局**
 
@@ -1227,6 +1241,8 @@ div {
   background-color: red;
 }
 ```
+
+![两栏布局效果图](/interview/css/two-column-layout.svg)
 
 **利用flex实现**
 

@@ -1,0 +1,29 @@
+<svg width="960" height="460" viewBox="0 0 960 460" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg8" x1="0" y1="0" x2="960" y2="460" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F8FAFC"/>
+      <stop offset="1" stop-color="#F5F3FF"/>
+    </linearGradient>
+  </defs>
+  <rect width="960" height="460" rx="28" fill="url(#bg8)"/>
+  <text x="56" y="72" fill="#0F172A" font-size="30" font-weight="700">三栏布局</text>
+  <text x="56" y="104" fill="#7C3AED" font-size="17">左右定宽，中间自适应，常见于圣杯布局 / 双飞翼布局</text>
+
+  <rect x="120" y="142" width="720" height="192" rx="24" fill="#FFFFFF" stroke="#DDD6FE" stroke-width="2"/>
+  <rect x="152" y="174" width="140" height="128" rx="18" fill="#60A5FA"/>
+  <text x="183" y="248" fill="#FFFFFF" font-size="22" font-weight="700">left</text>
+  <text x="178" y="276" fill="#DBEAFE" font-size="14">120px</text>
+
+  <rect x="302" y="174" width="356" height="128" rx="18" fill="#A78BFA"/>
+  <text x="452" y="248" fill="#FFFFFF" font-size="22" font-weight="700">center</text>
+  <text x="430" y="276" fill="#F3E8FF" font-size="14">flex / calc 自适应</text>
+
+  <rect x="678" y="174" width="130" height="128" rx="18" fill="#34D399"/>
+  <text x="706" y="248" fill="#FFFFFF" font-size="22" font-weight="700">right</text>
+  <text x="706" y="276" fill="#DCFCE7" font-size="14">120px</text>
+
+  <path d="M292 238H302" stroke="#7C3AED" stroke-width="3" stroke-dasharray="7 7"/>
+  <path d="M292 238L304 232M292 238L304 244M302 238L290 232M302 238L290 244" stroke="#7C3AED" stroke-width="3"/>
+  <path d="M658 238H678" stroke="#7C3AED" stroke-width="3" stroke-dasharray="7 7"/>
+  <path d="M658 238L670 232M658 238L670 244M678 238L666 232M678 238L666 244" stroke="#7C3AED" stroke-width="3"/>
+</svg>

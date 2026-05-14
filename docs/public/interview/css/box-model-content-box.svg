@@ -1,0 +1,45 @@
+<svg width="960" height="520" viewBox="0 0 960 520" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg1" x1="0" y1="0" x2="960" y2="520" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F8FAFC"/>
+      <stop offset="1" stop-color="#EEF2FF"/>
+    </linearGradient>
+    <linearGradient id="card1" x1="140" y1="110" x2="620" y2="410" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FDE68A"/>
+      <stop offset="1" stop-color="#FCA5A5"/>
+    </linearGradient>
+    <linearGradient id="card2" x1="200" y1="160" x2="560" y2="360" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FBBF24"/>
+      <stop offset="1" stop-color="#FB7185"/>
+    </linearGradient>
+    <linearGradient id="card3" x1="240" y1="200" x2="520" y2="320" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F8FAFC"/>
+      <stop offset="1" stop-color="#E2E8F0"/>
+    </linearGradient>
+  </defs>
+  <rect width="960" height="520" rx="28" fill="url(#bg1)"/>
+  <text x="56" y="72" fill="#0F172A" font-size="30" font-weight="700">content-box: width/height 只算内容区</text>
+  <text x="56" y="104" fill="#475569" font-size="17">padding、border、margin 都会额外占位</text>
+
+  <rect x="116" y="140" width="360" height="220" rx="24" fill="url(#card1)" opacity="0.35"/>
+  <rect x="146" y="170" width="300" height="160" rx="20" fill="none" stroke="#B45309" stroke-width="3" stroke-dasharray="8 8"/>
+  <rect x="166" y="190" width="260" height="120" rx="16" fill="none" stroke="#C2410C" stroke-width="3" stroke-dasharray="6 6"/>
+  <rect x="186" y="210" width="220" height="80" rx="12" fill="url(#card3)" stroke="#1E293B" stroke-width="2"/>
+
+  <text x="206" y="257" fill="#0F172A" font-size="22" font-weight="700">content</text>
+  <text x="260" y="164" fill="#7C2D12" font-size="16" font-weight="700">margin</text>
+  <text x="255" y="184" fill="#9A3412" font-size="16" font-weight="700">border</text>
+  <text x="252" y="204" fill="#B45309" font-size="16" font-weight="700">padding</text>
+
+  <path d="M166 344H406" stroke="#334155" stroke-width="2" stroke-dasharray="6 6"/>
+  <path d="M166 344L176 338M166 344L176 350M406 344L396 338M406 344L396 350" stroke="#334155" stroke-width="2"/>
+  <text x="232" y="371" fill="#334155" font-size="16">内容宽度 200px</text>
+
+  <rect x="558" y="142" width="334" height="228" rx="24" fill="#FFFFFF" stroke="#CBD5E1"/>
+  <text x="590" y="182" fill="#0F172A" font-size="22" font-weight="700">示例</text>
+  <text x="590" y="220" fill="#334155" font-size="18">width: 200px</text>
+  <text x="590" y="252" fill="#334155" font-size="18">height: 100px</text>
+  <text x="590" y="284" fill="#334155" font-size="18">padding: 20px</text>
+  <text x="590" y="316" fill="#334155" font-size="18">border: 10px solid</text>
+  <text x="590" y="348" fill="#334155" font-size="18">margin: 16px</text>
+</svg>
