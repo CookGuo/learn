@@ -2330,6 +2330,34 @@ input[type="checkbox"]:checked + label:before {
 *   **缓存布局属性值**：如果需要多次访问某个元素的布局属性（如位置、尺寸等），可以将其值缓存起来，避免多次触发回流计算。
 *   **避免强制同步布局**：避免在 JavaScript 中获取布局属性（如使用 `offsetTop`、`clientWidth` 等），因为它会强制同步计算布局信息，触发回流。如果需要获取布局信息，最好将获取操作放在一起，或使用 `getBoundingClientRect()` 方法。
 
+**几个常见布局读取属性的区别**
+
+这些属性的共同点是：它们都需要浏览器返回“最新的布局信息”，所以一旦在修改 DOM / 样式之后读取它们，浏览器往往会立刻清空渲染队列，强制执行一次回流。
+
+| 属性 | 读到的是什么 | 基准 | 常见用途 |
+| --- | --- | --- | --- |
+| `getBoundingClientRect()` | 元素当前在视口中的位置和尺寸 | 视口（viewport） | 判断元素是否进入可视区、做吸顶、碰撞检测、懒加载 |
+| `offsetTop / offsetLeft` | 元素相对于 `offsetParent` 的偏移 | 最近的定位父级 | 计算元素在父容器中的位置 |
+| `offsetWidth / offsetHeight` | 元素的布局宽高 | 元素自身 | 获取元素占据的实际空间 |
+| `clientTop / clientLeft` | 元素上边框 / 左边框的宽度 | 元素自身 | 坐标换算、边框计算 |
+| `clientWidth / clientHeight` | 内容区 + 内边距，不含边框和滚动条 | 元素自身 | 获取可用内容区域大小 |
+| `scrollTop / scrollLeft` | 内容已经滚动了多少 | 滚动容器自身 | 滚动定位、滚动监听、虚拟列表 |
+
+其中最容易混淆的是 `getBoundingClientRect()` 和 `offsetTop`：
+
+*   `getBoundingClientRect()` 看的是“元素此刻在屏幕上在哪”，返回的是相对于视口的坐标，页面滚动时这个值会变。
+*   `offsetTop` 看的是“元素相对于父级布局位置在哪”，更偏向布局树里的位置。
+
+如果想拿到元素相对于整个文档的位置，一般要把视口坐标和滚动距离合并：
+
+```js
+const rect = el.getBoundingClientRect()
+const top = rect.top + window.scrollY
+const left = rect.left + window.scrollX
+```
+
+因此，在性能敏感的场景里要避免“写样式后立刻读布局属性，再写样式再读布局属性”的交替操作，这会把浏览器本来可以批处理的回流打断，造成强制同步布局。
+
 通过合理的设计和优化，可以最小化重绘和回流的次数，提高页面性能和用户体验。
 
 ### 49 说一说css3的animation

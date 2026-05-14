@@ -16,6 +16,10 @@ crawled: 2026-04-08
 > *   盒模型： 内容(`content`)、填充(`padding`)、边界(`margin`)、 边框(`border`)；
 > *   区 别： `IE`的`content`部分把 `border` 和 `padding`计算了进去;
 
+下面这张图把标准盒模型和 IE 怪异盒模型放在一起看：
+
+![盒模型示意图](/interview/high-frequency/box-model.svg)
+
 **标准盒子模型的模型图**
 
 从上图可以看到：
@@ -25,6 +29,38 @@ crawled: 2026-04-08
 
 也就是，`width/height` 只是内容高度，不包含 `padding` 和 `border` 值
 
+可以看一个最直接的例子：
+
+```html
+<div class="box">content</div>
+```
+
+```css
+.box {
+  width: 200px;
+  height: 100px;
+  padding: 20px;
+  border: 10px solid #333;
+  margin: 16px;
+  box-sizing: content-box;
+}
+```
+
+这里 `width: 200px` 和 `height: 100px` 只表示内容区大小，浏览器实际占位尺寸是：
+
+*   总宽度 = `200 + 20 * 2 + 10 * 2 + 16 * 2 = 272px`
+*   总高度 = `100 + 20 * 2 + 10 * 2 + 16 * 2 = 172px`
+
+如果把 `box-sizing` 改成 `border-box`：
+
+```css
+.box {
+  box-sizing: border-box;
+}
+```
+
+那么 `width: 200px` 和 `height: 100px` 就会把 `padding` 和 `border` 一起算进去，内容区会被压缩。
+
 **IE 怪异盒子模型**
 
 从上图可以看到：
@@ -33,6 +69,30 @@ crawled: 2026-04-08
 *   盒子总高度 = `height` + `margin`;
 
 也就是，`width/height` 包含了 `padding` 和 `border`值
+
+可以看一个 `border-box` 的例子：
+
+```html
+<div class="box">content</div>
+```
+
+```css
+.box {
+  width: 200px;
+  height: 100px;
+  padding: 20px;
+  border: 10px solid #333;
+  margin: 16px;
+  box-sizing: border-box;
+}
+```
+
+这里 `width: 200px` 和 `height: 100px` 已经包含了 `padding` 和 `border`，所以：
+
+*   总宽度仍然是 `200 + 16 * 2 = 232px`
+*   总高度仍然是 `100 + 16 * 2 = 132px`
+
+和上面的 `content-box` 对比，`border-box` 会把内容区压小，但元素最终占位更可控，布局里更常用。
 
 > 页面渲染时，`dom` 元素所采用的 布局模型。可通过`box-sizing`进行设置
 
