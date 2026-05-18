@@ -75,7 +75,6 @@ DOM结构
 </div>
 ```
 
-@前端进阶之旅: 代码已经复制到剪贴板
 
 #### [#](#利用float-margin实现) 利用float + margin实现
 
@@ -100,7 +99,6 @@ DOM结构
 }
 ```
 
-@前端进阶之旅: 代码已经复制到剪贴板
 
 #### [#](#利用calc计算宽度) 利用calc计算宽度
 
@@ -126,7 +124,7 @@ DOM结构
 }
 ```
 
-@前端进阶之旅: 代码已经复制到剪贴板
+
 
 #### [#](#利用float-overflow实现) 利用float + overflow实现
 
@@ -151,7 +149,7 @@ DOM结构
 }
 ```
 
-@前端进阶之旅: 代码已经复制到剪贴板
+
 
 #### [#](#利用flex实现) 利用flex实现
 
@@ -178,7 +176,7 @@ DOM结构
 }
 ```
 
-@前端进阶之旅: 代码已经复制到剪贴板
+
 
 ### [#](#了解跨域吗-一般什么情况下会导致跨域) 了解跨域吗，一般什么情况下会导致跨域
 
@@ -307,7 +305,7 @@ DOM结构
 **函数的生命周期：**
 
 *   创建：`JS`解析引擎进行预解析，会将函数声明提前，同时将该函数放到全局作用域中或当前函数的上一级函数的局部作用域中。
-*   执行：J`S`引擎会将当前函数的局部变量和内部函数进行声明提前，然后再执行业务代码，当函数执行完退出时，释放该函数的执行上下文，并注销该函数的局部变量
+*   执行：`JS`引擎会将当前函数的局部变量和内部函数进行声明提前，然后再执行业务代码，当函数执行完退出时，释放该函数的执行上下文，并注销该函数的局部变量
 
 > 变量和函数的声明：如果变量名和函数名声明时相同，函数优先声明
 
@@ -378,7 +376,7 @@ DOM结构
    └───────────────────────┘
 ```
 
-@前端进阶之旅: 代码已经复制到剪贴板
+
 
 > Node.js中宏任务分成了几种类型，并且放在了不同的task queue里。不同的task queue在执行顺序上也有区别，微任务放在了每个task queue的末尾：
 
@@ -924,7 +922,7 @@ http://www.example.com:8080/index.html
 http://www3.example.com:8080/index.html
 ```
 
-@前端进阶之旅: 代码已经复制到剪贴板
+
 
 > 但是有两种情况：http默认的端口号为80，https默认端口号为443。
 
@@ -933,7 +931,7 @@ http://www.example.com:80 === http://www.example.com
 https://www.example.com:443 === https://www.example.com
 ```
 
-@前端进阶之旅: 代码已经复制到剪贴板
+
 
 **为什么浏览器会禁止跨域？**
 
@@ -967,7 +965,7 @@ const node = iframe.document.getElementById('你输入账号密码的Input')
 console.log(`拿到了这个${node}，我还拿不到你刚刚输入的账号密码吗`)
 ```
 
-@前端进阶之旅: 代码已经复制到剪贴板
+
 
 ### [#](#_3-cors跨域的原理) 3. CORS跨域的原理
 
@@ -1046,7 +1044,7 @@ function getCookie(name) {
 }
 ```
 
-@前端进阶之旅: 代码已经复制到剪贴板
+
 
 ### [#](#_7-正则里的非如何实现的) 7. 正则里的非如何实现的
 
@@ -1062,7 +1060,7 @@ console.log(str.replace(/[^l]/g, '帅'));
 // l帅帅帅帅帅帅帅帅
 ```
 
-@前端进阶之旅: 代码已经复制到剪贴板
+
 
 反之，如果是不在`[]`里的话则表示开头匹配：
 
@@ -1073,7 +1071,7 @@ var str = 'lindaidai';
 console.log(str.replace(/^l/g, '帅'));
 ```
 
-@前端进阶之旅: 代码已经复制到剪贴板
+
 
 ### [#](#_8-webpack几种hash的实现原理) 8. webpack几种hash的实现原理
 
@@ -1340,7 +1338,7 @@ console.log(str.replace(/^l/g, '帅'));
 */
 ```
 
-@前端进阶之旅: 代码已经复制到剪贴板
+
 
 ### [#](#ts-和-js-的区别) ts 和 js 的区别
 
@@ -1384,7 +1382,7 @@ console.log(str.replace(/^l/g, '帅'));
 */
 ```
 
-@前端进阶之旅: 代码已经复制到剪贴板
+
 
 ### [#](#给出的条件中能算出具体值吗-不能的话能算出具体范围吗) 给出的条件中能算出具体值吗？不能的话能算出具体范围吗？
 
@@ -1446,7 +1444,7 @@ B 页面意外崩溃，这时候 JS 线程都已经崩溃了，如何传递通�
 > ob.dep.notify()
 > ```
 > 
-> @前端进阶之旅: 代码已经复制到剪贴板
+> 
 
 ### [#](#除了监听滚轮-还有什么懒加载的方法) 除了监听滚轮，还有什么懒加载的方法？
 
@@ -1515,7 +1513,7 @@ function asyncPool(poolLimit, array, iteratorFn) {
 }
 ```
 
-@前端进阶之旅: 代码已经复制到剪贴板
+
 
 ### [#](#前端路由如何实现) 前端路由如何实现
 
@@ -1612,7 +1610,7 @@ div {
 }
 ```
 
-@前端进阶之旅: 代码已经复制到剪贴板
+
 
 6、边距重叠问题；当相邻两个元素都设置了margin 边距时，margin 将取最大值，舍弃最小值； 解决方案：为了不让边重叠，可以给子元素增加一个父级元素，并设置父级元素为overflow:hidden；
 
@@ -1676,7 +1674,7 @@ function isEven (num) {
 console.log([3, 4, 5].myFindIndex(isEven)) // 1
 ```
 
-@前端进阶之旅: 代码已经复制到剪贴板
+
 
 具体的`Polyfill`可以看`MDN`上： [Array.prototype.findIndex()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/findIndex)
 
@@ -1717,7 +1715,7 @@ console.log([3, 4, 5].myFindIndex(isEven)) // 1
     })
     ```
     
-    @前端进阶之旅: 代码已经复制到剪贴板
+    
     
 *   文件解析优化：
     
@@ -1739,7 +1737,7 @@ console.log([3, 4, 5].myFindIndex(isEven)) // 1
         import 'moment/locale/zh-cn';
         ```
         
-        @前端进阶之旅: 代码已经复制到剪贴板
+        
         
     *   (或者不用这种方式，直接使用更加轻量的`Day.js`也可以)
         
@@ -1789,7 +1787,7 @@ console.log([3, 4, 5].myFindIndex(isEven)) // 1
     }
     ```
     
-    @前端进阶之旅: 代码已经复制到剪贴板
+    
     
 
 完整代码：
@@ -1833,7 +1831,7 @@ FileListPlugin.prototype.apply = function (compiler) {
 module.exports = FileListPlugin;
 ```
 
-@前端进阶之旅: 代码已经复制到剪贴板
+
 
 **二、Watch-plugin**
 
@@ -1865,7 +1863,7 @@ WatcherPlugin.prototype.apply = function (compiler) {
 module.exports = WatcherPlugin;
 ```
 
-@前端进阶之旅: 代码已经复制到剪贴板
+
 
 **三、Clean-plugin**
 
@@ -1914,7 +1912,7 @@ CleanPlugin.prototype.apply = function (compiler) {
 module.exports = CleanPlugin;
 ```
 
-@前端进阶之旅: 代码已经复制到剪贴板
+
 
 ### [#](#http3-0-1和http3-0-2的区别) HTTP3.0.1和HTTP3.0.2的区别
 
@@ -2063,7 +2061,7 @@ module.exports = CleanPlugin;
     })
     ```
     
-    @前端进阶之旅: 代码已经复制到剪贴板
+    
     
 *   文件解析优化：
     
@@ -2085,7 +2083,7 @@ module.exports = CleanPlugin;
         import 'moment/locale/zh-cn';
         ```
         
-        @前端进阶之旅: 代码已经复制到剪贴板
+        
         
 *   使用`splitChunks`进行拆包，抽离公共模块，一些常用配置项：
     
@@ -2314,7 +2312,7 @@ UI样式较旧，类似老套的系统。
     console.log(new Person('boy'))
     ```
     
-    @前端进阶之旅: 代码已经复制到剪贴板
+    
     
     结果为：
     
@@ -2322,7 +2320,7 @@ UI样式较旧，类似老套的系统。
     Uncaught TypeError: Person is not a constructor
     ```
     
-    @前端进阶之旅: 代码已经复制到剪贴板
+    
     
 2.  不要用于事件绑定
     
@@ -2340,7 +2338,7 @@ UI样式较旧，类似老套的系统。
     })
     ```
     
-    @前端进阶之旅: 代码已经复制到剪贴板
+    
     
     可以看到，使用箭头函数进行事件绑定，会丢失原本的`this`指向。
     
@@ -2444,7 +2442,7 @@ console.log(format(60 * 1000 * 60 * 24 * 7)); // 7 天
 console.log(format(1554111847534)); // 发布时的时间戳
 ```
 
-@前端进阶之旅: 代码已经复制到剪贴板
+
 
 ### [#](#格式化数字) 格式化数字
 
@@ -2473,7 +2471,7 @@ function format(num: number): string {
 }
 ```
 
-@前端进阶之旅: 代码已经复制到剪贴板
+
 
 ### [#](#一面) 一面
 
@@ -2507,7 +2505,7 @@ function deepClone<D>(data: D): D {
 }
 ```
 
-@前端进阶之旅: 代码已经复制到剪贴板
+
 
 ### [#](#二面) 二面
 
@@ -2559,7 +2557,7 @@ class Observer<T extends object = {}> {
 }
 ```
 
-@前端进阶之旅: 代码已经复制到剪贴板
+
 
 ### [#](#三面) 三面
 
@@ -2594,7 +2592,7 @@ function getData(urls: string) {
 }
 ```
 
-@前端进阶之旅: 代码已经复制到剪贴板
+
 
 ## [#](#美团) 美团
 
@@ -2615,7 +2613,7 @@ function promiseWithTimeout(url, delay = 3000) {
 }
 ```
 
-@前端进阶之旅: 代码已经复制到剪贴板
+
 
 ## [#](#综合面试题) 综合面试题
 
@@ -2705,7 +2703,7 @@ date = date.replace(reg, '$3-$1-$2')
 console.log(date) // 2017-10-24
 ```
 
-@前端进阶之旅: 代码已经复制到剪贴板
+
 
 5.【高频】实现 Promise.all、Promise.allSettled
 
@@ -2742,7 +2740,7 @@ export default <T>(state: T, compare?: compareFunction<T>): T | undefined => {
 }
 ```
 
-@前端进阶之旅: 代码已经复制到剪贴板
+
 
 11.  【高频】实现一个 vue 的双向绑定
 
@@ -2836,7 +2834,7 @@ document.addEventListener('visibilitychange', function() {
 })
 ```
 
-@前端进阶之旅: 代码已经复制到剪贴板
+
 
 14.  js 原生 3种绑定事件
 
@@ -2856,7 +2854,7 @@ document.addEventListener('visibilitychange', function() {
 </script>
 ```
 
-@前端进阶之旅: 代码已经复制到剪贴板
+
 
 15.  说一下 websocket
 16.  【超高频】实现复杂数据去重
