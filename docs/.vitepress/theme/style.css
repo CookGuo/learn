@@ -4,6 +4,17 @@
   --vp-c-brand-2: #747bff;
   --vp-c-brand-3: #858cff;
   --vp-c-brand-soft: rgba(100, 108, 255, 0.14);
+  --vp-c-selection-bg: rgba(100, 108, 255, 0.18);
+  --vp-c-selection-text: inherit;
+  --vp-c-mark-bg: rgba(100, 108, 255, 0.16);
+  --vp-c-mark-text: inherit;
+}
+
+.dark {
+  --vp-c-selection-bg: rgba(255, 184, 77, 0.26);
+  --vp-c-selection-text: #1f2937;
+  --vp-c-mark-bg: rgba(255, 184, 77, 0.18);
+  --vp-c-mark-text: #1f2937;
 }
 
 /* 首页 Hero 区域样式 */
@@ -95,6 +106,42 @@
 .vp-doc a:hover {
   color: var(--vp-c-brand-2);
   text-decoration: underline;
+}
+
+/* 选区与强调文本 */
+::selection {
+  background: var(--vp-c-selection-bg);
+  color: var(--vp-c-selection-text);
+}
+
+::-moz-selection {
+  background: var(--vp-c-selection-bg);
+  color: var(--vp-c-selection-text);
+}
+
+.dark ::selection {
+  color: var(--vp-c-selection-text) !important;
+}
+
+.dark ::-moz-selection {
+  color: var(--vp-c-selection-text) !important;
+}
+
+.vp-doc a::selection,
+.vp-doc a::-moz-selection {
+  color: var(--vp-c-selection-text);
+}
+
+.vp-doc strong,
+.vp-doc b {
+  color: inherit;
+}
+
+.vp-doc mark {
+  background: var(--vp-c-mark-bg);
+  color: var(--vp-c-mark-text);
+  border-radius: 4px;
+  padding: 0 0.2em;
 }
 
 /* 表格样式 */
