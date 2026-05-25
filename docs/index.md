@@ -29,6 +29,10 @@ features:
     title: 前端工程化
     details: 梳理 npm scripts、Webpack、Docker、CI/CD 和 Kubernetes 等工程实践。
     link: /engineering/
+  - icon: 📘
+    title: TypeScript 专栏
+    details: 从类型系统、React 实践到工程模板，串起一条完整的 TypeScript 学习路径。
+    link: /typescript/
 ---
 
 <script setup>

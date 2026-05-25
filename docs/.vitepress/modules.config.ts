@@ -269,6 +269,24 @@ export const modules: ModuleConfig[] = [
     ],
   },
   {
+    id: 'typescript',
+    title: 'TypeScript 专栏',
+    description: 'TypeScript 基础、React 实践、工程模板搭建',
+    icon: '📘',
+    order: 6,
+    enabled: true,
+    access: 'public',
+    link: '/typescript/',
+    sidebar: [
+      {
+        text: '专栏导读',
+        items: [
+          { text: 'TypeScript 专栏', link: '/typescript/' },
+        ],
+      },
+    ],
+  },
+  {
     id: 'interview-selection',
     title: '精选篇',
     description: '精选面试题模块',
