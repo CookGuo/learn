@@ -43,7 +43,7 @@ GET /index.html HTTP1.1
 
 不过，先不急，在了解网络请求之前，我们需要先看看HTTP和TCP的关系。因为浏览器使用HTTP协议作为应用层协议，用来封装请求的文本信息；并使用TCP/IP作传输层协议将它发到网络上，所以在HTTP工作开始之前，浏览器需要通过TCP与服务器建立连接。也就是说HTTP的内容是通过TCP的传输数据阶段来实现的，你可以结合下图更好地理解这二者的关系。
 
-![](https://static001.geekbang.org/resource/image/12/80/1277f342174b23f9442d3b27016d7980.png)
+![](/browser/part01/lesson03/01.png)
 
 那接下来你可以思考这么“一连串”问题：
 
@@ -75,7 +75,7 @@ GET /index.html HTTP1.1
 
 你可以结合下图来理解，浏览器是如何发送请求信息给服务器的。
 
-![](https://static001.geekbang.org/resource/image/b8/d7/b8993c73f7b60feb9b8bd147545c47d7.png)
+![](/browser/part01/lesson03/02.png)
 
 首先浏览器会向服务器发送请求行，它包括了请求方法、请求URI（Uniform Resource Identifier）和HTTP版本协议。
 
@@ -99,7 +99,7 @@ curl -i  https://time.geekbang.org/
 
 注意这里加上了-i是为了返回响应行、响应头和响应体的数据，返回的结果如下图所示，你可以结合这些数据来理解服务器是如何响应浏览器的。
 
-![](https://static001.geekbang.org/resource/image/3e/76/3e30476a4bbda49fd7cd4fd0ea09f076.png)
+![](/browser/part01/lesson03/03.png)
 
 首先服务器会返回响应行，包括协议版本和状态码。
 
@@ -141,7 +141,7 @@ curl -I geekbang.org
 
 注意这里输入的参数是-I，和-i不一样，-I表示只需要获取响应头和响应行数据，而不需要获取响应体的数据，最终返回的数据如下图所示：
 
-![](https://static001.geekbang.org/resource/image/01/6b/01db98e08233dba5847fab171ce95e6b.png)
+![](/browser/part01/lesson03/04.png)
 
 从图中你可以看到，响应行返回的状态码是301，状态301就是告诉浏览器，我需要重定向到另外一个网址，而需要重定向的网址正是包含在响应头的Location字段中，接下来，浏览器获取Location字段中的地址，并使用该地址重新导航，这就是一个完整重定向的执行流程。这也就解释了为什么输入的是 geekbang.org，最终打开的却是 https://www.geekbang.org 了。
 
@@ -159,7 +159,7 @@ curl -I geekbang.org
 
 我们重点看下浏览器资源缓存，下面是缓存处理的过程：
 
-![](https://static001.geekbang.org/resource/image/16/02/1670e353bf6cccc096e63e0f102ed502.png)
+![](/browser/part01/lesson03/05.png)
 
 首先，我们看下服务器是通过什么方式让浏览器缓存数据的？
 
@@ -206,7 +206,7 @@ Cookie: UID=3431uad;
 
 好了，通过这个流程你可以知道浏览器页面状态是通过使用Cookie来实现的。Cookie流程可以参考下图：
 
-![](https://static001.geekbang.org/resource/image/d9/b3/d9d6cefe8d3d6d84a37a626687c6ecb3.png)
+![](/browser/part01/lesson03/06.png)
 
 简单地说，如果服务器端发送的响应头内有 Set-Cookie 的字段，那么浏览器就会将该字段的内容保持到本地。当下次客户端再往该服务器发送请求时，客户端会自动在请求头中加入 Cookie 值后再发送出去。服务器端发现客户端发送过来的Cookie后，会去检查究竟是从哪一个客户端发来的连接请求，然后对比服务器上的记录，最后得到该用户的状态信息。
 
@@ -216,7 +216,7 @@ Cookie: UID=3431uad;
 
 为了便于你理解，我画了下面这张详细的“HTTP请求示意图”，用来展现浏览器中的HTTP请求所经历的各个阶段。
 
-![](https://static001.geekbang.org/resource/image/1b/6c/1b49976aca2c700883d48d927f48986c.png)
+![](/browser/part01/lesson03/07.png)
 
 从图中可以看到，浏览器中的HTTP请求从发起到结束一共经历了如下八个阶段：构建请求、查找缓存、准备IP和端口、等待TCP队列、建立TCP连接、发起HTTP请求、服务器处理请求、服务器返回请求和断开连接。
 
