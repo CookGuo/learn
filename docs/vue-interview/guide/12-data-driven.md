@@ -1,12 +1,10 @@
 ---
 title: # 开发指南篇 4：数据驱动与拼图游戏
-source: https://interview.poetries.top/fe-improve-docs/vue/learn-vue-base/guide/12-开发指南篇%204：数据驱动与拼图游戏.html
 crawled: 2026-04-09
 ---
 
 # # 开发指南篇 4：数据驱动与拼图游戏
 
-> 原文: [https://interview.poetries.top/fe-improve-docs/vue/learn-vue-base/guide/12-开发指南篇%204：数据驱动与拼图游戏.html](https://interview.poetries.top/fe-improve-docs/vue/learn-vue-base/guide/12-开发指南篇%204：数据驱动与拼图游戏.html)
 
 ---
 

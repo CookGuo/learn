@@ -1,6 +1,5 @@
 ---
 title: 前端高频面试题-精选篇-设计模式模块 
-source: https://interview.poetries.top/docs/excellent-docs/16-设计模式.html
 crawled: 2026-04-08
 ---
 

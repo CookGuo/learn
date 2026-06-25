@@ -1,12 +1,10 @@
 ---
 title: # 建表初始化
-source: https://interview.poetries.top/fe-node-docs/nodejs-docs/koa2/-8.3 项目建表初始化.html
 crawled: 2026-04-09
 ---
 
 # # 建表初始化
 
-> 原文: [https://interview.poetries.top/fe-node-docs/nodejs-docs/koa2/-8.3 项目建表初始化.html](https://interview.poetries.top/fe-node-docs/nodejs-docs/koa2/-8.3 项目建表初始化.html)
 
 ---
 

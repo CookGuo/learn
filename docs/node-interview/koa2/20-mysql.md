@@ -1,12 +1,10 @@
 ---
 title: # mysql模块
-source: https://interview.poetries.top/fe-node-docs/nodejs-docs/koa2/-8.1 mysql模块.html
 crawled: 2026-04-09
 ---
 
 # # mysql模块
 
-> 原文: [https://interview.poetries.top/fe-node-docs/nodejs-docs/koa2/-8.1 mysql模块.html](https://interview.poetries.top/fe-node-docs/nodejs-docs/koa2/-8.1 mysql模块.html)
 
 ---
 

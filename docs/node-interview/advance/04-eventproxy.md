@@ -1,12 +1,10 @@
 ---
 title: # 《使用 eventproxy 控制并发》
-source: https://interview.poetries.top/fe-node-docs/nodejs-docs/advance/-使用 eventproxy 控制并发.html
 crawled: 2026-04-09
 ---
 
 # # 《使用 eventproxy 控制并发》
 
-> 原文: [https://interview.poetries.top/fe-node-docs/nodejs-docs/advance/-使用 eventproxy 控制并发.html](https://interview.poetries.top/fe-node-docs/nodejs-docs/advance/-使用 eventproxy 控制并发.html)
 
 ---
 

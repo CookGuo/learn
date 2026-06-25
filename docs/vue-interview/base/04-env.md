@@ -1,12 +1,10 @@
 ---
 title: # 构建基础篇 3：env 文件与环境设置
-source: https://interview.poetries.top/fe-improve-docs/vue/learn-vue-base/base/4-构建基础篇%203：env%20文件与环境设置.html
 crawled: 2026-04-09
 ---
 
 # # 构建基础篇 3：env 文件与环境设置
 
-> 原文: [https://interview.poetries.top/fe-improve-docs/vue/learn-vue-base/base/4-构建基础篇%203：env%20文件与环境设置.html](https://interview.poetries.top/fe-improve-docs/vue/learn-vue-base/base/4-构建基础篇%203：env%20文件与环境设置.html)
 
 ---
 

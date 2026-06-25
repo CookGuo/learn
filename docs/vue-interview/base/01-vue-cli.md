@@ -1,12 +1,10 @@
 ---
 title: # 开篇：Vue CLI 3 项目构建基础
-source: https://interview.poetries.top/fe-improve-docs/vue/learn-vue-base/base/1-Vue%20CLI%203%20%E9%A1%B9%E7%9B%AE%E6%9E%84%E5%BB%BA%E5%9F%BA%E7%A1%80.html
 crawled: 2026-04-09
 ---
 
 # # 开篇：Vue CLI 3 项目构建基础
 
-> 原文: [https://interview.poetries.top/fe-improve-docs/vue/learn-vue-base/base/1-Vue%20CLI%203%20%E9%A1%B9%E7%9B%AE%E6%9E%84%E5%BB%BA%E5%9F%BA%E7%A1%80.html](https://interview.poetries.top/fe-improve-docs/vue/learn-vue-base/base/1-Vue%20CLI%203%20%E9%A1%B9%E7%9B%AE%E6%9E%84%E5%BB%BA%E5%9F%BA%E7%A1%80.html)
 
 ---
 

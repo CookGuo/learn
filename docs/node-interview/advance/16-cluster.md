@@ -1,12 +1,10 @@
 ---
 title: cluster|Nodejs专题系列 | Node学习指南
-source: https://interview.poetries.top/fe-node-docs/nodejs-docs/advance/-cluster.html
 crawled: 2026-04-09
 ---
 
 # cluster|Nodejs专题系列 | Node学习指南
 
-> 原文: [https://interview.poetries.top/fe-node-docs/nodejs-docs/advance/-cluster.html](https://interview.poetries.top/fe-node-docs/nodejs-docs/advance/-cluster.html)
 
 ---
 

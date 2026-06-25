@@ -1,12 +1,10 @@
 ---
 title: 实践篇 表单验证下|React进阶专题 | 前端进阶学习
-source: https://interview.poetries.top/fe-improve-docs/react/react-improve/docs/24-实践篇%20表单验证下.html
 crawled: 2026-04-09
 ---
 
 # 实践篇 表单验证下|React进阶专题 | 前端进阶学习
 
-> 原文: [https://interview.poetries.top/fe-improve-docs/react/react-improve/docs/24-实践篇%20表单验证下.html](https://interview.poetries.top/fe-improve-docs/react/react-improve/docs/24-实践篇%20表单验证下.html)
 
 ---
 

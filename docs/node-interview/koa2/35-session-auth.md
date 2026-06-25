@@ -1,12 +1,10 @@
 ---
 title: # session登录态判断处理
-source: https://interview.poetries.top/fe-node-docs/nodejs-docs/koa2/-12.9 session登录态判断处理.html
 crawled: 2026-04-09
 ---
 
 # # session登录态判断处理
 
-> 原文: [https://interview.poetries.top/fe-node-docs/nodejs-docs/koa2/-12.9 session登录态判断处理.html](https://interview.poetries.top/fe-node-docs/nodejs-docs/koa2/-12.9 session登录态判断处理.html)
 
 ---
 

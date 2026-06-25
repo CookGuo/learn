@@ -1,12 +1,10 @@
 ---
 title: 域名解析 dns|Nodejs专题系列 | Node学习指南
-source: https://interview.poetries.top/fe-node-docs/nodejs-docs/modules/-4.9 域名解析 dns.html
 crawled: 2026-04-09
 ---
 
 # 域名解析 dns|Nodejs专题系列 | Node学习指南
 
-> 原文: [https://interview.poetries.top/fe-node-docs/nodejs-docs/modules/-4.9 域名解析 dns.html](https://interview.poetries.top/fe-node-docs/nodejs-docs/modules/-4.9 域名解析 dns.html)
 
 ---
 

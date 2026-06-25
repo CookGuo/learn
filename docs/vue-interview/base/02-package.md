@@ -1,12 +1,10 @@
 ---
 title: # 构建基础篇 1：你需要了解的包管理工具与配置项
-source: https://interview.poetries.top/fe-improve-docs/vue/learn-vue-base/base/2-构建基础篇%201：你需要了解的包管理工具与配置项.html
 crawled: 2026-04-09
 ---
 
 # # 构建基础篇 1：你需要了解的包管理工具与配置项
 
-> 原文: [https://interview.poetries.top/fe-improve-docs/vue/learn-vue-base/base/2-构建基础篇%201：你需要了解的包管理工具与配置项.html](https://interview.poetries.top/fe-improve-docs/vue/learn-vue-base/base/2-构建基础篇%201：你需要了解的包管理工具与配置项.html)
 
 ---
 

@@ -1,12 +1,10 @@
 ---
 title: # koa-bodyparser中间件
-source: https://interview.poetries.top/fe-node-docs/nodejs-docs/koa2/-3.3 koa bodyparser中间件.html
 crawled: 2026-04-09
 ---
 
 # # koa-bodyparser中间件
 
-> 原文: [https://interview.poetries.top/fe-node-docs/nodejs-docs/koa2/-3.3 koa bodyparser中间件.html](https://interview.poetries.top/fe-node-docs/nodejs-docs/koa2/-3.3 koa bodyparser中间件.html)
 
 ---
 

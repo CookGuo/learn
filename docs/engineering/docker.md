@@ -1,12 +1,10 @@
 ---
 title: docker系统总结|前端工程化 | 前端进阶学习
-source: https://interview.poetries.top/fe-improve-docs/engineering/docs/docker.html
 crawled: 2026-04-09
 ---
 
 # docker系统总结|前端工程化 | 前端进阶学习
 
-> 原文: [https://interview.poetries.top/fe-improve-docs/engineering/docs/docker.html](https://interview.poetries.top/fe-improve-docs/engineering/docs/docker.html)
 
 ---
 

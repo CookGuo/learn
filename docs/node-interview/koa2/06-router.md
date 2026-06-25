@@ -1,12 +1,10 @@
 ---
 title: # koa2 原生路由实现
-source: https://interview.poetries.top/fe-node-docs/nodejs-docs/koa2/-2.1 原生koa2实现路由.html
 crawled: 2026-04-09
 ---
 
 # # koa2 原生路由实现
 
-> 原文: [https://interview.poetries.top/fe-node-docs/nodejs-docs/koa2/-2.1 原生koa2实现路由.html](https://interview.poetries.top/fe-node-docs/nodejs-docs/koa2/-2.1 原生koa2实现路由.html)
 
 ---
 

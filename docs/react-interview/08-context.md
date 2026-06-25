@@ -1,12 +1,10 @@
 ---
 title: 基础篇 提供者 context|React进阶专题 | 前端进阶学习
-source: https://interview.poetries.top/fe-improve-docs/react/react-improve/docs/08-基础篇%20提供者%20context.html
 crawled: 2026-04-09
 ---
 
 # 基础篇 提供者 context|React进阶专题 | 前端进阶学习
 
-> 原文: [https://interview.poetries.top/fe-improve-docs/react/react-improve/docs/08-基础篇%20提供者%20context.html](https://interview.poetries.top/fe-improve-docs/react/react-improve/docs/08-基础篇%20提供者%20context.html)
 
 ---
 

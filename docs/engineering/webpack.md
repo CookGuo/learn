@@ -1,12 +1,10 @@
 ---
 title: webpack总结篇|前端工程化 | 前端进阶学习
-source: https://interview.poetries.top/fe-improve-docs/engineering/docs/webpack.html
 crawled: 2026-04-09
 ---
 
 # webpack总结篇|前端工程化 | 前端进阶学习
 
-> 原文: [https://interview.poetries.top/fe-improve-docs/engineering/docs/webpack.html](https://interview.poetries.top/fe-improve-docs/engineering/docs/webpack.html)
 
 ---
 

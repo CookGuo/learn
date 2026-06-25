@@ -1,12 +1,10 @@
 ---
 title: # Vue 组件精讲
-source: https://interview.poetries.top/fe-improve-docs/vue/docs/vue-component.html
 crawled: 2026-04-09
 ---
 
 # # Vue 组件精讲
 
-> 原文: [https://interview.poetries.top/fe-improve-docs/vue/docs/vue-component.html](https://interview.poetries.top/fe-improve-docs/vue/docs/vue-component.html)
 
 ---
 

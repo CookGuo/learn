@@ -1,6 +1,5 @@
 ---
 title: Vue 面试专题
-source: https://interview.poetries.top/fe-improve-docs/vue/learn-vue-base/
 crawled: 2026-04-09
 ---
 

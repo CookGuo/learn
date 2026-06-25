@@ -1,12 +1,10 @@
 ---
 title: 服务端字符编解码&乱码处理 charset_enc_dec|Nodejs专题系列 | Node学习指南
-source: https://interview.poetries.top/fe-node-docs/nodejs-docs/advance/-服务端字符编解码&乱码处理 charset_enc_dec.html
 crawled: 2026-04-09
 ---
 
 # 服务端字符编解码&乱码处理 charset_enc_dec|Nodejs专题系列 | Node学习指南
 
-> 原文: [https://interview.poetries.top/fe-node-docs/nodejs-docs/advance/-服务端字符编解码&乱码处理 charset_enc_dec.html](https://interview.poetries.top/fe-node-docs/nodejs-docs/advance/-服务端字符编解码&乱码处理 charset_enc_dec.html)
 
 ---
 

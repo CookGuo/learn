@@ -1,12 +1,10 @@
 ---
 title: 使用 Kubernetes 部署访问你的第一个应用|前端工程化 | 前端进阶学习
-source: https://interview.poetries.top/fe-improve-docs/engineering/ci-docs/note/07-使用 Kubernetes 部署访问你的第一个应用.html
 crawled: 2026-04-09
 ---
 
 # 使用 Kubernetes 部署访问你的第一个应用|前端工程化 | 前端进阶学习
 
-> 原文: [https://interview.poetries.top/fe-improve-docs/engineering/ci-docs/note/07-使用 Kubernetes 部署访问你的第一个应用.html](https://interview.poetries.top/fe-improve-docs/engineering/ci-docs/note/07-使用 Kubernetes 部署访问你的第一个应用.html)
 
 ---
 

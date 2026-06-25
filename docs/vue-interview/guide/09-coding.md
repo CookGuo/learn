@@ -1,12 +1,10 @@
 ---
 title: # 开发指南篇 1：从编码技巧与规范开始
-source: https://interview.poetries.top/fe-improve-docs/vue/learn-vue-base/guide/9-开发指南篇%201：从编码技巧与规范开始.html
 crawled: 2026-04-09
 ---
 
 # # 开发指南篇 1：从编码技巧与规范开始
 
-> 原文: [https://interview.poetries.top/fe-improve-docs/vue/learn-vue-base/guide/9-开发指南篇%201：从编码技巧与规范开始.html](https://interview.poetries.top/fe-improve-docs/vue/learn-vue-base/guide/9-开发指南篇%201：从编码技巧与规范开始.html)
 
 ---
 

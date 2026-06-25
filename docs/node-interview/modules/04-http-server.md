@@ -1,12 +1,10 @@
 ---
 title: 网络服务 http server|Nodejs专题系列 | Node学习指南
-source: https://interview.poetries.top/fe-node-docs/nodejs-docs/modules/-4.4 网络服务 http server.html
 crawled: 2026-04-09
 ---
 
 # 网络服务 http server|Nodejs专题系列 | Node学习指南
 
-> 原文: [https://interview.poetries.top/fe-node-docs/nodejs-docs/modules/-4.4 网络服务 http server.html](https://interview.poetries.top/fe-node-docs/nodejs-docs/modules/-4.4 网络服务 http server.html)
 
 ---
 

@@ -1,12 +1,10 @@
 ---
 title: 原理篇 调和与 fiber|React进阶专题 | 前端进阶学习
-source: https://interview.poetries.top/fe-improve-docs/react/react-improve/docs/17-原理篇%20调和与%20fiber.html
 crawled: 2026-04-09
 ---
 
 # 原理篇 调和与 fiber|React进阶专题 | 前端进阶学习
 
-> 原文: [https://interview.poetries.top/fe-improve-docs/react/react-improve/docs/17-原理篇%20调和与%20fiber.html](https://interview.poetries.top/fe-improve-docs/react/react-improve/docs/17-原理篇%20调和与%20fiber.html)
 
 ---
 

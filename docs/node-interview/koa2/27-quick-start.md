@@ -1,12 +1,10 @@
 ---
 title: # 项目demo
-source: https://interview.poetries.top/fe-node-docs/nodejs-docs/koa2/-12.1 快速启动.html
 crawled: 2026-04-09
 ---
 
 # # 项目demo
 
-> 原文: [https://interview.poetries.top/fe-node-docs/nodejs-docs/koa2/-12.1 快速启动.html](https://interview.poetries.top/fe-node-docs/nodejs-docs/koa2/-12.1 快速启动.html)
 
 ---
 

@@ -1,6 +1,5 @@
 ---
 title: 前端高频面试题-精选篇-React模块 
-source: https://interview.poetries.top/docs/excellent-docs/6-React.html
 crawled: 2026-04-08
 ---
 

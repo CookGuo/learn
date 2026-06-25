@@ -1,12 +1,10 @@
 ---
 title: 基础调试 console|Nodejs专题系列 | Node学习指南
-source: https://interview.poetries.top/fe-node-docs/nodejs-docs/modules/-3.1 基础调试 console.html
 crawled: 2026-04-09
 ---
 
 # 基础调试 console|Nodejs专题系列 | Node学习指南
 
-> 原文: [https://interview.poetries.top/fe-node-docs/nodejs-docs/modules/-3.1 基础调试 console.html](https://interview.poetries.top/fe-node-docs/nodejs-docs/modules/-3.1 基础调试 console.html)
 
 ---
 

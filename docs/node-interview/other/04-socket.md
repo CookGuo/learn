@@ -1,12 +1,10 @@
 ---
 title: Socket|Nodejs专题系列 | Node学习指南
-source: https://interview.poetries.top/fe-node-docs/nodejs-docs/other/04-Socket.html
 crawled: 2026-04-09
 ---
 
 # Socket|Nodejs专题系列 | Node学习指南
 
-> 原文: [https://interview.poetries.top/fe-node-docs/nodejs-docs/other/04-Socket.html](https://interview.poetries.top/fe-node-docs/nodejs-docs/other/04-Socket.html)
 
 ---
 

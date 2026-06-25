@@ -1,12 +1,10 @@
 ---
 title: Kubernetes DNS 策略 将你的服务连接起来|前端工程化 | 前端进阶学习
-source: https://interview.poetries.top/fe-improve-docs/engineering/ci-docs/note/11-Kubernetes DNS 策略 将你的服务连接起来.html
 crawled: 2026-04-09
 ---
 
 # Kubernetes DNS 策略 将你的服务连接起来|前端工程化 | 前端进阶学习
 
-> 原文: [https://interview.poetries.top/fe-improve-docs/engineering/ci-docs/note/11-Kubernetes DNS 策略 将你的服务连接起来.html](https://interview.poetries.top/fe-improve-docs/engineering/ci-docs/note/11-Kubernetes DNS 策略 将你的服务连接起来.html)
 
 ---
 

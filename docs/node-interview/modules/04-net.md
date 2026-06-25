@@ -1,12 +1,10 @@
 ---
 title: 网络TCP net|Nodejs专题系列 | Node学习指南
-source: https://interview.poetries.top/fe-node-docs/nodejs-docs/modules/-4.7 网络TCP net.html
 crawled: 2026-04-09
 ---
 
 # 网络TCP net|Nodejs专题系列 | Node学习指南
 
-> 原文: [https://interview.poetries.top/fe-node-docs/nodejs-docs/modules/-4.7 网络TCP net.html](https://interview.poetries.top/fe-node-docs/nodejs-docs/modules/-4.7 网络TCP net.html)
 
 ---
 

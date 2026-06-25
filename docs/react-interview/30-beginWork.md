@@ -1,12 +1,10 @@
 ---
 title: 原理篇 beginWork和render全流程|React进阶专题 | 前端进阶学习
-source: https://interview.poetries.top/fe-improve-docs/react/react-improve/docs/30-原理篇%20beginWork和render全流程.html
 crawled: 2026-04-09
 ---
 
 # 原理篇 beginWork和render全流程|React进阶专题 | 前端进阶学习
 
-> 原文: [https://interview.poetries.top/fe-improve-docs/react/react-improve/docs/30-原理篇%20beginWork和render全流程.html](https://interview.poetries.top/fe-improve-docs/react/react-improve/docs/30-原理篇%20beginWork和render全流程.html)
 
 ---
 

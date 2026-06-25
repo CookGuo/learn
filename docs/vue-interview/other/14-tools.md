@@ -1,12 +1,10 @@
 ---
 title: # 开发拓展篇 1：扩充你的开发工具
-source: https://interview.poetries.top/fe-improve-docs/vue/learn-vue-base/other/14-开发拓展篇%201：扩充你的开发工具.html
 crawled: 2026-04-09
 ---
 
 # # 开发拓展篇 1：扩充你的开发工具
 
-> 原文: [https://interview.poetries.top/fe-improve-docs/vue/learn-vue-base/other/14-开发拓展篇%201：扩充你的开发工具.html](https://interview.poetries.top/fe-improve-docs/vue/learn-vue-base/other/14-开发拓展篇%201：扩充你的开发工具.html)
 
 ---
 

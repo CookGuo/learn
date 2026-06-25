@@ -1,12 +1,10 @@
 ---
 title: # async/await封装使用mysql
-source: https://interview.poetries.top/fe-node-docs/nodejs-docs/koa2/-8.2 async await封装使用mysql.html
 crawled: 2026-04-09
 ---
 
 # # async/await封装使用mysql
 
-> 原文: [https://interview.poetries.top/fe-node-docs/nodejs-docs/koa2/-8.2 async await封装使用mysql.html](https://interview.poetries.top/fe-node-docs/nodejs-docs/koa2/-8.2 async await封装使用mysql.html)
 
 ---
 

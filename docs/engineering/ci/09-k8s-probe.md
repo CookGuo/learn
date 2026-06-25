@@ -1,12 +1,10 @@
 ---
 title: 服务可用性探针 如何判断你的服务是否可用|前端工程化 | 前端进阶学习
-source: https://interview.poetries.top/fe-improve-docs/engineering/ci-docs/note/09-服务可用性探针 如何判断你的服务是否可用.html
 crawled: 2026-04-09
 ---
 
 # 服务可用性探针 如何判断你的服务是否可用|前端工程化 | 前端进阶学习
 
-> 原文: [https://interview.poetries.top/fe-improve-docs/engineering/ci-docs/note/09-服务可用性探针 如何判断你的服务是否可用.html](https://interview.poetries.top/fe-improve-docs/engineering/ci-docs/note/09-服务可用性探针 如何判断你的服务是否可用.html)
 
 ---
 

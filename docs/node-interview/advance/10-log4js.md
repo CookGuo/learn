@@ -1,12 +1,10 @@
 ---
 title: log4js入门实例|Nodejs专题系列 | Node学习指南
-source: https://interview.poetries.top/fe-node-docs/nodejs-docs/advance/-log4js入门实例.html
 crawled: 2026-04-09
 ---
 
 # log4js入门实例|Nodejs专题系列 | Node学习指南
 
-> 原文: [https://interview.poetries.top/fe-node-docs/nodejs-docs/advance/-log4js入门实例.html](https://interview.poetries.top/fe-node-docs/nodejs-docs/advance/-log4js入门实例.html)
 
 ---
 

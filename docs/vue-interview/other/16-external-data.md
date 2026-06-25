@@ -1,12 +1,10 @@
 ---
 title: # 开发拓展篇 3：尝试使用外部数据
-source: https://interview.poetries.top/fe-improve-docs/vue/learn-vue-base/other/16-开发拓展篇%203：尝试使用外部数据.html
 crawled: 2026-04-09
 ---
 
 # # 开发拓展篇 3：尝试使用外部数据
 
-> 原文: [https://interview.poetries.top/fe-improve-docs/vue/learn-vue-base/other/16-开发拓展篇%203：尝试使用外部数据.html](https://interview.poetries.top/fe-improve-docs/vue/learn-vue-base/other/16-开发拓展篇%203：尝试使用外部数据.html)
 
 ---
 

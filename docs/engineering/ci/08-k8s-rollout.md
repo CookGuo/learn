@@ -1,12 +1,10 @@
 ---
 title: Kubernetes 灰度发布与滚动发布 零宕机发布的奥秘|前端工程化 | 前端进阶学习
-source: https://interview.poetries.top/fe-improve-docs/engineering/ci-docs/note/08-Kubernetes 灰度发布与滚动发布 零宕机发布的奥秘.html
 crawled: 2026-04-09
 ---
 
 # Kubernetes 灰度发布与滚动发布 零宕机发布的奥秘|前端工程化 | 前端进阶学习
 
-> 原文: [https://interview.poetries.top/fe-improve-docs/engineering/ci-docs/note/08-Kubernetes 灰度发布与滚动发布 零宕机发布的奥秘.html](https://interview.poetries.top/fe-improve-docs/engineering/ci-docs/note/08-Kubernetes 灰度发布与滚动发布 零宕机发布的奥秘.html)
 
 ---
 

@@ -1,6 +1,5 @@
 ---
 title: 进阶问题
-source: https://interview.poetries.top/qa/1-前端100题自检.html
 crawled: 2026-04-08
 ---
 

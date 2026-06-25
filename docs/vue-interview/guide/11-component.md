@@ -1,12 +1,10 @@
 ---
 title: # 开发指南篇 3：合理划分容器组件与展示组件
-source: https://interview.poetries.top/fe-improve-docs/vue/learn-vue-base/guide/11-开发指南篇%203：合理划分容器组件与展示组件.html
 crawled: 2026-04-09
 ---
 
 # # 开发指南篇 3：合理划分容器组件与展示组件
 
-> 原文: [https://interview.poetries.top/fe-improve-docs/vue/learn-vue-base/guide/11-开发指南篇%203：合理划分容器组件与展示组件.html](https://interview.poetries.top/fe-improve-docs/vue/learn-vue-base/guide/11-开发指南篇%203：合理划分容器组件与展示组件.html)
 
 ---
 

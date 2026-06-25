@@ -1,12 +1,10 @@
 ---
 title: # 构建实战篇 3：多页路由与模板解析
-source: https://interview.poetries.top/fe-improve-docs/vue/learn-vue-base/action/7-构建实战篇%203：多页路由与模板解析.html
 crawled: 2026-04-09
 ---
 
 # # 构建实战篇 3：多页路由与模板解析
 
-> 原文: [https://interview.poetries.top/fe-improve-docs/vue/learn-vue-base/action/7-构建实战篇%203：多页路由与模板解析.html](https://interview.poetries.top/fe-improve-docs/vue/learn-vue-base/action/7-构建实战篇%203：多页路由与模板解析.html)
 
 ---
 
