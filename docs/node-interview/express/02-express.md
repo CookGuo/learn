@@ -1,12 +1,10 @@
 ---
 title: Express|Nodejs专题系列 | Node学习指南
-source: https://interview.poetries.top/fe-node-docs/nodejs-docs/express/-1.2 Express.html
 crawled: 2026-04-09
 ---
 
 # Express|Nodejs专题系列 | Node学习指南
 
-> 原文: [https://interview.poetries.top/fe-node-docs/nodejs-docs/express/-1.2 Express.html](https://interview.poetries.top/fe-node-docs/nodejs-docs/express/-1.2 Express.html)
 
 ---
 

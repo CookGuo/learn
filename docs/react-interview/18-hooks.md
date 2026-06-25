@@ -1,12 +1,10 @@
 ---
 title: 原理篇 Hooks 原理|React进阶专题 | 前端进阶学习
-source: https://interview.poetries.top/fe-improve-docs/react/react-improve/docs/18-原理篇%20Hooks%20原理.html
 crawled: 2026-04-09
 ---
 
 # 原理篇 Hooks 原理|React进阶专题 | 前端进阶学习
 
-> 原文: [https://interview.poetries.top/fe-improve-docs/react/react-improve/docs/18-原理篇%20Hooks%20原理.html](https://interview.poetries.top/fe-improve-docs/react/react-improve/docs/18-原理篇%20Hooks%20原理.html)
 
 ---
 

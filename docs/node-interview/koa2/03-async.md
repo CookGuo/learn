@@ -1,12 +1,10 @@
 ---
 title: # async/await使用
-source: https://interview.poetries.top/fe-node-docs/nodejs-docs/koa2/-1.2 async await使用.html
 crawled: 2026-04-09
 ---
 
 # # async/await使用
 
-> 原文: [https://interview.poetries.top/fe-node-docs/nodejs-docs/koa2/-1.2 async await使用.html](https://interview.poetries.top/fe-node-docs/nodejs-docs/koa2/-1.2 async await使用.html)
 
 ---
 

@@ -1,12 +1,10 @@
 ---
 title: # 《使用 superagent 与 cheerio 完成简单爬虫》
-source: https://interview.poetries.top/fe-node-docs/nodejs-docs/advance/-使用 superagent 与 cheerio 完成简单爬虫.html
 crawled: 2026-04-09
 ---
 
 # # 《使用 superagent 与 cheerio 完成简单爬虫》
 
-> 原文: [https://interview.poetries.top/fe-node-docs/nodejs-docs/advance/-使用 superagent 与 cheerio 完成简单爬虫.html](https://interview.poetries.top/fe-node-docs/nodejs-docs/advance/-使用 superagent 与 cheerio 完成简单爬虫.html)
 
 ---
 

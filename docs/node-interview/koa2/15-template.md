@@ -1,12 +1,10 @@
 ---
 title: # koa2加载模板引擎
-source: https://interview.poetries.top/fe-node-docs/nodejs-docs/koa2/-6.1 koa2加载模板引擎.html
 crawled: 2026-04-09
 ---
 
 # # koa2加载模板引擎
 
-> 原文: [https://interview.poetries.top/fe-node-docs/nodejs-docs/koa2/-6.1 koa2加载模板引擎.html](https://interview.poetries.top/fe-node-docs/nodejs-docs/koa2/-6.1 koa2加载模板引擎.html)
 
 ---
 

@@ -1,12 +1,10 @@
 ---
 title: 二进制解码 string_decoder|Nodejs专题系列 | Node学习指南
-source: https://interview.poetries.top/fe-node-docs/nodejs-docs/modules/-8.2 二进制解码 string_decoder.html
 crawled: 2026-04-09
 ---
 
 # 二进制解码 string_decoder|Nodejs专题系列 | Node学习指南
 
-> 原文: [https://interview.poetries.top/fe-node-docs/nodejs-docs/modules/-8.2 二进制解码 string_decoder.html](https://interview.poetries.top/fe-node-docs/nodejs-docs/modules/-8.2 二进制解码 string_decoder.html)
 
 ---
 

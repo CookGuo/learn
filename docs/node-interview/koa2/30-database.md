@@ -1,12 +1,10 @@
 ---
 title: # 数据库设计
-source: https://interview.poetries.top/fe-node-docs/nodejs-docs/koa2/-12.4 数据库设计.html
 crawled: 2026-04-09
 ---
 
 # # 数据库设计
 
-> 原文: [https://interview.poetries.top/fe-node-docs/nodejs-docs/koa2/-12.4 数据库设计.html](https://interview.poetries.top/fe-node-docs/nodejs-docs/koa2/-12.4 数据库设计.html)
 
 ---
 

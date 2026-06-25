@@ -1,6 +1,5 @@
 ---
 title: 计算机基础
-source: https://interview.poetries.top/docs/excellent-docs/19-计算机通识.html
 crawled: 2026-04-08
 ---
 

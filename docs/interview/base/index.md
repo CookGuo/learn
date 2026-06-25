@@ -1,6 +1,5 @@
 ---
 title: 基础篇
-source: https://interview.poetries.top/docs/base.html
 crawled: 2026-04-08
 ---
 

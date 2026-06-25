@@ -1,6 +1,5 @@
 ---
 title: 面试高频手写题
-source: https://interview.poetries.top/docs/base/handwritten.html
 crawled: 2026-04-08
 ---
 

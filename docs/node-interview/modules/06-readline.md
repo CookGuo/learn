@@ -1,12 +1,10 @@
 ---
 title: 逐行读取 readline|Nodejs专题系列 | Node学习指南
-source: https://interview.poetries.top/fe-node-docs/nodejs-docs/modules/-6.2 逐行读取 readline.html
 crawled: 2026-04-09
 ---
 
 # 逐行读取 readline|Nodejs专题系列 | Node学习指南
 
-> 原文: [https://interview.poetries.top/fe-node-docs/nodejs-docs/modules/-6.2 逐行读取 readline.html](https://interview.poetries.top/fe-node-docs/nodejs-docs/modules/-6.2 逐行读取 readline.html)
 
 ---
 

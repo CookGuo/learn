@@ -1,12 +1,10 @@
 ---
 title: 什么是 CI CD|前端工程化 | 前端进阶学习
-source: https://interview.poetries.top/fe-improve-docs/engineering/ci-docs/note/01-什么是 CI CD.html
 crawled: 2026-04-09
 ---
 
 # 什么是 CI CD|前端工程化 | 前端进阶学习
 
-> 原文: [https://interview.poetries.top/fe-improve-docs/engineering/ci-docs/note/01-什么是 CI CD.html](https://interview.poetries.top/fe-improve-docs/engineering/ci-docs/note/01-什么是 CI CD.html)
 
 ---
 

@@ -1,12 +1,10 @@
 ---
 title: # koa中间件开发和使用
-source: https://interview.poetries.top/fe-node-docs/nodejs-docs/koa2/-1.4 koa中间件开发与使用.html
 crawled: 2026-04-09
 ---
 
 # # koa中间件开发和使用
 
-> 原文: [https://interview.poetries.top/fe-node-docs/nodejs-docs/koa2/-1.4 koa中间件开发与使用.html](https://interview.poetries.top/fe-node-docs/nodejs-docs/koa2/-1.4 koa中间件开发与使用.html)
 
 ---
 

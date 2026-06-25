@@ -1,12 +1,10 @@
 ---
 title: 子进程 child|Nodejs专题系列 | Node学习指南
-source: https://interview.poetries.top/fe-node-docs/nodejs-docs/modules/-7.2 子进程 child.html
 crawled: 2026-04-09
 ---
 
 # 子进程 child|Nodejs专题系列 | Node学习指南
 
-> 原文: [https://interview.poetries.top/fe-node-docs/nodejs-docs/modules/-7.2 子进程 child.html](https://interview.poetries.top/fe-node-docs/nodejs-docs/modules/-7.2 子进程 child.html)
 
 ---
 

@@ -1,6 +1,5 @@
 ---
 title: 前端高频面试题-精选篇-Vue模块 
-source: https://interview.poetries.top/docs/excellent-docs/7-Vue.html
 crawled: 2026-04-08
 ---
 

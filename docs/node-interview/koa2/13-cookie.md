@@ -1,12 +1,10 @@
 ---
 title: # koa2使用cookie
-source: https://interview.poetries.top/fe-node-docs/nodejs-docs/koa2/-5.1 koa2使用cookie.html
 crawled: 2026-04-09
 ---
 
 # # koa2使用cookie
 
-> 原文: [https://interview.poetries.top/fe-node-docs/nodejs-docs/koa2/-5.1 koa2使用cookie.html](https://interview.poetries.top/fe-node-docs/nodejs-docs/koa2/-5.1 koa2使用cookie.html)
 
 ---
 

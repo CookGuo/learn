@@ -1,12 +1,10 @@
 ---
 title: 实用工具模块 util|Nodejs专题系列 | Node学习指南
-source: https://interview.poetries.top/fe-node-docs/nodejs-docs/modules/-9.2 实用工具模块 util.html
 crawled: 2026-04-09
 ---
 
 # 实用工具模块 util|Nodejs专题系列 | Node学习指南
 
-> 原文: [https://interview.poetries.top/fe-node-docs/nodejs-docs/modules/-9.2 实用工具模块 util.html](https://interview.poetries.top/fe-node-docs/nodejs-docs/modules/-9.2 实用工具模块 util.html)
 
 ---
 

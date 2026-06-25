@@ -1,12 +1,10 @@
 ---
 title: 进入CI的世界|前端工程化 | 前端进阶学习
-source: https://interview.poetries.top/fe-improve-docs/engineering/ci-docs/note/05-进入CI的世界.html
 crawled: 2026-04-09
 ---
 
 # 进入CI的世界|前端工程化 | 前端进阶学习
 
-> 原文: [https://interview.poetries.top/fe-improve-docs/engineering/ci-docs/note/05-进入CI的世界.html](https://interview.poetries.top/fe-improve-docs/engineering/ci-docs/note/05-进入CI的世界.html)
 
 ---
 

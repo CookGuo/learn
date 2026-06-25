@@ -1,12 +1,10 @@
 ---
 title: # koa2 快速开始
-source: https://interview.poetries.top/fe-node-docs/nodejs-docs/koa2/-1.1 快速开始.html
 crawled: 2026-04-09
 ---
 
 # # koa2 快速开始
 
-> 原文: [https://interview.poetries.top/fe-node-docs/nodejs-docs/koa2/-1.1 快速开始.html](https://interview.poetries.top/fe-node-docs/nodejs-docs/koa2/-1.1 快速开始.html)
 
 ---
 

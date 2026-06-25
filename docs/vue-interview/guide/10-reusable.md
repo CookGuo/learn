@@ -1,12 +1,10 @@
 ---
 title: # 开发指南篇 2：学会编写可复用性模块
-source: https://interview.poetries.top/fe-improve-docs/vue/learn-vue-base/guide/10-开发指南篇%202：学会编写可复用性模块.html
 crawled: 2026-04-09
 ---
 
 # # 开发指南篇 2：学会编写可复用性模块
 
-> 原文: [https://interview.poetries.top/fe-improve-docs/vue/learn-vue-base/guide/10-开发指南篇%202：学会编写可复用性模块.html](https://interview.poetries.top/fe-improve-docs/vue/learn-vue-base/guide/10-开发指南篇%202：学会编写可复用性模块.html)
 
 ---
 

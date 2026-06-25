@@ -1,12 +1,10 @@
 ---
 title: 什么是 Kubernetes && 搭建 Kubernetes 集群 持续部署环境起步|前端工程化 | 前端进阶学习
-source: https://interview.poetries.top/fe-improve-docs/engineering/ci-docs/note/06-什么是 Kubernetes && 搭建 Kubernetes 集群 持续部署环境起步.html
 crawled: 2026-04-09
 ---
 
 # 什么是 Kubernetes && 搭建 Kubernetes 集群 持续部署环境起步|前端工程化 | 前端进阶学习
 
-> 原文: [https://interview.poetries.top/fe-improve-docs/engineering/ci-docs/note/06-什么是 Kubernetes && 搭建 Kubernetes 集群 持续部署环境起步.html](https://interview.poetries.top/fe-improve-docs/engineering/ci-docs/note/06-什么是 Kubernetes && 搭建 Kubernetes 集群 持续部署环境起步.html)
 
 ---
 

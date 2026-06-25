@@ -1,12 +1,10 @@
 ---
 title: # Nodejs进阶：crypto模块之理论篇
-source: https://interview.poetries.top/fe-node-docs/nodejs-docs/advance/-crypto模块之理论篇.html
 crawled: 2026-04-09
 ---
 
 # # Nodejs进阶：crypto模块之理论篇
 
-> 原文: [https://interview.poetries.top/fe-node-docs/nodejs-docs/advance/-crypto模块之理论篇.html](https://interview.poetries.top/fe-node-docs/nodejs-docs/advance/-crypto模块之理论篇.html)
 
 ---
 

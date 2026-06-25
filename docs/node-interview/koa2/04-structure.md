@@ -1,12 +1,10 @@
 ---
 title: # koa2简析结构
-source: https://interview.poetries.top/fe-node-docs/nodejs-docs/koa2/-1.3 koa2简析结构.html
 crawled: 2026-04-09
 ---
 
 # # koa2简析结构
 
-> 原文: [https://interview.poetries.top/fe-node-docs/nodejs-docs/koa2/-1.3 koa2简析结构.html](https://interview.poetries.top/fe-node-docs/nodejs-docs/koa2/-1.3 koa2简析结构.html)
 
 ---
 

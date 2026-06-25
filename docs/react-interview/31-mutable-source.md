@@ -1,12 +1,10 @@
 ---
 title: React 18特性篇 useMutableSource外部数据源|React进阶专题 | 前端进阶学习
-source: https://interview.poetries.top/fe-improve-docs/react/react-improve/docs/31-V18特性篇%20useMutableSource外部数据源.html
 crawled: 2026-04-09
 ---
 
 # React 18特性篇 useMutableSource外部数据源|React进阶专题 | 前端进阶学习
 
-> 原文: [https://interview.poetries.top/fe-improve-docs/react/react-improve/docs/31-V18特性篇%20useMutableSource外部数据源.html](https://interview.poetries.top/fe-improve-docs/react/react-improve/docs/31-V18特性篇%20useMutableSource外部数据源.html)
 
 ---
 

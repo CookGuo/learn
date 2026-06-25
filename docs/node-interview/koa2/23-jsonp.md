@@ -1,12 +1,10 @@
 ---
 title: # 原生koa2实现jsonp
-source: https://interview.poetries.top/fe-node-docs/nodejs-docs/koa2/-9.1 原生koa2实现JSONP.html
 crawled: 2026-04-09
 ---
 
 # # 原生koa2实现jsonp
 
-> 原文: [https://interview.poetries.top/fe-node-docs/nodejs-docs/koa2/-9.1 原生koa2实现JSONP.html](https://interview.poetries.top/fe-node-docs/nodejs-docs/koa2/-9.1 原生koa2实现JSONP.html)
 
 ---
 

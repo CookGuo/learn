@@ -1,12 +1,10 @@
 ---
 title: # 构建实战篇 4：项目整合与优化
-source: https://interview.poetries.top/fe-improve-docs/vue/learn-vue-base/action/8-构建实战篇%204：项目整合与优化.html
 crawled: 2026-04-09
 ---
 
 # # 构建实战篇 4：项目整合与优化
 
-> 原文: [https://interview.poetries.top/fe-improve-docs/vue/learn-vue-base/action/8-构建实战篇%204：项目整合与优化.html](https://interview.poetries.top/fe-improve-docs/vue/learn-vue-base/action/8-构建实战篇%204：项目整合与优化.html)
 
 ---
 

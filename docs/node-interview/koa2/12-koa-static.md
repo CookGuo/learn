@@ -1,12 +1,10 @@
 ---
 title: # koa-static中间件使用
-source: https://interview.poetries.top/fe-node-docs/nodejs-docs/koa2/-4.2 koa static中间件.html
 crawled: 2026-04-09
 ---
 
 # # koa-static中间件使用
 
-> 原文: [https://interview.poetries.top/fe-node-docs/nodejs-docs/koa2/-4.2 koa static中间件.html](https://interview.poetries.top/fe-node-docs/nodejs-docs/koa2/-4.2 koa static中间件.html)
 
 ---
 

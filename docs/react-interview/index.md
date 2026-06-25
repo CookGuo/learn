@@ -1,6 +1,5 @@
 ---
 title: React 面试专题
-source: https://interview.poetries.top/fe-improve-docs/react/react-improve/
 crawled: 2026-04-09
 ---
 

@@ -1,12 +1,10 @@
 ---
 title: 基础篇 多功能 Ref|React进阶专题 | 前端进阶学习
-source: https://interview.poetries.top/fe-improve-docs/react/react-improve/docs/07-基础篇%20多功能%20Ref.html
 crawled: 2026-04-09
 ---
 
 # 基础篇 多功能 Ref|React进阶专题 | 前端进阶学习
 
-> 原文: [https://interview.poetries.top/fe-improve-docs/react/react-improve/docs/07-基础篇%20多功能%20Ref.html](https://interview.poetries.top/fe-improve-docs/react/react-improve/docs/07-基础篇%20多功能%20Ref.html)
 
 ---
 

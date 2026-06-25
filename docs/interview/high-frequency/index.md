@@ -1,6 +1,5 @@
 ---
 title: 高频篇
-source: https://interview.poetries.top/docs/base/high-frequency.html
 crawled: 2026-04-08
 ---
 

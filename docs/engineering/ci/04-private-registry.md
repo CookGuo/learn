@@ -1,12 +1,10 @@
 ---
 title: 将镜像上传至私有镜像库 让镜像管理更私密|前端工程化 | 前端进阶学习
-source: https://interview.poetries.top/fe-improve-docs/engineering/ci-docs/note/04-将镜像上传至私有镜像库 让镜像管理更私密.html
 crawled: 2026-04-09
 ---
 
 # 将镜像上传至私有镜像库 让镜像管理更私密|前端工程化 | 前端进阶学习
 
-> 原文: [https://interview.poetries.top/fe-improve-docs/engineering/ci-docs/note/04-将镜像上传至私有镜像库 让镜像管理更私密.html](https://interview.poetries.top/fe-improve-docs/engineering/ci-docs/note/04-将镜像上传至私有镜像库 让镜像管理更私密.html)
 
 ---
 

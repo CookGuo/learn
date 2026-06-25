@@ -1,12 +1,10 @@
 ---
 title: # GET请求数据获取
-source: https://interview.poetries.top/fe-node-docs/nodejs-docs/koa2/-3.1 GET请求数据获取.html
 crawled: 2026-04-09
 ---
 
 # # GET请求数据获取
 
-> 原文: [https://interview.poetries.top/fe-node-docs/nodejs-docs/koa2/-3.1 GET请求数据获取.html](https://interview.poetries.top/fe-node-docs/nodejs-docs/koa2/-3.1 GET请求数据获取.html)
 
 ---
 

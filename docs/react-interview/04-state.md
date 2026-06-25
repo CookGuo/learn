@@ -1,12 +1,10 @@
 ---
 title: 基础篇 玄学 state|React进阶专题 | 前端进阶学习
-source: https://interview.poetries.top/fe-improve-docs/react/react-improve/docs/04-基础篇%20玄学%20state.html
 crawled: 2026-04-09
 ---
 
 # 基础篇 玄学 state|React进阶专题 | 前端进阶学习
 
-> 原文: [https://interview.poetries.top/fe-improve-docs/react/react-improve/docs/04-基础篇%20玄学%20state.html](https://interview.poetries.top/fe-improve-docs/react/react-improve/docs/04-基础篇%20玄学%20state.html)
 
 ---
 

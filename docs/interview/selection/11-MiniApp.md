@@ -1,6 +1,5 @@
 ---
 title: 前端高频面试题-精选篇-小程序模块 
-source: https://interview.poetries.top/docs/excellent-docs/11-小程序模块.html
 crawled: 2026-04-08
 ---
 

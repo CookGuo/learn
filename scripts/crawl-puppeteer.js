@@ -126,7 +126,7 @@ async function crawlWithBrowser(url, outputPath, cookie) {
     })
     markdown = markdown.replace(/\n{3,}/g, '\n\n').trim()
 
-    const frontmatter = `---\ntitle: ${title}\nsource: ${url}\ncrawled: ${new Date().toISOString().split('T')[0]}\n---\n\n# ${title}\n\n> 原文: [${url}](${url})\n\n---\n\n`
+    const frontmatter = `---\ntitle: ${title}\ncrawled: ${new Date().toISOString().split('T')[0]}\n---\n\n# ${title}\n\n---\n\n`
 
     const finalContent = frontmatter + markdown
 

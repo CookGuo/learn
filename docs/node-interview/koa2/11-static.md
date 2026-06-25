@@ -1,12 +1,10 @@
 ---
 title: # 原生koa2实现静态资源服务器
-source: https://interview.poetries.top/fe-node-docs/nodejs-docs/koa2/-4.1 原生koa2实现静态资源服务器.html
 crawled: 2026-04-09
 ---
 
 # # 原生koa2实现静态资源服务器
 
-> 原文: [https://interview.poetries.top/fe-node-docs/nodejs-docs/koa2/-4.1 原生koa2实现静态资源服务器.html](https://interview.poetries.top/fe-node-docs/nodejs-docs/koa2/-4.1 原生koa2实现静态资源服务器.html)
 
 ---
 

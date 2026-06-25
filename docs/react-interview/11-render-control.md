@@ -1,12 +1,10 @@
 ---
 title: 优化篇 渲染控制|React进阶专题 | 前端进阶学习
-source: https://interview.poetries.top/fe-improve-docs/react/react-improve/docs/11-优化篇%20渲染控制.html
 crawled: 2026-04-09
 ---
 
 # 优化篇 渲染控制|React进阶专题 | 前端进阶学习
 
-> 原文: [https://interview.poetries.top/fe-improve-docs/react/react-improve/docs/11-优化篇%20渲染控制.html](https://interview.poetries.top/fe-improve-docs/react/react-improve/docs/11-优化篇%20渲染控制.html)
 
 ---
 

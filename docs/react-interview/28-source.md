@@ -1,12 +1,10 @@
 ---
 title: 总结篇 如何有效阅读源码|React进阶专题 | 前端进阶学习
-source: https://interview.poetries.top/fe-improve-docs/react/react-improve/docs/28-总结篇%20如何有效阅读源码.html
 crawled: 2026-04-09
 ---
 
 # 总结篇 如何有效阅读源码|React进阶专题 | 前端进阶学习
 
-> 原文: [https://interview.poetries.top/fe-improve-docs/react/react-improve/docs/28-总结篇%20如何有效阅读源码.html](https://interview.poetries.top/fe-improve-docs/react/react-improve/docs/28-总结篇%20如何有效阅读源码.html)
 
 ---
 

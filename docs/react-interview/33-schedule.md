@@ -1,12 +1,10 @@
 ---
 title: 原理篇 更新流程 进入调度任务|React进阶专题 | 前端进阶学习
-source: https://interview.poetries.top/fe-improve-docs/react/react-improve/docs/33-原理篇%20更新流程%20进入调度任务.html
 crawled: 2026-04-09
 ---
 
 # 原理篇 更新流程 进入调度任务|React进阶专题 | 前端进阶学习
 
-> 原文: [https://interview.poetries.top/fe-improve-docs/react/react-improve/docs/33-原理篇%20更新流程%20进入调度任务.html](https://interview.poetries.top/fe-improve-docs/react/react-improve/docs/33-原理篇%20更新流程%20进入调度任务.html)
 
 ---
 

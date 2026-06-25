@@ -1,12 +1,10 @@
 ---
 title: # koa2实现session
-source: https://interview.poetries.top/fe-node-docs/nodejs-docs/koa2/-5.2 koa2实现session.html
 crawled: 2026-04-09
 ---
 
 # # koa2实现session
 
-> 原文: [https://interview.poetries.top/fe-node-docs/nodejs-docs/koa2/-5.2 koa2实现session.html](https://interview.poetries.top/fe-node-docs/nodejs-docs/koa2/-5.2 koa2实现session.html)
 
 ---
 

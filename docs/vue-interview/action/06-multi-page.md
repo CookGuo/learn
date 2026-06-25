@@ -1,12 +1,10 @@
 ---
 title: # 构建实战篇 2：使用 pages 构建多页应用
-source: https://interview.poetries.top/fe-improve-docs/vue/learn-vue-base/action/6-构建实战篇%202：使用%20pages%20构建多页应用.html
 crawled: 2026-04-09
 ---
 
 # # 构建实战篇 2：使用 pages 构建多页应用
 
-> 原文: [https://interview.poetries.top/fe-improve-docs/vue/learn-vue-base/action/6-构建实战篇%202：使用%20pages%20构建多页应用.html](https://interview.poetries.top/fe-improve-docs/vue/learn-vue-base/action/6-构建实战篇%202：使用%20pages%20构建多页应用.html)
 
 ---
 

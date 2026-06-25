@@ -1,12 +1,10 @@
 ---
 title: # 分层设计
-source: https://interview.poetries.top/fe-node-docs/nodejs-docs/koa2/-12.3 分层操作.html
 crawled: 2026-04-09
 ---
 
 # # 分层设计
 
-> 原文: [https://interview.poetries.top/fe-node-docs/nodejs-docs/koa2/-12.3 分层操作.html](https://interview.poetries.top/fe-node-docs/nodejs-docs/koa2/-12.3 分层操作.html)
 
 ---
 

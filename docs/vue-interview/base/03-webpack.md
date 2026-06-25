@@ -1,12 +1,10 @@
 ---
 title: # 构建基础篇 2：webpack 在 CLI 3 中的应用
-source: https://interview.poetries.top/fe-improve-docs/vue/learn-vue-base/base/3-构建基础篇%202：webpack%20在%20CLI%203%20中的应用.html
 crawled: 2026-04-09
 ---
 
 # # 构建基础篇 2：webpack 在 CLI 3 中的应用
 
-> 原文: [https://interview.poetries.top/fe-improve-docs/vue/learn-vue-base/base/3-构建基础篇%202：webpack%20在%20CLI%203%20中的应用.html](https://interview.poetries.top/fe-improve-docs/vue/learn-vue-base/base/3-构建基础篇%202：webpack%20在%20CLI%203%20中的应用.html)
 
 ---
 

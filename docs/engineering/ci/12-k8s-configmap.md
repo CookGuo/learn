@@ -1,12 +1,10 @@
 ---
 title: Kubernetes ConfigMap 统一管理服务环境变量|前端工程化 | 前端进阶学习
-source: https://interview.poetries.top/fe-improve-docs/engineering/ci-docs/note/12-Kubernetes ConfigMap 统一管理服务环境变量.html
 crawled: 2026-04-09
 ---
 
 # Kubernetes ConfigMap 统一管理服务环境变量|前端工程化 | 前端进阶学习
 
-> 原文: [https://interview.poetries.top/fe-improve-docs/engineering/ci-docs/note/12-Kubernetes ConfigMap 统一管理服务环境变量.html](https://interview.poetries.top/fe-improve-docs/engineering/ci-docs/note/12-Kubernetes ConfigMap 统一管理服务环境变量.html)
 
 ---
 

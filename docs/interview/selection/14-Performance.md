@@ -1,6 +1,5 @@
 ---
 title: 前端高频面试题-精选篇-性能优化模块 
-source: https://interview.poetries.top/docs/excellent-docs/14-性能优化模块.html
 crawled: 2026-04-08
 ---
 

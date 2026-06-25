@@ -1,12 +1,10 @@
 ---
 title: 安装 Docker 和 Jenkins 持续构建环境起步|前端工程化 | 前端进阶学习
-source: https://interview.poetries.top/fe-improve-docs/engineering/ci-docs/note/02-安装 Docker 和 Jenkins 持续构建环境起步.html
 crawled: 2026-04-09
 ---
 
 # 安装 Docker 和 Jenkins 持续构建环境起步|前端工程化 | 前端进阶学习
 
-> 原文: [https://interview.poetries.top/fe-improve-docs/engineering/ci-docs/note/02-安装 Docker 和 Jenkins 持续构建环境起步.html](https://interview.poetries.top/fe-improve-docs/engineering/ci-docs/note/02-安装 Docker 和 Jenkins 持续构建环境起步.html)
 
 ---
 

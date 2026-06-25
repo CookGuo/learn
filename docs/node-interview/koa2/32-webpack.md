@@ -1,12 +1,10 @@
 ---
 title: # webpack4 环境搭建
-source: https://interview.poetries.top/fe-node-docs/nodejs-docs/koa2/-12.6 webpack4环境搭建.html
 crawled: 2026-04-09
 ---
 
 # # webpack4 环境搭建
 
-> 原文: [https://interview.poetries.top/fe-node-docs/nodejs-docs/koa2/-12.6 webpack4环境搭建.html](https://interview.poetries.top/fe-node-docs/nodejs-docs/koa2/-12.6 webpack4环境搭建.html)
 
 ---
 

@@ -1,12 +1,10 @@
 ---
 title: # 开发指南篇 5：Vue API 盲点解析
-source: https://interview.poetries.top/fe-improve-docs/vue/learn-vue-base/guide/13-开发指南篇%205：Vue%20API%20盲点解析.html
 crawled: 2026-04-09
 ---
 
 # # 开发指南篇 5：Vue API 盲点解析
 
-> 原文: [https://interview.poetries.top/fe-improve-docs/vue/learn-vue-base/guide/13-开发指南篇%205：Vue%20API%20盲点解析.html](https://interview.poetries.top/fe-improve-docs/vue/learn-vue-base/guide/13-开发指南篇%205：Vue%20API%20盲点解析.html)
 
 ---
 

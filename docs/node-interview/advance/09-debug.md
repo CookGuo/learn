@@ -1,12 +1,10 @@
 ---
 title: 调试日志打印debug模块|Nodejs专题系列 | Node学习指南
-source: https://interview.poetries.top/fe-node-docs/nodejs-docs/advance/-调试日志打印debug模块.html
 crawled: 2026-04-09
 ---
 
 # 调试日志打印debug模块|Nodejs专题系列 | Node学习指南
 
-> 原文: [https://interview.poetries.top/fe-node-docs/nodejs-docs/advance/-调试日志打印debug模块.html](https://interview.poetries.top/fe-node-docs/nodejs-docs/advance/-调试日志打印debug模块.html)
 
 ---
 

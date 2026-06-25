@@ -1,12 +1,10 @@
 ---
 title: 使用 Jenkins 构建镜像 将你的应用打包成镜像|前端工程化 | 前端进阶学习
-source: https://interview.poetries.top/fe-improve-docs/engineering/ci-docs/note/03-使用 Jenkins 构建镜像 将你的应用打包成镜像.html
 crawled: 2026-04-09
 ---
 
 # 使用 Jenkins 构建镜像 将你的应用打包成镜像|前端工程化 | 前端进阶学习
 
-> 原文: [https://interview.poetries.top/fe-improve-docs/engineering/ci-docs/note/03-使用 Jenkins 构建镜像 将你的应用打包成镜像.html](https://interview.poetries.top/fe-improve-docs/engineering/ci-docs/note/03-使用 Jenkins 构建镜像 将你的应用打包成镜像.html)
 
 ---
 

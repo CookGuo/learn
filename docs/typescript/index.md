@@ -1,6 +1,5 @@
 ---
 title: Typescript总结篇（二）
-source: https://feinterview.poetries.top/blog/ts-summary
 crawled: 2026-05-25
 ---
 # 一、简介

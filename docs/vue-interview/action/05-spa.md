@@ -1,12 +1,10 @@
 ---
 title: # 构建实战篇 1：单页应用的基本配置
-source: https://interview.poetries.top/fe-improve-docs/vue/learn-vue-base/action/5-构建实战篇%201：单页应用的基本配置.html
 crawled: 2026-04-09
 ---
 
 # # 构建实战篇 1：单页应用的基本配置
 
-> 原文: [https://interview.poetries.top/fe-improve-docs/vue/learn-vue-base/action/5-构建实战篇%201：单页应用的基本配置.html](https://interview.poetries.top/fe-improve-docs/vue/learn-vue-base/action/5-构建实战篇%201：单页应用的基本配置.html)
 
 ---
 

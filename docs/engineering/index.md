@@ -1,6 +1,5 @@
 ---
 title: 前端工程化
-source: https://interview.poetries.top/fe-improve-docs/engineering/
 crawled: 2026-04-09
 ---
 

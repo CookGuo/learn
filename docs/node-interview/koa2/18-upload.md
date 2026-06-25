@@ -1,12 +1,10 @@
 ---
 title: # 上传文件简单实现
-source: https://interview.poetries.top/fe-node-docs/nodejs-docs/koa2/-7.2 上传文件简单实现.html
 crawled: 2026-04-09
 ---
 
 # # 上传文件简单实现
 
-> 原文: [https://interview.poetries.top/fe-node-docs/nodejs-docs/koa2/-7.2 上传文件简单实现.html](https://interview.poetries.top/fe-node-docs/nodejs-docs/koa2/-7.2 上传文件简单实现.html)
 
 ---
 

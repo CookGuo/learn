@@ -1,12 +1,10 @@
 ---
 title: # busboy模块
-source: https://interview.poetries.top/fe-node-docs/nodejs-docs/koa2/-7.1 busboy模块.html
 crawled: 2026-04-09
 ---
 
 # # busboy模块
 
-> 原文: [https://interview.poetries.top/fe-node-docs/nodejs-docs/koa2/-7.1 busboy模块.html](https://interview.poetries.top/fe-node-docs/nodejs-docs/koa2/-7.1 busboy模块.html)
 
 ---
 

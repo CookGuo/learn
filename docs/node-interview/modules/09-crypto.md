@@ -1,12 +1,10 @@
 ---
 title: 数据加密 crypto|Nodejs专题系列 | Node学习指南
-source: https://interview.poetries.top/fe-node-docs/nodejs-docs/modules/-9.3 数据加密 crypto.html
 crawled: 2026-04-09
 ---
 
 # 数据加密 crypto|Nodejs专题系列 | Node学习指南
 
-> 原文: [https://interview.poetries.top/fe-node-docs/nodejs-docs/modules/-9.3 数据加密 crypto.html](https://interview.poetries.top/fe-node-docs/nodejs-docs/modules/-9.3 数据加密 crypto.html)
 
 ---
 

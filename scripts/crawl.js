@@ -80,7 +80,7 @@ async function crawl(url, outputPath) {
     let markdown = turndown.turndown(contentHtml)
     markdown = markdown.replace(/\n{3,}/g, '\n\n').trim()
 
-    const frontmatter = `---\ntitle: ${pageTitle}\nsource: ${url}\ncrawled: ${new Date().toISOString().split('T')[0]}\n---\n\n# ${pageTitle}\n\n> 原文: [${url}](${url})\n\n---\n\n`
+    const frontmatter = `---\ntitle: ${pageTitle}\ncrawled: ${new Date().toISOString().split('T')[0]}\n---\n\n# ${pageTitle}\n\n---\n\n`
 
     const finalContent = frontmatter + markdown
 

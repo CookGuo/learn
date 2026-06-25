@@ -1,6 +1,5 @@
 ---
 title: 前端高频面试题-精选篇-前端工程模块 
-source: https://interview.poetries.top/docs/excellent-docs/9-前端工程模块.html
 crawled: 2026-04-08
 ---
 

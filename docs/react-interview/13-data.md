@@ -1,12 +1,10 @@
 ---
 title: # 总结
-source: https://interview.poetries.top/fe-improve-docs/react/react-improve/docs/13-优化篇%20处理海量数据.html
 crawled: 2026-04-09
 ---
 
 # # 总结
 
-> 原文: [https://interview.poetries.top/fe-improve-docs/react/react-improve/docs/13-优化篇%20处理海量数据.html](https://interview.poetries.top/fe-improve-docs/react/react-improve/docs/13-优化篇%20处理海量数据.html)
 
 ---
 

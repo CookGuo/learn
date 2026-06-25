@@ -1,12 +1,10 @@
 ---
 title: 进程相关 process|Nodejs专题系列 | Node学习指南
-source: https://interview.poetries.top/fe-node-docs/nodejs-docs/modules/-7.1 进程相关 process.html
 crawled: 2026-04-09
 ---
 
 # 进程相关 process|Nodejs专题系列 | Node学习指南
 
-> 原文: [https://interview.poetries.top/fe-node-docs/nodejs-docs/modules/-7.1 进程相关 process.html](https://interview.poetries.top/fe-node-docs/nodejs-docs/modules/-7.1 进程相关 process.html)
 
 ---
 

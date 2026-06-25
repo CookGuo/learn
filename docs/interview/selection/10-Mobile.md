@@ -1,6 +1,5 @@
 ---
 title: 前端高频面试题-精选篇-移动多端开发模块 
-source: https://interview.poetries.top/docs/excellent-docs/10-移动多端开发.html
 crawled: 2026-04-08
 ---
 
