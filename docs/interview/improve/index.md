@@ -4979,7 +4979,7 @@ console.timeEnd('innerHTML')
 *   计算 `BFC` 的高度时，浮动子元素也参与计算
 *   文字层不会被浮动层覆盖，环绕于周围
 
-![BFC 效果图](/interview/high-frequency/bfc-margin-collapse.svg)
+![BFC 与 margin 折叠三种场景示意图](/interview/high-frequency/bfc-margin-collapse.svg)
 
 **应用:**
 
